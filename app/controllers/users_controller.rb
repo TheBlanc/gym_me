@@ -50,6 +50,6 @@ end
     @user = User.find(params[:id])
   end
   def user_param
-    params.require(:user).permit(:email)
+    params.require(:user).permit(first_name:, :last_name, :email, phone_number: , :password, :password_confirmation)
 
 end
