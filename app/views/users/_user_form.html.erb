@@ -1,13 +1,36 @@
 <%= form_for user do |f| %>
+<div class="signUp" >
+<p><%= f.label :first_name %><p>
+<p><%= f.text_field :first_name, placeholder: "First Name" %></p>
+</div>
+<div class="signUp" >
+<p><%= f.label :last_name %><p>
+<p><%= f.text_field :last_name, placeholder: "Last Name" %></p>
+</div>
+<div class="signUp" >
+<p><%= f.label :address %></p>
+<p><%= f.text_field :address, placeholder: "Address" %></p>
+</div>
+<div class="signUp" >
+<p><%= f.label :phone_number %></p>
+<p><%= f.telephone_field :phone_number, placeholder: " Phone Number"%></p>
+</div>
+<div class="signUp" >
+<p><%=f.label :postal_code  %></p>
+<p><%=f.text_field :postal_code, placeholder: "Postal Code" %></p>
+</div>
+<div class="signUp" >
 <p><%= f.label :email %></p>
-<p><%= f.text_field :email %></p>
-
+<p><%= f.text_field :email, placeholder: "Email Address"  %></p>
+</div>
+<div class="signUp" >
 <p><%= f.label :password %></p>
-<p><%= f.password_field :password %></p>
-
+<p><%= f.password_field :password, placeholder: "Password"%></p>
+<div class="signUp" >
 <p><%= f.label :password_confirmation %></p>
-<p><%= f.password_field :password_confirmation %></p>
-
+<p><%= f.password_field :password_confirmation, placeholder: "Password Confirmation" %></p>
+</div>
+<div class="signUp" >
 <p><%= f.submit "Sign Up" %></p>
-
+</div>
 <% end %>
