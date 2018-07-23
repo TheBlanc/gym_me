@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+
+
+
   def index
   end
 
@@ -17,7 +20,8 @@ class UsersController < ApplicationController
       redirect_to user_path(@user)
     else
       render :new
-    end 
+    end
+
 
   end
 
