@@ -1,4 +1,4 @@
-class UserController < ApplicationController
+class UsersController < ApplicationController
   def index
   end
 
@@ -13,19 +13,17 @@ class UserController < ApplicationController
     @user.password = params[:user][:password]
     @user.password_confirmation = params[:user][:password_confirmation]
 
-    if @user.save?
+    if @user.save
       redirect_to user_path(@user)
-
     else
       render :new
-
-    end
+    end 
 
   end
 
   def show
     load_user
-    
+
   end
 
 
