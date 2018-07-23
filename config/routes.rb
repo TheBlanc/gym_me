@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
-  
-  resources :sessions
-  resources :users
+  devise_for :users
+  root to: "events#index"
   resources :events
-  root "events#index"
 end
