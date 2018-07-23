@@ -1,5 +1,5 @@
-<h1>Gym Me Events</h1>
+<h1>All Events</h1>
 <% @events.each do |event| %>
-  <h3><%= event.title %></h3>
+  <h3><%= link_to event.title, event_url(event.id)%></h3>
   <p><%= event.description %></p>
 <% end %>
