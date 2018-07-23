@@ -10,6 +10,13 @@
   </head>
 
   <body>
+    <h1 class="logo">Gym Me</h1>
+    <nav class="top-nav">
+      <%= link_to "Create Event", new_event_url %>
+      <%= link_to "All Events", events_url %>
+
+
+    </nav>
     <%= yield %>
   </body>
 </html>
