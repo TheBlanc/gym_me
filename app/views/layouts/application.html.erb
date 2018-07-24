@@ -12,13 +12,14 @@
   <body>
     <h1 class="logo">Gym Me</h1>
     <nav class="top-nav">
-      <%= link_to "Create Event", new_event_url %>
-      <%= link_to "All Events", events_url %>
 
-      <% if current_user %>
-        <p>'Hello <%= current_user.email %>'</p>
-      <% else %>
-        <%= link_to "Sign In", new_user_session_url %>
+      <% if user_signed_in? %>
+        <p>'Hello <%= current_user.email %>!'</p>
+       <%= link_to "Create Event", new_event_path %> |
+        <%= link_to "All Events", events_path %> |
+        <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+        <%else %>
+          <%= link_to "Register", new_user_registration_url %>
       <% end %>
 
 

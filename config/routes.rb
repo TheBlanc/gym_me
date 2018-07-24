@@ -1,9 +1,8 @@
 Rails.application.routes.draw do
-  get 'tickets/index'
-  get 'tickets/show'
-  get 'tickets/new'
-  get 'tickets/create'
-  devise_for :users
-  root to: "events#index"
-  resources :events
+
+    root to: "events#index"
+    devise_for :users
+    resources :users, only: [:show]
+    resources :events
+
 end
