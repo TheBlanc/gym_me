@@ -1,7 +1,5 @@
 class UsersController < ApplicationController
 
-
-
   def index
   end
 
@@ -31,28 +29,31 @@ class UsersController < ApplicationController
 
   def update
     load_user
-      if @user.update_attributes(user_param)
-        redirect_to users_path
-      else
-        render :edit
+    if @user.update_attributes(user_param)
+      redirect_to users_path
+    else
+      render :edit
+    end
   end
 
   def edit
-      load_user
+    load_user
   end
 
-def destory
-  load_user
-  @user.destroy
-  redirect_to events_path
-end
+  def destory
+    load_user
+    @user.destroy
+    redirect_to events_path
+  end
 
   private
 
   def load_user
     @user = User.find(params[:id])
   end
+
   def user_param
     params.require(:user).permit(first_name:, :last_name, :email, phone_number: , :password, :password_confirmation)
+  end
 
 end
