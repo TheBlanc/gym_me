@@ -11,6 +11,11 @@
 
   <body>
     <h1 class="logo">Gym Me</h1>
+    <%= form_tag events_path, method: :get do %>
+      <%=text_field_tag :search %>
+      <%= submit_tag %>
+
+    <%end %>
     <nav class="top-nav">
 
       <% if user_signed_in? %>
