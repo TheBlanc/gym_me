@@ -10,13 +10,13 @@ class TicketsController < ApplicationController
 
   def create
     @ticket = Ticket.new
-    @ticket.user_id = session[:user_id]
-    @ticket.event_id = params[:id]
+    @ticket.user_id = current_user.id
+    @ticket.event_id = params[:event_id]
 
     if @ticket.save
       redirect_to root_url
     else
-      render 'event#show'
+      raise
       flash[:alert] = "Something went wrong"
     end
   end
