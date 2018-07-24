@@ -14,8 +14,11 @@
     <nav class="top-nav">
       <%= link_to "Create Event", new_event_url %>
       <%= link_to "All Events", events_url %>
-      <% if user_signed_in? %>
-        <p>'Hello user!'</p>
+
+      <% if current_user %>
+        <p>'Hello <%= current_user.email %>'</p>
+      <% else %>
+        <%= link_to "Sign In", new_user_session_url %>
       <% end %>
 
 

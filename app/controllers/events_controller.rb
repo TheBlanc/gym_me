@@ -18,7 +18,7 @@ class EventsController < ApplicationController
     @event.time = params[:event][:time]
     @event.description = params[:event][:description]
     @event.activity_type = params[:event][:activity_type]
-    # @event.creator = session[:user_id]
+    @event.user_id = current_user.id
 
 
     if @event.save
