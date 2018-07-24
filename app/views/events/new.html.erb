@@ -1,2 +1,7 @@
-<h1>Events#new</h1>
+<h1>New Event</h1>
+
+<% if flash[:notice] %>
+  <p><%= flash[:notice] %></p>
+<% end %>
+
 <%= render "event_form", event: @event %>
