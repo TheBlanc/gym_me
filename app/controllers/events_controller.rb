@@ -1,12 +1,11 @@
 class EventsController < ApplicationController
 
-    def index
-      if params[:search] && !params[:search].empty?
-          @events = Event.basic_search(params[:search])
-      else
-          @events = Event.all
+  def index
+    if params[:search] && !params[:search].empty?
+        @events = Event.basic_search(params[:search])
+    else
+        @events = Event.all
     end
-
   end
 
   def show
@@ -30,8 +29,8 @@ class EventsController < ApplicationController
     if @event.save
       redirect_to root_url
     else
-      render :new
       flash[:alert] = "Something went wrong"
+      render :new
     end
   end
 

@@ -2,6 +2,8 @@
 <p><%= @event.description %></p>
 <% if joined_event? %>
   <h4>You signed up for this event!</h4>
-<% else %>
+<% elsif current_user %>
   <%= button_to "Join Event", event_tickets_path(@event) %>
+<% else %>
+  <h4><%= link_to "Log-in", new_user_session_path %> to join event</h4>
 <% end %>

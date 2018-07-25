@@ -1,5 +1,13 @@
-<h1>All Events</h1>
-<% @events.each do |event| %>
-  <h3><%= link_to event.title, event_url(event.id)%></h3>
-  <p><%= event.description %></p>
+<% if current_user %>
+  <h1>All Events</h1>
+
+  <%= form_tag events_path, method: :get do %>
+    <%=text_field_tag :search %>
+    <%= submit_tag "Find Event" %>
+  <% end %>
+
+  <% @events.each do |event| %>
+    <h3><%= link_to event.title, event_url(event.id)%></h3>
+    <p><%= event.description %></p>
+  <% end %>
 <% end %>
