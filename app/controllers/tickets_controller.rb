@@ -14,10 +14,10 @@ class TicketsController < ApplicationController
     @ticket.event_id = params[:event_id]
 
     if @ticket.save
-      redirect_to root_url
+      redirect_to event_path(params[:event_id])
     else
-      raise
       flash[:alert] = "Something went wrong"
+      redirect_to event_path(params[:event_id])
     end
   end
 

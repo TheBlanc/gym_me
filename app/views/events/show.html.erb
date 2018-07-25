@@ -1,3 +1,7 @@
 <h1><%= @event.title %></h1>
 <p><%= @event.description %></p>
-<%= button_to "Join Event", event_tickets_path(@event) %>
+<% if joined_event? %>
+  <h4>You signed up for this event!</h4>
+<% else %>
+  <%= button_to "Join Event", event_tickets_path(@event) %>
+<% end %>
