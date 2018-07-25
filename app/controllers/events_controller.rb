@@ -1,12 +1,11 @@
 class EventsController < ApplicationController
 
-    def index
-      if params[:search] && !params[:search].empty?
-          @events = Event.basic_search(params[:search])
-      else
-          @events = Event.all
+  def index
+    if params[:search] && !params[:search].empty?
+        @events = Event.basic_search(params[:search])
+    else
+        @events = Event.all
     end
-
   end
 
   def show
