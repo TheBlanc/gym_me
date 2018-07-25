@@ -1,4 +1,35 @@
 <h1>User Profile Page</h1>
-<p><%= @user.first_name %> <%= @user.last_name %></p>
+<h3><%= @user.first_name %> <%= @user.last_name %></h3>
+<h4>Age</h4>
+<p><%= @user.age %></p>
+<h4>Address</h4>
+<p><%= @user.country %></p>
+<p><%= @user.province %></p>
+<p><%= @user.city %></p>
+<p><%= @user.street_address %></p>
+
+
+<h4>Gender</h4>
+<p><%= @user.sex %></p>
+<h4>Fitness Level</h4>
+<p><%= @user.fitness_level %></p>
+<h4>About Me</h4>
+<p><%= @user.description %></p>
+
+<h2>Events Im Attending</h2>
+<% @events.each do |event| %>
+  <p><%= event.title %></p>
+  <p><%= event.activity_type %></p>
+  <p><%= event.time %></p>
+  <p><%= event.description %></p>
+<% end %>
+
+<h2>My Events</h2>
+<% @owned_events.each do |event| %>
+  <p><%= event.title %></p>
+  <p><%= event.activity_type %></p>
+  <p><%= event.time %></p>
+  <p><%= event.description %></p>
+<% end %>
 
 <%= link_to "Edit my profile", edit_user_registration_path(current_user.id) %>
