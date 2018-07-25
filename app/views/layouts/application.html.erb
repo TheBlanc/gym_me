@@ -13,8 +13,10 @@
     <h1 class="logo">Gym Me</h1>
 
     <nav class="top-nav">
+      <% if current_user && current_user.first_name %>
+        <p>Hello <%= current_user.first_name %>!</p>
+      <% end %>
       <% if current_user %>
-        <p>Hello <%= current_user.email %>!</p>
         <%= link_to "Create Event", new_event_path %> |
         <%= link_to "All Events", events_path %> |
         <%= link_to "My Profile", user_path(current_user.id) %> |
