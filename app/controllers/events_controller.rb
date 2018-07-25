@@ -26,12 +26,11 @@ class EventsController < ApplicationController
     @event.activity_type = params[:event][:activity_type]
     @event.user_id = current_user.id
 
-
     if @event.save
       redirect_to root_url
     else
-      render :new
       flash[:alert] = "Something went wrong"
+      render :new
     end
   end
 
