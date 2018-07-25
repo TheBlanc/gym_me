@@ -1,2 +1,4 @@
 <h1>User Profile Page</h1>
 <p><%= @user.first_name %> <%= @user.last_name %></p>
+
+<%= link_to "Edit my profile", edit_user_registration_path(current_user.id) %>
