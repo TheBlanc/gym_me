@@ -11,7 +11,8 @@
 # It's strongly recommended that you check this file into your version control system.
 
 
-ActiveRecord::Schema.define(version: 2018_07_26_041727) do
+
+ActiveRecord::Schema.define(version: 2018_07_26_160703) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "hstore"
@@ -36,7 +37,7 @@ ActiveRecord::Schema.define(version: 2018_07_26_041727) do
     t.integer "user_id"
     t.string "name"
     t.float "latitude"
-    t.float "logitude"
+    t.float "longitude"
   end
 
   create_table "tickets", force: :cascade do |t|
