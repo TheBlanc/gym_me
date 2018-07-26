@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_26_041727) do
+ActiveRecord::Schema.define(version: 2018_07_26_155940) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "hstore"
@@ -37,6 +37,8 @@ ActiveRecord::Schema.define(version: 2018_07_26_041727) do
     t.string "city"
     t.string "province"
     t.string "country"
+    t.integer "capacity"
+    t.boolean "need_approval"
   end
 
   create_table "tickets", force: :cascade do |t|
