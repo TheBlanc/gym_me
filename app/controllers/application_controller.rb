@@ -8,13 +8,6 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:account_update, keys: [:first_name, :last_name, :location, :fitness_level, :sex, :description, :street_address, :city, :province, :postal_code, :country])
   end
 
-  # Overwrite the devise path after updating a profile
-  def after_update_path_for(resource)
-    user_path(resource)
-  end
-
-
-
   helper_method :joined_event?
 
   private
