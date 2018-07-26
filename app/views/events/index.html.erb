@@ -8,6 +8,8 @@
 
   <% @events.each do |event| %>
     <h3><%= link_to event.title, event_url(event.id)%></h3>
-    <p><%= event.description %></p>
+    <p>Event Description: <%= event.description %></p>
+    <p>Event Address: <%= event.address %></p>
+    <p>When: <%= event.time %></p>
   <% end %>
 <% end %>

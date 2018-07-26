@@ -3,6 +3,7 @@ class EventsController < ApplicationController
   def index
     if params[:search] && !params[:search].empty?
         @events = Event.basic_search(params[:search])
+        @events = Event.near(params[:search]) if @events.empty?
     else
         @events = Event.all
     end
@@ -21,7 +22,7 @@ class EventsController < ApplicationController
   def create
     @event = Event.new
     @event.title = params[:event][:title]
-    @event.location = params[:event][:location]
+    @event.address = params[:event][:address]
     @event.time = params[:event][:time]
     @event.description = params[:event][:description]
     @event.activity_type = params[:event][:activity_type]
