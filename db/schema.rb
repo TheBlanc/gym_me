@@ -42,6 +42,14 @@ ActiveRecord::Schema.define(version: 2018_07_26_193522) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"
+
+    t.string "street_address"
+    t.string "city"
+    t.string "province"
+    t.string "country"
+    t.integer "capacity"
+    t.boolean "need_approval"
+
     t.string "name"
     t.float "latitude"
     t.float "longitude"
@@ -55,6 +63,7 @@ ActiveRecord::Schema.define(version: 2018_07_26_193522) do
     t.datetime "updated_at", null: false
     t.index ["chat_room_id"], name: "index_messages_on_chat_room_id"
     t.index ["user_id"], name: "index_messages_on_user_id"
+
   end
 
   create_table "tickets", force: :cascade do |t|

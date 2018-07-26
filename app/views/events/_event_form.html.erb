@@ -15,6 +15,17 @@
 <p><%= f.label :description %></p>
 <p><%= f.text_area :description, placeholder: "Description" %></p>
 
+<p><%= f.label :capacity %></p>
+<p><%= f.number_field :capacity %></p>
+
+<div class="field">
+  <p><%= f.label "Private Event?" %></p>
+  <%= f.label :need_approval, "Yes", :value => "true" %>
+  <%= f.radio_button  :need_approval, true %>
+  <%= f.label :need_approval, "No", :value => "false"  %>
+  <%= f.radio_button :need_approval, false, :checked => true %>
+</div>
+
 <p><%= f.submit "Create event" %></p>
 
 <% end %>

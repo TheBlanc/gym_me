@@ -25,6 +25,8 @@ class EventsController < ApplicationController
     @event.time = params[:event][:time]
     @event.description = params[:event][:description]
     @event.activity_type = params[:event][:activity_type]
+    @event.capacity = params[:event][:capacity]
+    @event.need_approval = params[:event][:need_approval]
     @event.user_id = current_user.id
 
     if @event.save
