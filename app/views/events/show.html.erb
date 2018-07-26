@@ -1,5 +1,6 @@
 <h1><%= @event.title %></h1>
 <p><%= @event.description %></p>
+<!-- Check if user is signed in, and if they have joined this event  -->
 <% if joined_event? %>
   <h4>You signed up for this event!</h4>
 <% elsif current_user %>
@@ -8,26 +9,30 @@
   <h4><%= link_to "Log-in", new_user_session_path %> to join event</h4>
 <% end %>
 
-<h3>Comments</h3>
-<% @comments.each do |comment| %>
-  <div class="comment">
-    <p><%= comment.user.email %></p>
-    <p><%= comment.body %></p>
-    <p><em><%= comment.created_at.strftime("%m/%d/%Y at %I:%M%p") %></em></p>
-    <%= button_to "delete comment", event_comment_path(@event, comment.id), data: { confirm: "Are you sure?" }, method: :delete %>
-  </div>
-<% end %>
+<% if current_user && joined_event? %>
 
+  <h3>Comments</h3>
+  <% @comments.each do |comment| %>
+    <div class="comment">
+      <p><%= comment.user.email %></p>
+      <p><%= comment.body %></p>
+      <p><em><%= comment.created_at.strftime("%m/%d/%Y at %I:%M%p") %></em></p>
+      <!-- Check if user created comment to have authorization to delete it  -->
+      <% if comment.user.id == current_user.id %>
+        <%= button_to "delete comment", event_comment_path(@event, comment.id), data: { confirm: "Are you sure?" }, method: :delete %>
+      <% end %>
+    </div>
+  <% end %>
 
-<%= form_for( @comment, url: event_comments_path(@event.id) ) do |f| %>
+  <%= form_for( @comment, url: event_comments_path(@event.id) ) do |f| %>
+    <div class="field">
+      <%= f.label "Leave a comment" %><br/>
+      <%= f.text_area :body %>
+    </div>
 
-  <div class="field">
-    <%= f.label "Leave a comment" %><br/>
-    <%= f.text_area :body %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Comment" %>
-  </div>
+    <div class="actions">
+      <%= f.submit "Comment" %>
+    </div>
+  <% end %>
 
 <% end %>
