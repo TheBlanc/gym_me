@@ -3,4 +3,8 @@ class Event < ApplicationRecord
   has_many :tickets
   has_many :users, through: :tickets
   has_many :comments
+
+  geocoded_by :address
+  after_validation :geocode, if: :address_changed?
+
 end

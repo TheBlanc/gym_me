@@ -29,7 +29,6 @@ class EventsController < ApplicationController
     @event.need_approval = params[:event][:need_approval]
     @event.user_id = current_user.id
 
-
     if @event.save
       redirect_to root_url
     else
