@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     resources :users, only: [:show, :edit, :update]
     resources :events do
       resources :tickets, only: [:create]
+      resources :comments, only: [:create, :destroy]
     end
 
 end
