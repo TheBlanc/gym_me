@@ -10,6 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 2018_07_26_041727) do
 
   # These are extensions that must be enabled in order to support this database
@@ -26,17 +27,16 @@ ActiveRecord::Schema.define(version: 2018_07_26_041727) do
 
   create_table "events", force: :cascade do |t|
     t.string "title"
-    t.string "location"
+    t.string "address"
     t.datetime "time"
     t.text "description"
     t.string "activity_type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"
-    t.string "street_address"
-    t.string "city"
-    t.string "province"
-    t.string "country"
+    t.string "name"
+    t.float "latitude"
+    t.float "logitude"
   end
 
   create_table "tickets", force: :cascade do |t|

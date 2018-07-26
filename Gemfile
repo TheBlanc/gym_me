@@ -28,7 +28,9 @@ gem 'jbuilder', '~> 2.5'
  gem 'bcrypt', '~> 3.1.7'
 #Textacular exposes full text search capabilities from PostgreSQL, extending ActiveRecord with scopes making search easy and fun!
  gem 'textacular', '~> 5.0'
-
+#Complete Ruby geocoding solution.http://www.rubygeocoder.com/
+gem 'geocoder'
+#
  gem 'jquery-rails'
 
 # Use ActiveStorage variant
