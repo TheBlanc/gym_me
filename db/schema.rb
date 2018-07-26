@@ -11,12 +11,19 @@
 # It's strongly recommended that you check this file into your version control system.
 
 
-ActiveRecord::Schema.define(version: 2018_07_25_200225) do
-
+ActiveRecord::Schema.define(version: 2018_07_26_041727) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "hstore"
   enable_extension "plpgsql"
+
+  create_table "comments", force: :cascade do |t|
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "event_id"
+    t.text "body"
+  end
 
   create_table "events", force: :cascade do |t|
     t.string "title"
