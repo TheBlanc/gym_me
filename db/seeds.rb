@@ -16,8 +16,9 @@ end
 5.times do |n|
   e = Event.new
   e.title = "Event #{n+1}"
-  e.location = "Downtown"
+  e.address = "Downtown"
   e.description = "This is event #{n+1}"
+  e.capacity = 2
   e.user_id = (n+1)
   e.save
 end
@@ -27,4 +28,5 @@ end
   t.user_id = (5-n)
   t.event_id = (n+1)
   t.save
+  t.event.capacity -= 1
 end

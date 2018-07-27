@@ -4,16 +4,29 @@
 <p><%= f.text_field :title, placeholder: "Event title"%></p>
 
 <p><%= f.label :activity_type %></p>
-<p><%= f.text_field :activity_type, placeholder: "Activity Type" %></p>
+<p><%= f.select :activity_type, ["Cardio", "Weight Lifting", "Boxing", "Yoga", "Cross Fit", "Swimming"]%></p>
 
 <p><%= f.label :time %></p>
-<p><%= f.datetime_field :time, placeholder: "Time"  %></p>
+<p><%= f.datetime_field :time %></p>
 
 <p><%= f.label :address %></p>
+
 <p><%= f.text_field :address, placeholder: "Address" %></p>
 
+
 <p><%= f.label :description %></p>
-<p><%= f.text_area :description, placeholder: "Description" %></p>
+<p><%= f.text_area :description, placeholder: "What kind of event?" %></p>
+
+<p><%= f.label "Available Spots" %></p>
+<p><%= f.number_field :capacity %></p>
+
+<div class="field">
+  <p><%= f.label "Private Event?" %></p>
+  <%= f.label :need_approval, "Yes", :value => "true" %>
+  <%= f.radio_button  :need_approval, true %>
+  <%= f.label :need_approval, "No", :value => "false"  %>
+  <%= f.radio_button :need_approval, false, :checked => true %>
+</div>
 
 <p><%= f.submit "Create event" %></p>
 

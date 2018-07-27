@@ -1,4 +1,5 @@
 <h1><%= @event.title %></h1>
+
 <p>Where: <%= @event.address %></p>
 <p>When: <%= @event.time %></p>
 <p>description: <%= @event.description %></p>
@@ -10,17 +11,30 @@
   src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCSAITA7lbVhXUE9n3rZBVrryoQTvtNYKE&callback=initMap">
 </script>
 
+
+<p><%= @event.time %></p>
+<p><%= @event.activity_type %></p>
+<% if @event.capacity %>
+  <p>(<%= @event.users.length %> people attending)</p>
+  <p>Tickets Remaining: <%= @event.capacity %></p>
+<% end %>
+
+
+<p><%= @event.description %></p>
+
 <!-- Check if user is signed in, and if they have joined this event  -->
 <% if joined_event? %>
-  <h4>You signed up for this event!</h4>
-<% elsif current_user %>
+  <h4>You are signed up for this event!</h4>
+  <%= link_to "Cancel rsvp", event_ticket_path(@event.id, @ticket.id), method: :delete %>
+<% elsif current_user != @event.owner && @event.capacity > 0 %>
   <%= button_to "Join Event", event_tickets_path(@event) %>
+<% elsif @event.capacity == 0 %>
+  <h4>Event is currently full.</h4>
 <% else %>
   <h4><%= link_to "Log-in", new_user_session_path %> to join event</h4>
 <% end %>
 
 <% if current_user && joined_event? %>
-
   <h3>Comments</h3>
   <% @comments.each do |comment| %>
     <div class="comment">
