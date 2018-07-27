@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_27_185504) do
+ActiveRecord::Schema.define(version: 2018_07_27_192442) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "hstore"
@@ -66,11 +66,12 @@ ActiveRecord::Schema.define(version: 2018_07_27_185504) do
     t.string "city"
     t.string "province"
     t.string "country"
+    t.integer "capacity"
+    t.boolean "need_approval"
     t.string "name"
     t.float "latitude"
     t.float "longitude"
-    t.integer "capacity"
-    t.boolean "need_approval"
+    t.boolean "matching"
   end
 
   create_table "messages", force: :cascade do |t|

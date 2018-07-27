@@ -10,7 +10,7 @@ class EventsController < ApplicationController
           if event.capacity > 0
             available_events << event
           end
-        end
+        end 
         @events = available_events
     else
         available_events = []
