@@ -1,4 +1,17 @@
 <h1><%= @event.title %></h1>
+
+<p>Where: <%= @event.address %></p>
+<p>When: <%= @event.time %></p>
+<p>description: <%= @event.description %></p>
+
+<div id="longitude" ><%= @event.longitude %></div>
+<div id="latitude" ><%= @event.latitude %></div>
+<div id="map"></div>
+<script async defer
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCSAITA7lbVhXUE9n3rZBVrryoQTvtNYKE&callback=initMap">
+</script>
+
+
 <p><%= @event.time %></p>
 <p><%= @event.activity_type %></p>
 <% if @event.capacity %>
@@ -8,6 +21,7 @@
 
 
 <p><%= @event.description %></p>
+
 <!-- Check if user is signed in, and if they have joined this event  -->
 <% if joined_event? %>
   <h4>You are signed up for this event!</h4>

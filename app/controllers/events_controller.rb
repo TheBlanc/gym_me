@@ -3,6 +3,9 @@ class EventsController < ApplicationController
   def index
     # check if search parameter is being passed and isnt an empty string
     if params[:search] && !params[:search].empty?
+        @events = Event.basic_search(params[:search])
+        @events = Event.near(params[:search]) if @events.empty?
+
         search_events = Event.basic_search(params[:search])
         # iterate through the events and check if the there are spots available (capacity > 0)
         available_events = []
@@ -12,6 +15,7 @@ class EventsController < ApplicationController
           end
         end 
         @events = available_events
+
     else
         available_events = []
         all_events = Event.all
@@ -55,5 +59,6 @@ class EventsController < ApplicationController
       render :new
     end
   end
+
 
 end
