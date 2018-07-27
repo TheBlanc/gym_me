@@ -1,11 +1,21 @@
 class EventsController < ApplicationController
 
   def index
-    if params[:search] && !params[:search].empty?
-        @events = Event.basic_search(params[:search])
-    else
-        @events = Event.all
+    all_events = Event.all
+    available_events = []
+
+    all_events.each do |event|
+      if event.capacity > 0
+        available_events << event
+      end
     end
+
+    if params[:search] && !params[:search].empty?
+        @events = available_events.basic_search(params[:search])
+    else
+        @events = available_events
+    end
+    
   end
 
   def show
@@ -13,6 +23,7 @@ class EventsController < ApplicationController
     @comments = @event.comments
     @comment = Comment.new
     @users = @event.users
+    @ticket = Ticket.find_by(user_id: current_user.id, event_id: @event.id)
   end
 
   def new
