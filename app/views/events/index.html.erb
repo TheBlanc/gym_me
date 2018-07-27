@@ -2,6 +2,7 @@
   <h1>All Events</h1>
 
   <%= form_tag events_path, method: :get do %>
+    <%= label_tag "Search Location" %>
     <%=text_field_tag :search %>
     <%= submit_tag "Find Event" %>
   <% end %>
