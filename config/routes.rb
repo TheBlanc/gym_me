@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     resources :chat_rooms, only: [:new, :create, :show, :index]
 
     resources :events do
-      resources :tickets, only: [:create]
+      resources :tickets, only: [:create, :destroy]
       resources :comments, only: [:create, :destroy]
     end
 
