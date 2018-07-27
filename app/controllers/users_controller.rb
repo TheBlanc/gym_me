@@ -23,7 +23,7 @@ class UsersController < ApplicationController
     @user.city = params[:user][:city]
     @user.street_address = params[:user][:street_address]
     @user.postal_code = params[:user][:postal_code]
-
+    @user.avatar.attach(params[:user][:avatar])
     if @user.save
       redirect_to user_path(@user.id)
     else

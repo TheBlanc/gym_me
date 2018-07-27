@@ -12,6 +12,8 @@ class User < ApplicationRecord
 # dependent destory allows you to call User.destroy and delete all chat rooms own by user
   has_many :chat_rooms, dependent: :destroy
   has_many :messages, dependent: :destroy
+# active_storage module for giving users avatar photos
+  has_one_attached :avatar
 
   def name
     email.split('@')[0]
