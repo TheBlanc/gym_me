@@ -12,6 +12,7 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
     @comments = @event.comments
     @comment = Comment.new
+    @users = @event.users
   end
 
   def new
@@ -21,7 +22,7 @@ class EventsController < ApplicationController
   def create
     @event = Event.new
     @event.title = params[:event][:title]
-    @event.location = params[:event][:location]
+    @event.address = params[:event][:address]
     @event.time = params[:event][:time]
     @event.description = params[:event][:description]
     @event.activity_type = params[:event][:activity_type]

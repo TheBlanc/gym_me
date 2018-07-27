@@ -9,6 +9,7 @@ class ApplicationController < ActionController::Base
   end
 
   helper_method :joined_event?
+  helper_method :tickets_left?
 
   private
 
@@ -16,6 +17,18 @@ class ApplicationController < ActionController::Base
   def joined_event?
     current_event = Event.find(params[:id])
     current_user && current_event.users.find_by(id: current_user.id)
+  end
+
+  # returns true if tickets are remaining for an event
+  def tickets_left?
+    current_event = Event.find(params[:id])
+    if current_event.capacity == nil
+      return true
+    elsif (current_event.capacity - current_event.users.length) > 0
+      return true
+    else
+      return false
+    end 
   end
 
 end

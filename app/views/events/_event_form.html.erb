@@ -7,13 +7,13 @@
 <p><%= f.text_field :activity_type, placeholder: "Activity Type" %></p>
 
 <p><%= f.label :time %></p>
-<p><%= f.datetime_field :time, placeholder: "Time"  %></p>
+<p><%= f.time_field :time, placeholder: Time.now  %></p>
 
-<p><%= f.label :location %></p>
-<p><%= f.text_field :location, placeholder: "Location" %></p>
+<p><%= f.label :address %></p>
+<p><%= f.text_field :address, placeholder: "Location" %></p>
 
 <p><%= f.label :description %></p>
-<p><%= f.text_area :description, placeholder: "Description" %></p>
+<p><%= f.text_area :description, placeholder: "What kind of event?" %></p>
 
 <p><%= f.label :capacity %></p>
 <p><%= f.number_field :capacity %></p>

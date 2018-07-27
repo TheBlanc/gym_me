@@ -1,16 +1,25 @@
 <h1><%= @event.title %></h1>
+<p><%= @event.time %></p>
+<p><%= @event.activity_type %></p>
+<% if @event.capacity %>
+  <p>(Capacity: <%= @event.capacity %>)</p>
+  <p>Tickets Remaining: <%= (@event.capacity - @users.length) %></p>
+<% end %>
+
+
 <p><%= @event.description %></p>
 <!-- Check if user is signed in, and if they have joined this event  -->
 <% if joined_event? %>
-  <h4>You signed up for this event!</h4>
-<% elsif current_user %>
+  <h4>You are signed up for this event!</h4>
+<% elsif current_user != @event.owner && tickets_left? %>
   <%= button_to "Join Event", event_tickets_path(@event) %>
+<% elsif !tickets_left? %>
+  <h4>Event is currently full!</h4>
 <% else %>
   <h4><%= link_to "Log-in", new_user_session_path %> to join event</h4>
 <% end %>
 
 <% if current_user && joined_event? %>
-
   <h3>Comments</h3>
   <% @comments.each do |comment| %>
     <div class="comment">
