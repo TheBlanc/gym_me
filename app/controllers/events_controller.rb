@@ -13,7 +13,7 @@ class EventsController < ApplicationController
           if event.capacity > 0
             available_events << event
           end
-        end 
+        end
         @events = available_events
 
     else
@@ -58,6 +58,31 @@ class EventsController < ApplicationController
       flash[:alert] = "Something went wrong"
       render :new
     end
+  end
+
+  def edit
+    @event = Event.find(params[:id])
+  end
+
+  def update
+    @event = Event.find(params[:id])
+
+    @event.title = params[:event][:title]
+    @event.address = params[:event][:address]
+    @event.time = params[:event][:time]
+    @event.description = params[:event][:description]
+    @event.activity_type = params[:event][:activity_type]
+    @event.capacity = params[:event][:capacity]
+    @event.need_approval = params[:event][:need_approval]
+    @event.user_id = current_user.id
+
+    if @event.save
+      redirect_to event_path(@event)
+    else
+      flash[:alert] = "Something went wrong"
+      render :edit
+    end
+
   end
 
 

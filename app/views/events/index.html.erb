@@ -1,16 +1,23 @@
 <% if current_user %>
-  <h1>All Events</h1>
+  <header class="event-index">
+    <h1>All Events</h1>
+    <nav class="search">
+      <%= form_tag events_path, method: :get do %>
+        <%= label_tag "Search Location" %>
+        <%=text_field_tag :search %>
+        <%= submit_tag "Find Event" %>
+      <% end %>
+    </nav>
+  </header>
 
-  <%= form_tag events_path, method: :get do %>
-    <%= label_tag "Search Location" %>
-    <%=text_field_tag :search %>
-    <%= submit_tag "Find Event" %>
-  <% end %>
-
-  <% @events.each do |event| %>
-    <h3><%= link_to event.title, event_url(event.id)%></h3>
-    <p>Event Description: <%= event.description %></p>
-    <p>Event Address: <%= event.address %></p>
-    <p>When: <%= event.time %></p>
-  <% end %>
+  <section class="event-reults">
+    <% @events.each do |event| %>
+      <div class="event-card">
+        <h3><%= link_to event.title, event_url(event.id)%></h3>
+        <p>Event Description: <%= event.description %></p>
+        <p>Event Address: <%= event.address %></p>
+        <p>When: <%= event.time %></p>
+      </div>
+    <% end %>
+  </section>
 <% end %>
