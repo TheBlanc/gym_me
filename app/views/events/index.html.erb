@@ -16,7 +16,7 @@
         <h3><%= link_to event.title, event_url(event.id)%></h3>
         <p>Event Description: <%= event.description %></p>
         <p>Event Address: <%= event.address %></p>
-        <p>When: <%= event.time %></p>
+        <p>When: <%= event.time.strftime("%m/%d/%Y at %I:%M%p") %></p>
       </div>
     <% end %>
   </section>

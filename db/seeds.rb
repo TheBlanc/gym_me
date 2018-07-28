@@ -16,12 +16,23 @@ end
 5.times do |n|
   e = Event.new
   e.title = "Event #{n+1}"
-  e.address = "Downtown"
+  e.address = "100 King St. W"
   e.description = "This is event #{n+1}"
   e.capacity = 2
   e.user_id = (n+1)
+  e.time = Time.now + 1000000
   e.save
 end
+
+e = Event.new
+e.title = "Old Event"
+e.address = "100 King St. W"
+e.description = "This is an old event"
+e.capacity = 2
+e.user_id = 1
+e.time = Time.now - 1000000
+e.save
+
 
 5.times do |n|
   t = Ticket.new
