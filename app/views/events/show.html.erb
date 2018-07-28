@@ -1,5 +1,5 @@
 <h1><%= @event.title %></h1>
-
+<p>Created by: <%= link_to @event.owner.email, user_path(@event.owner.id) %></p>
 <p>Where: <%= @event.address %></p>
 <p>When: <%= @event.time %></p>
 <p>description: <%= @event.description %></p>
@@ -15,7 +15,7 @@
 <p><%= @event.time %></p>
 <p><%= @event.activity_type %></p>
 <% if @event.capacity %>
-  <p>(<%= @event.users.length %> people attending)</p>
+  <p>(<%= @event.users.length %> attending)</p>
   <p>Tickets Remaining: <%= @event.capacity %></p>
 <% end %>
 
@@ -30,7 +30,7 @@
   <%= button_to "Join Event", event_tickets_path(@event) %>
 <% elsif @event.capacity == 0 %>
   <h4>Event is currently full.</h4>
-<% else %>
+<% elsif !current_user %>
   <h4><%= link_to "Log-in", new_user_session_path %> to join event</h4>
 <% end %>
 
