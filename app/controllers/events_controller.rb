@@ -8,9 +8,10 @@ class EventsController < ApplicationController
 
         search_events = Event.basic_search(params[:search])
         # iterate through the events and check if the there are spots available (capacity > 0)
+        # and that the event has not started
         available_events = []
         search_events.each do |event|
-          if event.capacity > 0
+          if event.capacity > 0 && event.time > Time.now
             available_events << event
           end
         end
@@ -20,7 +21,7 @@ class EventsController < ApplicationController
         available_events = []
         all_events = Event.all
         all_events.each do |event|
-          if event.capacity > 0
+          if event.capacity > 0 && event.time > Time.now
             available_events << event
           end
         end
