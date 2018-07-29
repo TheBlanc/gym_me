@@ -18,4 +18,10 @@ class User < ApplicationRecord
   def name
     email.split('@')[0]
   end
+
+  def full_name
+    if first_name && last_name
+      "#{first_name} + #{last_name}"
+    end
+  end
 end

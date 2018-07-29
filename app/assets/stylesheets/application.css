@@ -14,10 +14,21 @@
  *= require_self
  */
 
- #messages {
-   max-height: 450px;
-   overflow-y: auto;
-   .avatar {
-     margin: 0.5rem;
-   }
+#messages {
+ max-height: 450px;
+ overflow-y: auto;
+ .avatar {
+   margin: 0.5rem;
  }
+}
+
+body {
+  margin: 20px;
+  text-align: center;
+}
+
+.container {
+ display: inline-block;
+ margin: 20px auto;
+ text-align: left;
+}

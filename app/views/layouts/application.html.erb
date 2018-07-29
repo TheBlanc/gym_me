@@ -13,30 +13,31 @@
     </script>
   </head>
 
-  <header>
-    <h1 class="logo">Gym Me</h1>
-
-    <nav class="top-nav">
-
-      <% if current_user && current_user.first_name %>
-        <p>Hello <%= current_user.first_name %>!</p>
-      <% end %>
-      <% if current_user %>
-        <%= link_to "Create Event", new_event_path %> |
-        <%= link_to "All Events", events_path %> |
-        <%= link_to "My Profile", user_path(current_user.id) %> |
-        <%= link_to "new chat room", new_chat_room_path %>
-        <%= link_to "Logout", destroy_user_session_path, method: :delete %>
-      <% else %>
-        <%= link_to "Log-in", new_user_session_path %> |
-        <%= link_to "Register", new_user_registration_url %>
-      <% end %>
-
-    </nav>
-
-  </header>
-
   <body>
-    <%= yield %>
+    <header>
+      <h1 class="logo">Gym Me</h1>
+
+      <nav class="top-nav">
+
+        <% if current_user %>
+          <p>Logged in: <%= current_user.email %></p>
+          <%= link_to "Create Event", new_event_path %> |
+          <%= link_to "All Events", events_path %> |
+          <%= link_to "My Profile", user_path(current_user.id) %> |
+          <%= link_to "New Chat Room", new_chat_room_path %> |
+          <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+        <% else %>
+          <%= link_to "Log-in", new_user_session_path %> |
+          <%= link_to "Register", new_user_registration_url %>
+        <% end %>
+
+      </nav>
+    </header>
+    
+    <div class="container">
+      <%= yield %>
+    </div>
+
   </body>
+
 </html>

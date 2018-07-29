@@ -1,6 +1,9 @@
 <h1>User Profile Page</h1>
-<% if image_tag url_for(@user.avatar) !== nil %>
- <%= image_tag url_for(@user.avatar)%>
+<% if @user.avatar.attached? %>
+  <div class="avatar">
+    <%= image_tag url_for(@user.avatar) %>
+  </div>
+<% end %>
 
 
   <%end %>
@@ -22,23 +25,26 @@
     <tr><%= @user.description %></tr>
   </tbody>
 </table>
-<h2>Events Im Attending</h2>
-<% @events.each do |event| %>
-  <p><%= link_to event.title, event_url(event.id)%></p>
-  <p><%= event.activity_type %></p>
-  <p><%= event.time %></p>
-  <p><%= event.description %></p>
-<% end %>
 
-<% if @owned_events.length > 0 %>
-  <h2>My Events</h2>
-  <% @owned_events.each do |event| %>
+<% if @user == current_user %>
+  <h2>Events Im Attending</h2>
+  <% @events.each do |event| %>
     <p><%= link_to event.title, event_url(event.id)%></p>
     <p><%= event.activity_type %></p>
     <p><%= event.time %></p>
     <p><%= event.description %></p>
   <% end %>
+
+  <% if @owned_events.length > 0 %>
+    <h2>My Events</h2>
+    <% @owned_events.each do |event| %>
+      <p><%= link_to event.title, event_url(event.id)%></p>
+      <p><%= event.activity_type %></p>
+      <p><%= event.time %></p>
+      <p><%= event.description %></p>
+    <% end %>
+  <% end %>
+
+
+  <%= link_to "Edit my profile", edit_user_path(current_user.id) %>
 <% end %>
-
-
-<%= link_to "Edit my profile", edit_user_path(current_user.id) %>
