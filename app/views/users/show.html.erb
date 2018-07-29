@@ -1,6 +1,9 @@
 <h1>User Profile Page</h1>
-<%= image_tag url_for(@user.avatar) %>
+<% if image_tag url_for(@user.avatar) !== nil %>
+ <%= image_tag url_for(@user.avatar)%>
 
+
+  <%end %>
 <table class="user_profile_table">
   <tbody>
     <tr><%= @user.first_name %> <%= @user.last_name %></tr>

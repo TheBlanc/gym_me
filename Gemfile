@@ -67,6 +67,9 @@ group :test do
   gem 'pry-byebug'
 
 end
-
+# Figaro Help to secure API keys: https://github.com/laserlemon/figaro
+gem "figaro"
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+#Rails view helper for grabbing Gravatar images. The goal here is to be configurable and have those configuration points documented! https://github.com/mdeering/gravatar_image_tag
+gem 'gravatar_image_tag'

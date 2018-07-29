@@ -1,15 +1,9 @@
-<h1><%= @event.title %></h1>
+<h1 id="eventName"><%= @event.title %></h1>
 
 <p>Where: <%= @event.address %></p>
 <p>When: <%= @event.time %></p>
 <p>description: <%= @event.description %></p>
-
-<div id="longitude" ><%= @event.longitude %></div>
-<div id="latitude" ><%= @event.latitude %></div>
-<div id="map"></div>
-<script async defer
-  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCSAITA7lbVhXUE9n3rZBVrryoQTvtNYKE&callback=initMap">
-</script>
+<div id="map" data-latitude="<%= @event.latitude %>" data-longitude="<%= @event.longitude %>"></div>
 
 
 <p><%= @event.time %></p>

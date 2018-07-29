@@ -1,0 +1,2 @@
+<div id="longitude" ><%= @event.longitude %></div>
+<div id="latitude" ><%= @event.latitude %></div>
