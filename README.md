@@ -13,6 +13,7 @@ Things you may want to cover:
 * System dependencies
 
 * Configuration
+google maps API: https://developers.google.com/maps/documentation/javascript/tutorial
 
 * Database creation
 

@@ -1,12 +1,10 @@
 <h1>User Profile Page</h1>
-<% if @user.avatar.attached? %>
-  <div class="avatar">
-    <%= image_tag url_for(@user.avatar) %>
-  </div>
-<% end %>
+  <% if @user.avatar.attached? %>
+    <div class="avatar">
+      <%= image_tag url_for(@user.avatar) %>
+    </div>
+  <% end %>
 
-
-  <%end %>
 <table class="user_profile_table">
   <tbody>
     <tr><%= @user.first_name %> <%= @user.last_name %></tr>
@@ -34,17 +32,15 @@
     <p><%= event.time %></p>
     <p><%= event.description %></p>
   <% end %>
-
   <% if @owned_events.length > 0 %>
     <h2>My Events</h2>
-    <% @owned_events.each do |event| %>
+      <% @owned_events.each do |event| %>
       <p><%= link_to event.title, event_url(event.id)%></p>
       <p><%= event.activity_type %></p>
       <p><%= event.time %></p>
       <p><%= event.description %></p>
+      <% end %>
     <% end %>
-  <% end %>
-
 
   <%= link_to "Edit my profile", edit_user_path(current_user.id) %>
-<% end %>
+<%end %>

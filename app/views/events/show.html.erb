@@ -1,7 +1,6 @@
 
 <h1 id="eventName"><%= @event.title %></h1>
 
-<h1><%= @event.title %></h1>
 <p>Created by: <%= link_to @event.owner.email, user_path(@event.owner.id) %></p>
 
 <!-- Check if user is signed in, and if they have joined this event  -->
@@ -22,8 +21,14 @@
 
 <p>Where: <%= @event.address %></p>
 <p>When: <%= @event.time %></p>
-<p>description: <%= @event.description %></p>
+<p>Description: <%= @event.description %></p>
+<!-- GOOGLE MAPS-->
 <div id="map" data-latitude="<%= @event.latitude %>" data-longitude="<%= @event.longitude %>"></div>
+<div id="infowindow-content">
+      <img src="" width="16" height="16" id="place-icon">
+      <span id="place-name"  class="title"></span><br>
+      <span id="place-address"></span>
+</div>
 
 
 <p><%= @event.time %></p>
