@@ -4,24 +4,13 @@
     <%= image_tag url_for(@user.avatar) %>
   </div>
 <% end %>
-<table class="user_profile_table">
-  <tbody>
-    <tr><%= @user.first_name %> <%= @user.last_name %></tr>
-    <p>Age</p>
-    <tr><%= @user.age %></tr>
-    <h4>Address</h4>
-    <tr><%= @user.country %></tr>
-    <tr><%= @user.province %></tr>
-    <tr><%= @user.city %></tr>
-    <tr><%= @user.street_address %></tr>
-    <h4>Gender</h4>
-    <tr><%= @user.sex %></tr>
-    <h4>Fitness Level</h4>
-    <tr><%= @user.fitness_level %></tr>
-    <h4>About Me</h4>
-    <tr><%= @user.description %></tr>
-  </tbody>
-</table>
+    <h2><%= @user.first_name %> <%= @user.last_name %></h2>
+    <h4>Age: <%= @user.age %></h4>
+    <h4>Preferred Workout Location: <%= @user.location %></h4>
+    <h4>Gender: <%= @user.gender %></h4>
+    <h4>Fitness Level: <%= @user.fitness_level %></h4>
+    <h4>About Me:</h4>
+    <p><%= @user.description %></p>
 
 <% if @user == current_user %>
   <% if @events.length > 0 %>
