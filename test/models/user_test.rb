@@ -4,7 +4,7 @@ class UserTest < ActiveSupport::TestCase
   def test_email_must_be_unique
     user1 = create(:user, email: 'abc@abc.com', password: "12345678", password_confirmation: "12345678")
     user2 = build(:user, email: 'abc@abc.com', password: "12345678", password_confirmation: "12345678")
-    assert user2.valid?
+    assert user2.invalid?
   end
 
   def test_user_must_include_password_confirmation_on_create
