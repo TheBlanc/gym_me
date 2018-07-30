@@ -18,33 +18,23 @@
   </div>
 
   <div class="field">
-    <%= f.label :sex %><br/>
-    <%= f.text_field :sex %>
+    <%= f.label "Gender" %><br/>
+    <%= f.select :gender, ["Male", "Female", "Non-Binary", ["Rather Not Say", nil]]%>
   </div>
 
   <div class="field">
-    <%= f.label :country %><br/>
-    <%= f.text_field :country, id: :country %>
-  </div>
-
-  <div class="two wide field">
-    <%= f.label :province %><br/>
-    <%= f.text_field :province, id: :province %>
+    <%= f.label "Preferred Workout Location" %><br/>
+    <%= f.text_field :location, id: :postal_code %>
   </div>
 
   <div class="field">
-    <%= f.label :city %><br/>
-    <%= f.text_field :city, id: :city %>
+    <%= f.label "Fitness level" %><br/>
+    <%= f.select :fitness_level, [1, 2, 3]%>
   </div>
 
   <div class="field">
-    <%= f.label :street_address %><br/>
-    <%= f.text_field :street_address, id: :street_address %>
-  </div>
-
-  <div class="field">
-    <%= f.label :postal_code %><br/>
-    <%= f.text_field :postal_code, id: :postal_code %>
+    <%= f.label "A Bit About Yourself" %><br/>
+    <%= f.text_area :description %>
   </div>
 
   <div  class="field">
@@ -52,9 +42,19 @@
     <%= f.file_field :avatar %>
   </div>
 
+  <div class="field">
+    <p><%= f.label "Do you want to find a gym buddy?" %></p>
+    <%= f.label :matching, "Yes", :value => "true" %>
+    <%= f.radio_button :matching, true, :checked => true %>
+    <%= f.label :matching, "No", :value => "false"  %>
+    <%= f.radio_button :matching, false %>
+  </div>
+
   <div class="actions">
     <%= f.submit "Update" %>
   </div>
+
+
 <% end %>
 
 <%= link_to "Advanced Profile Settings", edit_user_registration_path %>

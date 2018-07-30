@@ -3,7 +3,7 @@ Rails.application.routes.draw do
     root to: "events#index"
 
     devise_for :users, controllers: { registrations: 'users/registrations' }
-    resources :users, only: [:show, :edit, :update]
+    resources :users, only: [:index, :show, :edit, :update]
     resources :chat_rooms, only: [:new, :create, :show, :index]
 
     resources :events do

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_27_192442) do
+ActiveRecord::Schema.define(version: 2018_07_30_191534) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "hstore"
@@ -71,7 +71,6 @@ ActiveRecord::Schema.define(version: 2018_07_27_192442) do
     t.string "name"
     t.float "latitude"
     t.float "longitude"
-    t.boolean "matching"
   end
 
   create_table "messages", force: :cascade do |t|
@@ -101,16 +100,15 @@ ActiveRecord::Schema.define(version: 2018_07_27_192442) do
     t.string "current_sign_in_ip"
     t.string "last_sign_in_ip"
     t.integer "age"
-    t.string "sex"
     t.integer "fitness_level"
     t.string "description"
     t.string "first_name"
     t.string "last_name"
-    t.string "street_address"
-    t.string "city"
-    t.string "province"
-    t.string "postal_code"
-    t.string "country"
+    t.boolean "matching"
+    t.string "location"
+    t.float "latitude"
+    t.float "longitude"
+    t.string "gender"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
