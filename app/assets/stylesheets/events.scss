@@ -4,7 +4,8 @@
 
 #map {
        height: 50%;
-       width: 50%
+       width: 50%;
+       position: absolute;
 
      }
      /* Optional: Makes the sample page fill the window. */
@@ -14,9 +15,9 @@
        padding: 0;
    }
 
-#longitude{
+#longitude {
    display: none;
 }
-#latitude{
+#latitude {
    display: none;
 }

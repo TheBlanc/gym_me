@@ -7,7 +7,8 @@ function initMap(){
 
   map = new google.maps.Map(document.getElementById('map'), {
     center: latLong,
-    zoom: 18
+    zoom: 15,
+    mapTypeControl: false
   });
 
 var mapMarker = document.getElementById('eventName');
@@ -32,6 +33,7 @@ var mapMarker = document.getElementById('eventName');
 
      };
 }
+
 
 // var longitude;
 // var latitude;
