@@ -16,7 +16,7 @@
   u.location = "10#{n+1} King St. W"
   u.gender = "Female"
   u.matching = true
-  u.save
+  u.save!
 end
 
 5.times do |n|
@@ -28,23 +28,17 @@ end
   e.activity_type = "Cardio"
   e.user_id = (n+1)
   e.time = Time.now + 1000000
-  e.save
+  e.persistence = false
+  e.end_date = Time.now + 100000000000
+  e.activity_type = ["Cardio", "Weight Lifting", "Boxing", "Yoga", "Cross Fit", "Swimming"].sample
+  e.save!
 end
-
-e = Event.new
-e.title = "Old Event"
-e.address = "100 King St. W"
-e.description = "This is an old event"
-e.capacity = 2
-e.user_id = 1
-e.time = Time.now - 1000000
-e.save
 
 
 5.times do |n|
   t = Ticket.new
   t.user_id = (5-n)
   t.event_id = (n+1)
-  t.save
+  t.save!
   t.event.capacity -= 1
 end

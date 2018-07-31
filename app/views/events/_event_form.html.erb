@@ -6,9 +6,18 @@
 <p><%= f.label :activity_type %></p>
 <p><%= f.select :activity_type, ["Cardio", "Weight Lifting", "Boxing", "Yoga", "Cross Fit", "Swimming"]%></p>
 
-<p><%= f.label :time %></p>
-<p><%= f.datetime_local_field :time %></p>
 
+<p><%= f.label "Start Date" %></p>
+<p><%= f.date_field :time %></p>
+
+
+<p><%= f.label "End Date" %></p>
+<p><%= f.date_field :end_date %></p>
+
+<div class="persistence">
+<p><%=f.label "Persistence"  %></p>
+<p><%=f.check_box :persistence %></p>
+</div>
 <p><%= f.label :address %></p>
 
 <p><%= f.text_field :address, placeholder: "Address" %></p>

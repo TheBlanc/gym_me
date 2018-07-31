@@ -3,6 +3,7 @@
     <h1>Events</h1>
     <nav class="search">
       <%= form_tag events_path, method: :get do %>
+
         <%= label_tag "Activity Type" %>
         <%= select_tag :activity_type, options_for_select(["Cardio", "Weight Lifting", "Boxing", "Yoga", "Cross Fit", "Swimming"], selected: params[:activity_type]), include_blank: true %>
         <br>
@@ -11,7 +12,12 @@
 
         <%= submit_tag "Find Event" %>
       <% end %>
+     <div class="distance">
+         
+     </div>
     </nav>
+
+
   </header>
 
   <section class="event-reults">
