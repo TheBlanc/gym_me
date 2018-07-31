@@ -1,5 +1,9 @@
 class UsersController < ApplicationController
 
+  def gym_buddy
+
+  end
+
   def index
     # check if search parameter is being passed and isnt an empty string
     if params[:search] && !params[:search].empty?

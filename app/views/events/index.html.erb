@@ -1,10 +1,14 @@
 <% if current_user %>
   <header class="event-index">
-    <h1>All Events</h1>
+    <h1>Events</h1>
     <nav class="search">
       <%= form_tag events_path, method: :get do %>
-        <%= label_tag "Search Location" %>
-        <%=text_field_tag :search %>
+        <%= label_tag "Activity Type" %>
+        <%= select_tag :activity_type, options_for_select(["Cardio", "Weight Lifting", "Boxing", "Yoga", "Cross Fit", "Swimming"], selected: params[:activity_type]), include_blank: true %>
+        <br>
+        <%= label_tag "Search By Name" %>
+        <%= text_field_tag :search, params[:search] %>
+
         <%= submit_tag "Find Event" %>
       <% end %>
     </nav>
@@ -15,6 +19,7 @@
       <div class="event-card">
         <h3><%= link_to event.title, event_url(event.id)%></h3>
         <p>Event Description: <%= event.description %></p>
+        <p>Activity Type: <%= event.activity_type %></p>
         <p>Event Address: <%= event.address %></p>
         <p>When: <%= event.time.strftime("%m/%d/%Y at %I:%M%p") %></p>
       </div>

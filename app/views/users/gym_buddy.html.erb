@@ -1,0 +1,12 @@
+<% if current_user %>
+  <header class="user-index">
+    <h1>Gym Buddy Results</h1>
+    <nav class="search">
+      <%= form_tag users_path, method: :get do %>
+        <%= label_tag "Search Users" %>
+        <%= text_field_tag :search %>
+        <%= submit_tag "Find Gym Buddy" %>
+      <% end %>
+    </nav>
+  </header>
+<% end %>
