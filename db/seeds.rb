@@ -10,6 +10,12 @@
   u = User.new
   u.email = "test#{n+1}@gmail.com"
   u.password = "passpass"
+  u.first_name = "Testy"
+  u.last_name = "#{n+1}erson"
+  u.fitness_level = 2
+  u.location = "10#{n+1} King St. W"
+  u.gender = "Female"
+  u.matching = true
   u.save!
 end
 
@@ -19,6 +25,7 @@ end
   e.address = "100 King St. W"
   e.description = "This is event #{n+1}"
   e.capacity = 2
+  e.activity_type = "Cardio"
   e.user_id = (n+1)
   e.time = Time.now + 1000000
   e.persistence = false
