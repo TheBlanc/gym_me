@@ -1,11 +1,9 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  body: MyText
-  user: one
-  chat_rooms: one
+  author_id: 1
+  recevier_id: 1
 
 two:
-  body: MyText
-  user: two
-  chat_rooms: two
+  author_id: 1
+  recevier_id: 1

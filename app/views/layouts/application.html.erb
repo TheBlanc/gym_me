@@ -22,7 +22,6 @@
           <%= link_to "Create Event", new_event_path %> |
           <%= link_to "All Events", events_path %> |
           <%= link_to "My Profile", user_path(current_user.id) %> |
-          <%= link_to "New Chat Room", new_chat_room_path %> |
           <%= link_to "Find Gym Buddy", users_path %> |
           <%= link_to "Logout", destroy_user_session_path, method: :delete %>
         <% else %>

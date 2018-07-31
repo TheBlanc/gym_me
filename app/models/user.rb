@@ -9,9 +9,10 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
-# dependent destory allows you to call User.destroy and delete all chat rooms own by user
-  has_many :chat_rooms, dependent: :destroy
-  has_many :messages, dependent: :destroy
+
+has_many :authored_conversations, class_name: 'Conversation', foreign_key: 'author_id'
+has_many :received_conversations, class_name: 'Conversation', foreign_key: 'received_id'
+has_many :personal_messages, dependent: :destroy
 # active_storage module for giving users avatar photos
   has_one_attached :avatar
 

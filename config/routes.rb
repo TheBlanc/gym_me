@@ -4,7 +4,8 @@ Rails.application.routes.draw do
 
     devise_for :users, controllers: { registrations: 'users/registrations' }
     resources :users, only: [:index, :show, :edit, :update]
-    resources :chat_rooms, only: [:new, :create, :show, :index]
+    resources :personal_messages, only: [:new, :create]
+    resources :conversations, only: [:index, :show]
 
     resources :events do
       resources :tickets, only: [:create, :destroy]

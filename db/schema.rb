@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_31_144128) do
+ActiveRecord::Schema.define(version: 2018_07_31_181423) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "hstore"
@@ -53,6 +53,15 @@ ActiveRecord::Schema.define(version: 2018_07_31_144128) do
     t.text "body"
   end
 
+  create_table "conversations", force: :cascade do |t|
+    t.integer "author_id"
+    t.integer "receiver_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    # index ensuring the uniqueness of the author_id and receiver_id combination
+    t.index ["author_id", "receiver_id"], name: "index_conversations_on_author_id_and_receiver_id", unique: true
+  end
+
   create_table "events", force: :cascade do |t|
     t.string "title"
     t.string "address"
@@ -83,6 +92,14 @@ ActiveRecord::Schema.define(version: 2018_07_31_144128) do
     t.datetime "updated_at", null: false
     t.index ["chat_room_id"], name: "index_messages_on_chat_room_id"
     t.index ["user_id"], name: "index_messages_on_user_id"
+  end
+
+  create_table "personal_messages", force: :cascade do |t|
+    t.string "body"
+    t.integer "conversation_id"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "tickets", force: :cascade do |t|
