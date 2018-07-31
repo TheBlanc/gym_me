@@ -12,28 +12,28 @@
         zoom: 18
         });
 
-        var mapMarker = document.getElementById('eventName');
-
+        var eventName = document.getElementById('eventName');
+        console.log(eventName.innerHTML);
         //mapMarker  variable contrain the marker on the map.
         var mapMarker = new google.maps.Marker({
         map: map,
         draggable: false,
         animation: google.maps.Animation.DROP,
         position: latLong,
-        title: mapMarker.innerHTML,
+        title: eventName.innerHTML,
         });
 
         mapMarker.addListener('click', toggleBounce);
-
         //toggleBounce function is the animation for the maker.
       function toggleBounce() {
+        console.log("daniel was here");
         if (mapMarker.getAnimation() !== null) {
           mapMarker.setAnimation(null);
         } else {
           mapMarker.setAnimation(google.maps.Animation.BOUNCE);
         }
         };
-    
+
       }
     }
   initMap();
