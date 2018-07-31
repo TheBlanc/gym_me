@@ -1,12 +1,19 @@
 class EventsController < ApplicationController
 
+  def discover
+
+  end
+
   def index
+    # # check for search parameters
+    # if params[:search] && params[:activity_type]
+
+
     # check if search parameter is being passed and isnt an empty string
-    if params[:search] && !params[:search].empty?
+    if params[:search] && !params[:search].empty? && params[:activity_type]
         @events = Event.basic_search(params[:search])
         @events = Event.near(params[:search]) if @events.empty?
-
-        search_events = Event.basic_search(params[:search])
+        search_events = Event.basic_search(params[:search]).where(activity_type: params[:activity_type])
         # iterate through the events and check if the there are spots available (capacity > 0)
         # and that the event has not started
         available_events = []
@@ -27,7 +34,7 @@ class EventsController < ApplicationController
             if event.capacity > 0 && event.time > Time.now
               available_events << event
             end
-          end 
+          end
         end
         @events = available_events
     end
