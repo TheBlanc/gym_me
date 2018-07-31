@@ -1,4 +1,5 @@
 <h1>User Profile Page</h1>
+
   <% if @user.avatar.attached? %>
     <div class="avatar">
       <%= image_tag url_for(@user.avatar) %>
@@ -24,13 +25,29 @@
   </tbody>
 </table>
 
+<% if @user.avatar.attached? %>
+  <div class="avatar">
+    <%= image_tag url_for(@user.avatar) %>
+  </div>
+<% end %>
+    <h2><%= @user.first_name %> <%= @user.last_name %></h2>
+    <h4>Age: <%= @user.age %></h4>
+    <h4>Preferred Workout Location: <%= @user.location %></h4>
+    <h4>Gender: <%= @user.gender %></h4>
+    <h4>Fitness Level: <%= @user.fitness_level %></h4>
+    <h4>About Me:</h4>
+    <p><%= @user.description %></p>
+
+
 <% if @user == current_user %>
-  <h2>Events Im Attending</h2>
-  <% @events.each do |event| %>
-    <p><%= link_to event.title, event_url(event.id)%></p>
-    <p><%= event.activity_type %></p>
-    <p><%= event.time %></p>
-    <p><%= event.description %></p>
+  <% if @events.length > 0 %>
+    <h2>Events Im Attending</h2>
+    <% @events.each do |event| %>
+      <p><%= link_to event.title, event_url(event.id)%></p>
+      <p><%= event.activity_type %></p>
+      <p><%= event.time %></p>
+      <p><%= event.description %></p>
+    <% end %>
   <% end %>
   <% if @owned_events.length > 0 %>
     <h2>My Events</h2>

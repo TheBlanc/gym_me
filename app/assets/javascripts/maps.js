@@ -1,3 +1,4 @@
+
   document.addEventListener("DOMContentLoaded", function(){
    function initMap(){
 
@@ -32,19 +33,9 @@
           mapMarker.setAnimation(google.maps.Animation.BOUNCE);
         }
         };
-        //autocomplete\ for form
+    
       }
     }
   initMap();
 
 });
-// var longitude;
-// var latitude;
-// document.addEventListener("DOMContentLoaded", function(){
-//     longitude = document.getElementById('longitude');
-//     latitude = document.getElementById('latitude');
-// longitude  = parseFloat(longitude.textContent)
-// latitude = parseFloat(latitude.textContent)
-//
-//
-// });

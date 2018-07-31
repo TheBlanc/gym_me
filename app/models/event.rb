@@ -7,5 +7,5 @@ class Event < ApplicationRecord
   geocoded_by :address
   after_validation :geocode, if: :address_changed?
 
-
+  validates :title, :address, :time, :description, :activity_type, presence: true 
 end
