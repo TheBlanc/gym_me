@@ -14,9 +14,9 @@ var input = document.getElementById('search');
       autocomplete.setFields(
         ['address_components', 'geometry', 'icon', 'name']);
     }
-    var event_address = document.getElementById('street_address');
+    var event_address = document.getElementById('location');
       if(event_address!== null){
-        var autocomplete = new google.maps.places.Autocomplete(event_address);
+        var autocomplete = new google.maps.places.Autocomplete(location);
         autocomplete.setFields(
           ['address_components', 'geometry', 'icon', 'name']);
       }
