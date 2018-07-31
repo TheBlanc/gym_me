@@ -4,17 +4,17 @@
 
   <div class="field">
     <%= f.label :first_name %><br/>
-    <%= f.text_field :first_name %>
+    <%= f.text_field :first_name, placeholder: "First Name" %>
   </div>
 
   <div class="field">
     <%= f.label :last_name %><br/>
-    <%= f.text_field :last_name %>
+    <%= f.text_field :last_name, placeholder: "Last Name" %>
   </div>
 
   <div class="field">
     <%= f.label :age %><br/>
-    <%= f.number_field :age %>
+    <%= f.number_field :age, placeholder: "Enter Age" %>
   </div>
 
   <div class="field">
@@ -24,7 +24,7 @@
 
   <div class="field">
     <%= f.label "Preferred Workout Location" %><br/>
-    <%= f.text_field :location, id: :postal_code %>
+    <%= f.text_field :location, id: :postal_code, placeholder: "Enter Address" %>
   </div>
 
   <div class="field">
