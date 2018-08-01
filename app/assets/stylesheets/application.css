@@ -14,6 +14,152 @@
  *= require_self
  */
 
+ :root {
+   --main-red: #e04b59;
+
+ }
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+ body {
+   text-align: center;
+ }
+
+ img {
+   width: 100%;
+ }
+
+/*----- TOP NAV BAR -----*/
+
+.top-nav {
+  width: 100%;
+  background-color: var(--main-red);
+  padding-left: 35px;
+}
+
+.nav-item {
+  padding: 12px 10px;
+  display: inline-block;
+}
+
+.top-nav-items a {
+  color: white;
+  font-family: sans-serif;
+  text-decoration: none;
+}
+    .top-nav-items a:hover {
+      color: black;
+    }
+
+
+
+
+div.logo {
+  display: inline-block;
+  width: 8em;
+  margin-top: 20px;
+  position: absolute;
+  left: 7px;
+  top: 5px;
+}
+
+h1.logo {
+  margin: 0;
+  font-size: 1.7em;
+}
+
+
+/*----- USER NAV  -----*/
+
+.user-nav {
+  padding: 10px;
+  text-align: right;
+}
+
+.profile-button {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.user-nav span {
+  margin: 0;
+  position: relative;
+  top: 6px;
+  right: 0px;
+}
+
+.user-nav-item {
+  display: inline-block;
+  padding: 5px 10px;
+}
+
+.user-nav-item a {
+  color: black;
+  font-family: sans-serif;
+  text-decoration: none;
+
+}
+    .user-nav-item a:hover {
+      text-decoration: underline;
+    }
+
+
+
+.avatar {
+  display: inline-block;
+  width: 3em;
+  height: 3em;
+  border: 1px black solid;
+  border-radius: 100%;
+  vertical-align: middle;
+  padding: 0;
+
+
+}
+
+.avatar img {
+  border-radius: 80%;
+}
+
+/*----- USER OPTIONS MODAL -----*/
+
+.user-options-modal {
+  position: absolute;
+  right: 0;
+  top: 61px;
+  background-color: white;
+  border: black 2px solid;
+}
+
+.user-options-modal.hidden {
+  display: none;
+}
+
+.current-user {
+  margin: 10px 7px;
+  font-size: 0.8em;
+  cursor: default;
+
+}
+
+.user-options-modal a {
+  color: black;
+  font-family: sans-serif;
+  text-decoration: none;
+}
+.user-options-item {
+  padding: 7px 10px;
+  border: 1px solid black;
+
+}
+    .user-options-item:hover {
+      background-color: var(--main-red);
+      color: white;
+}
+
+
 #messages {
  max-height: 450px;
  overflow-y: auto;
@@ -22,10 +168,6 @@
  }
 }
 
-body {
-  margin: 20px;
-  text-align: center;
-}
 
 .container {
  display: inline-block;
@@ -33,9 +175,8 @@ body {
  text-align: left;
 }
 
-   #conversation-body {
-     max-height: 400px;
-     overflow-y: auto;
-     margin-bottom: 2em;
-   }
-
+ #conversation-body {
+   max-height: 400px;
+   overflow-y: auto;
+   margin-bottom: 2em;
+ }
