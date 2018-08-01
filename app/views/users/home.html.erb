@@ -1,23 +1,24 @@
-<h1>Home</h1>
 <% if @user == current_user %>
-  <%= link_to "Create Event", new_event_path %> | <%= link_to "My Profile", user_path(current_user.id) %>
-
   <% if @events.length > 0 %>
-    <h2>Events Im Attending</h2>
+    <h2>Your Schedule</h2>
     <% @events.each do |event| %>
-      <p><%= link_to event.title, event_url(event.id)%></p>
-      <p><%= event.activity_type %></p>
-      <p><%= event.time %></p>
-      <p><%= event.description %></p>
+      <div class="event-card">
+        <p><%= link_to event.title, event_url(event.id)%></p>
+        <p><%= event.activity_type %></p>
+        <p><%= event.time %></p>
+        <p><%= event.description %></p>
+      </div>
     <% end %>
   <% end %>
   <% if @owned_events.length > 0 %>
     <h2>Events Im Leading</h2>
       <% @owned_events.each do |event| %>
-      <p><%= link_to event.title, event_url(event.id)%></p>
-      <p><%= event.activity_type %></p>
-      <p><%= event.time %></p>
-      <p><%= event.description %></p>
+      <div class="event-card">
+        <p><%= link_to event.title, event_url(event.id)%></p>
+        <p><%= event.activity_type %></p>
+        <p><%= event.time %></p>
+        <p><%= event.description %></p>
+      </div>
       <% end %>
     <% end %>
 <%end %>

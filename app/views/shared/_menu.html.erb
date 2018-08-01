@@ -1,16 +1,54 @@
-
 <% if current_user %>
-        <div id="current-user"></div>
-       <p>Logged in: <%= current_user.email %></p>
-       <nav class="top-nav">
-       <%= link_to "Discover Events", discover_path %> |
-       <%= link_to "Home", home_path(current_user.id) %> |
-         <%= link_to "My Conversations", conversations_path %> |
-       <%= link_to "Find Gym Buddy", gymbuddy_path %> |
+     <div id="current-user"></div>
+     <div class="user-options-modal hidden" id="user-menu">
+       <%= link_to new_event_path do %>
+         <div class="user-options-item">Create Event</div>
+       <% end %>
+       <%= link_to user_path(current_user.id) do %>
+         <div class="user-options-item">My Profile</div>
+       <% end %>
+       <%= link_to conversations_path do %>
+         <div class="user-options-item">Messages</div>
+       <% end %>
+       <%= link_to destroy_user_session_path, method: :delete do %>
+         <div class="user-options-item">Logout</div>
+       <% end %>
+       <p class="current-user"><%= current_user.email %></p>
+     </div>
+<% end %>
 
-       <%= link_to "Logout", destroy_user_session_path, method: :delete %>
-     <% else %>
-       <%= link_to "Log-in", new_user_session_path %> |
-       <%= link_to "Discover Events", discover_path %>
+<nav class="user-nav">
+  <div class="profile-button" id="profile-avatar-button">
+    <div class="avatar">
+      <%= image_tag("jimmy.png") %>
+    </div>
+    <span>&#x25BC;</span>
+  </div>
+</nav>
 
-     <% end %>
+<header class="top-nav">
+    <% if current_user %>
+    <div class="logo">
+      <%= image_tag("steam.png", class: "logo-image", alt: "Gym Me Logo") %>
+      <h1 class="logo">Gym Me </h1>
+    </div>
+    <nav class="top-nav-items">
+      <div class="nav-item">
+        <%= link_to "Discover Events", discover_path %>
+      </div>
+      <div class="nav-item">
+        <%= link_to "Home", home_path(current_user.id) %>
+      </div>
+      <div class="nav-item">
+        <%= link_to "Find Gym Buddy", gymbuddy_path %>
+      </div>
+    <% else %>
+    <div class="nav-item">
+      <%= link_to "Log-in", new_user_session_path %>
+    </div>
+    <div class="nav-item">
+      <%= link_to "Discover Events", discover_path %>
+    </div>
+    <% end %>
+    </nav>
+</header>
