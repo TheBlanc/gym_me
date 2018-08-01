@@ -1,16 +1,15 @@
-<% if current_user %>
-  <header class="event-index">
-    <h1>Events</h1>
-    </div>
-    <nav class="search">
-      <%= form_tag events_path, method: :get do %>
-        <%= label_tag "Activity Type" %>
-        <%= select_tag :activity_type, options_for_select(["Cardio", "Weight Lifting", "Boxing", "Yoga", "Cross Fit", "Swimming"]), include_blank: true  %>
-        <br>
-        <%= label_tag "Events Nearby:" %>
-        <%= text_field_tag :search %>
-        <%= submit_tag "Find Event" %>
-      <% end %>
-    </nav>
-  </header>
-<% end %>
+<header class="event-index">
+  <h1>Discover Events</h1>
+  <nav class="search">
+    <%= form_tag events_path, method: :get do %>
+      <%= label_tag "Activity Type" %>
+      <%= select_tag :activity_type, options_for_select(["Cardio", "Weight Lifting", "Boxing", "Yoga", "Cross Fit", "Swimming"]), include_blank: true  %>
+      <br>
+      <%= label_tag "Events Near:" %>
+      <%= text_field_tag :search %>
+
+      <%= submit_tag "Find Event" %>
+    <% end %>
+  </nav>
+</header>
+
