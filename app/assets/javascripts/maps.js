@@ -40,7 +40,7 @@
           if (discoverLatLong.length > 0){
             // latLong is a hash that contain the latitude and longitude for the map.
             var discovercenter = {lat: discoverLatLong.data('latitude') , lng: discoverLatLong.data('longitude') };
-               var discovermap = new google.maps.Map(document.getElementById('discovermap'), {
+            var discovermap = new google.maps.Map(document.getElementById('discovermap'), {
              center: discovercenter,
              zoom: 11
              });
@@ -52,6 +52,10 @@
             // console.log(discoverLatLong[i].attributes[2].value);
             // console.log({lat: parseFloat(discoverLatLong[i].attributes[1].value), lng: parseFloat(discoverLatLong[i].attributes[2].value) });
             // console.log(eventmarkertitle[i].attributes[1].value);
+            var contentString = eventmarkertitle[i].attributes[1].value
+            var infowindow = new google.maps.InfoWindow({
+              content: contentString
+            });
 
             var eventmapMarker = new google.maps.Marker({
             map: discovermap,
@@ -60,7 +64,10 @@
             position: {lat: parseFloat(discoverLatLong[i].attributes[1].value), lng: parseFloat(discoverLatLong[i].attributes[2].value) },
             title: eventmarkertitle[i].attributes[1].value,
             });
+
             }
+
+
             eventmapMarker.addListener('click', toggleBounce);
           //toggleBounce function is the animation for the maker.
       function toggleBounce() {
@@ -68,6 +75,7 @@
             eventmapMarker.setAnimation(null);
         } else {
             eventmapMarker.setAnimation(google.maps.Animation.BOUNCE);
+            infowindow.open(discovermap, eventmapMarker);
         }
       };
 
