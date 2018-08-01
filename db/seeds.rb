@@ -6,6 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+
 5.times do |n|
   u = User.new
   u.email = "test#{n+1}@gmail.com"
@@ -16,7 +17,8 @@
   u.location = "10#{n+1} King St. W"
   u.gender = "Female"
   u.matching = true
-  u.save!
+  u.save
+
 end
 
 5.times do |n|

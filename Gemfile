@@ -33,6 +33,8 @@ gem 'geocoder'
 #
 gem 'jquery-rails'
 
+gem 'emoji'
+
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
