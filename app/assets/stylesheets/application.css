@@ -32,3 +32,10 @@ body {
  margin: 20px auto;
  text-align: left;
 }
+
+   #conversation-body {
+     max-height: 400px;
+     overflow-y: auto;
+     margin-bottom: 2em;
+   }
+
