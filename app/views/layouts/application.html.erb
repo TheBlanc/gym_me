@@ -13,25 +13,23 @@
 
   <body>
     <header>
-      <h1 class="logo">Gym Me</h1>
-
-      <nav class="top-nav">
-
+      <h1 class="logo">Gym Me </h1>
         <% if current_user %>
           <p>Logged in: <%= current_user.email %></p>
-          <%= link_to "Create Event", new_event_path %> |
+          <nav class="top-nav">
           <%= link_to "Discover Events", discover_path %> |
-          <%= link_to "My Profile", user_path(current_user.id) %> |
+          <%= link_to "Home", home_path(current_user.id) %> |
           <%= link_to "New Chat Room", new_chat_room_path %> |
           <%= link_to "Find Gym Buddy", gymbuddy_path %> |
           <%= link_to "Logout", destroy_user_session_path, method: :delete %>
         <% else %>
           <%= link_to "Log-in", new_user_session_path %> |
-          <%= link_to "Register", new_user_registration_url %>
+          <%= link_to "Discover Events", discover_path %>
+
         <% end %>
 
-      </nav>
-      <hr>
+          </nav>
+
     </header>
 
     <div class="container">

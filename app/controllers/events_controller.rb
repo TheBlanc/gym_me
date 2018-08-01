@@ -48,7 +48,10 @@ class EventsController < ApplicationController
     @comments = @event.comments
     @comment = Comment.new
     @users = @event.users
-    @ticket = Ticket.find_by(user_id: current_user.id, event_id: @event.id)
+    
+    if current_user
+      @ticket = Ticket.find_by(user_id: current_user.id, event_id: @event.id)
+    end
   end
 
   def new

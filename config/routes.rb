@@ -1,9 +1,19 @@
 Rails.application.routes.draw do
     mount ActionCable.server => '/cable'
-    root to: "events#index"
 
     devise_for :users, controllers: { registrations: 'users/registrations' }
+
+    authenticated :user do
+      root 'users#home', as: :authenticated_root
+      get '/home', to: 'users#home'
+    end
+
+    devise_scope :user do
+      root "devise/sessions#new"
+    end
+
     resources :users, only: [:index, :show, :edit, :update]
+
     resources :chat_rooms, only: [:new, :create, :show, :index]
 
     get '/discover', to: 'events#discover'
