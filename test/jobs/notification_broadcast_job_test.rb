@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class MessageBroadcastJobTest < ActiveJob::TestCase
+class NotificationBroadcastJobTest < ActiveJob::TestCase
   # test "the truth" do
   #   assert true
   # end
