@@ -1,0 +1,19 @@
+.nav-bar {
+  width: 100%;
+  background-color: var(--main-red);
+  padding-left: 35px;
+}
+
+.nav-item {
+  padding: 12px 10px;
+  display: inline-block;
+}
+
+.nav-bar-items a {
+  color: white;
+  font-family: sans-serif;
+  text-decoration: none;
+}
+    .nav-bar-items a:hover {
+      color: black;
+    }

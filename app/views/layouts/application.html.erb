@@ -12,12 +12,20 @@
   </head>
 
   <body>
-    <!-- Renders nav bar -->
-    <%= render "shared/menu" %>
-
-    <div class="container">
-      <%= yield %>
+    <div class="logo">
+      <%= image_tag("steam.png", class: "logo-image", alt: "Gym Me Logo") %>
+      <h1 class="logo">Gym Me </h1>
     </div>
+    <!-- Renders user avatar and drop down menu -->
+    <%= render "shared/user_menu" %>
+
+      <!-- Renders nav bar -->
+      <%= render "shared/nav_bar" %>
+
+
+    <section class="container">
+      <%= yield %>
+    </section>
 
   </body>
 

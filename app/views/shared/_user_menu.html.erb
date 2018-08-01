@@ -1,0 +1,23 @@
+<% if current_user %>
+   <ul class="user-options-modal hidden" id="user-menu">
+     <%= link_to new_event_path do %>
+       <li class="user-options-item">Create Event</li>
+     <% end %>
+     <%= link_to user_path(current_user.id) do %>
+       <li class="user-options-item">My Profile</li>
+     <% end %>
+     <%= link_to destroy_user_session_path, method: :delete do %>
+       <li class="user-options-item">Logout</li>
+     <% end %>
+       <li class="current-user"><%= current_user.email %></li>
+   </ul>
+
+   <nav class="user-nav">
+     <div class="profile-button" id="profile-avatar-button">
+       <div class="avatar">
+         <%= image_tag("jimmy.png") %>
+       </div>
+       <span>&#x25BC;</span>
+     </div>
+   </nav>
+<% end %>

@@ -1,0 +1,49 @@
+.user-nav {
+  padding: 10px;
+  text-align: right;
+}
+
+.profile-button {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.user-nav span {
+  margin: 0;
+  position: relative;
+  top: 6px;
+  right: 0px;
+}
+
+.user-nav-item {
+  display: inline-block;
+  padding: 5px 10px;
+}
+
+.user-nav-item a {
+  color: black;
+  font-family: sans-serif;
+  text-decoration: none;
+
+}
+    .user-nav-item a:hover {
+      text-decoration: underline;
+    }
+
+
+
+.avatar {
+  display: inline-block;
+  width: 3em;
+  height: 3em;
+  border: 1px black solid;
+  border-radius: 100%;
+  vertical-align: middle;
+  padding: 0;
+
+
+}
+
+.avatar img {
+  border-radius: 80%;
+}

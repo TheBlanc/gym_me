@@ -1,0 +1,20 @@
+<nav class="nav-bar">
+  <% if current_user %>
+    <ul class="nav-bar-items">
+      <%= link_to home_path(current_user.id) do %>
+        <li class="nav-item"> Home </li>
+      <% end %>
+      <%= link_to discover_path do %>
+        <li class="nav-item"> Discover Events </li>
+      <% end %>
+      <%= link_to gymbuddy_path do %>
+        <li class="nav-item"> Find Gym Buddy </li>
+      <% end %>
+      <%= link_to conversations_path do %>
+        <li class="nav-item"> Messages </li>
+      <% end %>
+    </ul>
+  <% else %>
+      <h1 class="nav-item greeting"> You're just a few clicks away from Gymme </h2>
+  <% end %>
+</nav>
