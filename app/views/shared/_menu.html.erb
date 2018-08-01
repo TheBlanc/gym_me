@@ -1,0 +1,16 @@
+
+<% if current_user %>
+        <div id="current-user"></div>
+       <p>Logged in: <%= current_user.email %></p>
+       <nav class="top-nav">
+       <%= link_to "Discover Events", discover_path %> |
+       <%= link_to "Home", home_path(current_user.id) %> |
+         <%= link_to "My Conversations", conversations_path %> |
+       <%= link_to "Find Gym Buddy", gymbuddy_path %> |
+
+       <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+     <% else %>
+       <%= link_to "Log-in", new_user_session_path %> |
+       <%= link_to "Discover Events", discover_path %>
+
+     <% end %>
