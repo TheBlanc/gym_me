@@ -37,6 +37,19 @@
     <%= f.text_area :description %>
   </div>
 
+  <div class"field">
+    WOROKOUT dramatically
+    <% Date::DAYNAMES.each do |day| %>
+   <%= f.check_box :day, {multiple: true}, day, nil %>
+   <%= day %>
+  <% end %>
+  </div>
+
+  <div class"field">
+    <%= f.label :time_of_day %>
+    <%= f.select :time_of_day, ['Morning', 'Afternoon', 'Evening', 'Twilight'], {}, {} %>
+  </div>
+
   <div  class="field">
     <%= f.label :avatar %><br/>
     <%= f.file_field :avatar %>
