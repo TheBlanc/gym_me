@@ -1,12 +1,23 @@
 .profile-area {
-  background-color: var(--main-grey)
+  background-color: var(--main-grey);
+}
+//--------- BUTTONS --------- //
+.icon-button {
+  width: 2em;
+  cursor: pointer;
 }
 
 .close-button {
   position: absolute;
   top: 10px;
   left: 10px;
-  width: 2em;
+  cursor: pointer;
+}
+
+.settings-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
   cursor: pointer;
 }
 
@@ -18,8 +29,16 @@
   vertical-align: middle;
   padding: 0;
   vertical-align: center;
-  margin: 7em 0;
+  margin: 7em 0 0.5em 0;
 }
+
+.current-user {
+  color: black;
+  padding: 0.3em 0 6em 0;
+  font-size: 0.8em;
+  cursor: default;
+}
+
 
 .user-options-avatar img {
   border-radius: 100%;
@@ -38,12 +57,6 @@
   display: none;
 }
 
-.current-user {
-  color: black;
-  margin: 10px 7px 0px 7px;
-  font-size: 0.8em;
-  cursor: default;
-}
 
 .user-options-modal a {
   color: black;

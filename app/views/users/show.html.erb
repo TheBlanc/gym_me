@@ -23,7 +23,12 @@
     <p><%= @user.description %></p>
 
   <%= link_to image_tag("noun_message.png", class:"send-message-icon"), new_personal_message_path(receiver_id: params[:id]) %>
+  
+<% if @user == current_user %>
+  <div class="icon-button" id="close-button">
+    <%= link_to edit_user_path(current_user.id) do %>
+      <%= image_tag("settings.svg") %>
+    <% end %>
+  </div>
+<% end %>
 
-  <%= link_to "Edit my profile", edit_user_path(current_user.id) %>
-
-  </section>
