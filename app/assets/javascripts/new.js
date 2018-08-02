@@ -8,9 +8,9 @@ document.addEventListener("DOMContentLoaded", function(){
     //event show page map
     var eventsLatLongClass = $('.eventsLatLong');
     var eventsCoordinates = {lat: eventsLatLongClass.data('latitude') , lng: eventsLatLongClass.data('longitude') };
-    var eventsMapID = $('#eventsMap')
-
-    console.log(eventsMapID.length);
+    var eventsMapID = $('#eventsMap');
+    var eventsMarkerTitle = document.getElementsByClassName('eventsMarkerTitle');
+    console.log(eventsMarkerTitle[0].attributes[1].value);
 
     //initMap call google api to displau the makp
     function initMap(){
@@ -66,13 +66,20 @@ document.addEventListener("DOMContentLoaded", function(){
         }
     }
     // make marker to bounce
-    function addMarkerWithTimeout(position, map, timeout) {
+    function addMarkerWithTimeout(position, name, map, timeout) {
        window.setTimeout(function() {
-         markers.push(new google.maps.Marker({
-           position: position,
-           map: map,
-           animation: google.maps.Animation.DROP
-         }));
+           var marker = new google.maps.Marker({
+             position: position,
+             map: map,
+             animation: google.maps.Animation.DROP
+            });
+            marker.addListener('click', function(){
+                toggleBounce(this);
+                infoWindow('<h1>'+name+'</h1>').open(map, this);
+
+            });
+           // infoWindow('<h1>'+eventName.innerHTML+'</h1>').open(eventMap, this);
+         markers.push(marker);
        }, timeout);
     }
      function infoWindow(contentString) {
@@ -90,9 +97,9 @@ document.addEventListener("DOMContentLoaded", function(){
     function drop(cordinatesArray, map) {
        clearMarkers();
        for (var i = 0; i < cordinatesArray.length; i++) {
+           var name = eventsMarkerTitle[i].attributes[1].value;
            var position = {lat: parseFloat(cordinatesArray[i].attributes[1].value), lng: parseFloat(cordinatesArray[i].attributes[2].value)};
-         addMarkerWithTimeout(position, map, i * 200);
-         infoWindow('<h1>'+eventName.innerHTML+'</h1>').open(eventMap, this);
+         addMarkerWithTimeout(position, name, map, i * 200);
        }
     }
 
