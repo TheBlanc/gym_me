@@ -12,7 +12,7 @@
         </div>
       <% else %>
         <div class="avatar">
-          <%= image_tag(user_avatar(@user)) %>
+          <%= image_tag(user_avatar(current_user)) %>
         </div>
       <% end %>
       <span>&#x25BC;</span>
@@ -29,7 +29,8 @@
           </div>
         <% else %>
           <div class="user-options-avatar">
-            <%= image_tag("jimmy.png") %>
+
+            <%= image_tag(user_avatar(current_user)) %>
           </div>
         <% end %>
       </div>
