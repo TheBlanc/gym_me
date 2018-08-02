@@ -67,6 +67,8 @@ class UsersController < ApplicationController
     @user.location = params[:user][:location]
     @user.description = params[:user][:description]
     @user.matching = params[:user][:matching]
+    @user.day= params[:user][:day]
+    @user.time_of_day= params[:user][:time_of_day]
     @user.avatar.attach(params[:user][:avatar])
 
     if @user.save
