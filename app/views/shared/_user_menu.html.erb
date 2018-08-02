@@ -1,23 +1,54 @@
-<% if current_user %>
-   <ul class="user-options-modal hidden" id="user-menu">
-     <%= link_to new_event_path do %>
-       <li class="user-options-item">Create Event</li>
-     <% end %>
-     <%= link_to user_path(current_user.id) do %>
-       <li class="user-options-item">My Profile</li>
-     <% end %>
-     <%= link_to destroy_user_session_path, method: :delete do %>
-       <li class="user-options-item">Logout</li>
-     <% end %>
-       <li class="current-user"><%= current_user.email %></li>
-   </ul>
+<nav class="user-nav">
+  <div class="logo">
+      <h1 class="logo"> Gym Me </h1>
+  </div>
 
-   <nav class="user-nav">
-     <div class="profile-button" id="profile-avatar-button">
-       <div class="avatar">
-         <%= image_tag("jimmy.png") %>
-       </div>
-       <span>&#x25BC;</span>
-     </div>
-   </nav>
-<% end %>
+
+  <% if current_user %>
+    <div class="profile-button" id="profile-avatar-button">
+      <% if current_user.avatar.attached? %>
+        <div class="avatar">
+          <%= image_tag url_for(current_user.avatar) %>
+        </div>
+      <% else %>
+        <div class="avatar">
+          <%= image_tag("jimmy.png") %>
+        </div>
+      <% end %>
+      <span>&#x25BC;</span>
+    </div>
+
+    <section class="user-options-modal hidden" id="user-menu">
+      <div class="close-button" id="close-button">
+        <%= image_tag("close.svg") %>
+      </div>
+      <div class="profile-area">
+        <% if current_user.avatar.attached? %>
+          <div class="user-options-avatar">
+            <%= image_tag url_for(current_user.avatar) %>
+          </div>
+        <% else %>
+          <div class="user-options-avatar">
+            <%= image_tag("jimmy.png") %>
+          </div>
+        <% end %>
+      </div>
+      <ul class="user-options">
+        <%= link_to new_event_path do %>
+          <li class="user-options-item">Create Event</li>
+        <% end %>
+        <%= link_to user_path(current_user.id) do %>
+          <li class="user-options-item">My Profile</li>
+        <% end %>
+        <%= link_to destroy_user_session_path, method: :delete do %>
+          <li class="user-options-item">Logout</li>
+        <% end %>
+          <li class="current-user"><%= current_user.email %></li>
+          <div class="logo-image">
+              <%= image_tag("steam.png", class: "logo-image", alt: "Gym Me Logo") %>
+          </div>
+      </ul>
+    </section>
+
+  <% end %>
+</nav>

@@ -8,20 +8,15 @@
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
-
   </head>
 
   <body>
-    <div class="logo">
-      <%= image_tag("steam.png", class: "logo-image", alt: "Gym Me Logo") %>
-      <h1 class="logo">Gym Me </h1>
-    </div>
+
     <!-- Renders user avatar and drop down menu -->
     <%= render "shared/user_menu" %>
 
-      <!-- Renders nav bar -->
-      <%= render "shared/nav_bar" %>
-
+    <!-- Renders main nav bar -->
+    <%= render "shared/nav_bar" %>
 
     <section class="container">
       <%= yield %>

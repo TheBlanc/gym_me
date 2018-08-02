@@ -16,52 +16,20 @@
 
  :root {
    --main-red: #e04b59;
+ }
 
+ *, *::before, *::after {
+   box-sizing: border-box;
  }
 
  body {
-   text-align: center;
+   background-color: #dddddd;
  }
 
  img {
    width: 100%;
  }
 
-/*----- USER OPTIONS MODAL -----*/
-
-.user-options-modal {
-  position: absolute;
-  right: 0;
-  top: 61px;
-  background-color: white;
-  border: black 2px solid;
-}
-
-.user-options-modal.hidden {
-  display: none;
-}
-
-.current-user {
-  margin: 10px 7px;
-  font-size: 0.8em;
-  cursor: default;
-
-}
-
-.user-options-modal a {
-  color: black;
-  font-family: sans-serif;
-  text-decoration: none;
-}
-.user-options-item {
-  padding: 7px 10px;
-  border: 1px solid black;
-
-}
-    .user-options-item:hover {
-      background-color: var(--main-red);
-      color: white;
-}
 
 
 #messages {
@@ -72,12 +40,6 @@
  }
 }
 
-
-.container {
- display: inline-block;
- margin: 20px auto;
- text-align: left;
-}
 
 
    #conversation-body {
