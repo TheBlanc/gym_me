@@ -23,6 +23,7 @@ end.html_safe if content.present?
 end
 
   helper_method :joined_event?
+  helper_method :user_avatar
 
   private
 
@@ -30,6 +31,17 @@ end
   def joined_event?
     current_event = Event.find(params[:id])
     current_user && current_event.users.find_by(id: current_user.id)
+  end
+
+  # give user avatar based on gender
+  def user_avatar(user)
+    if user.gender == "Male"
+      return "jimmy.png"
+    elsif user.gender == "Female"
+      return "yanny.svg"
+    else
+      return "blank-avatar.svg"
+    end
   end
 
 end

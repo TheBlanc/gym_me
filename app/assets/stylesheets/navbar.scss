@@ -1,0 +1,47 @@
+.nav-bar {
+  width: 100%;
+  background-color: var(--main-grey);
+  position: fixed;
+  bottom: 0;
+  text-align: center;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+}
+
+.nav-button {
+  display: inline-block;
+  padding: 1em 0;
+  width: 24%;
+  text-align: center;
+}
+
+.nav-item {
+  width: 2em;
+}
+
+.icon {
+  fill: white;
+}
+
+.greeting {
+  width: 100%;
+  padding: 3em;
+}
+
+.nav-bar-items {
+  text-align: center;
+}
+
+.nav-bar-items a {
+  color: white;
+  font-family: sans-serif;
+  text-decoration: none;
+  display: inline-block;
+}
+    .nav-bar-items a:hover {
+      color: black;
+    }
+
+.desktop.nav-item {
+  display: none;
+}

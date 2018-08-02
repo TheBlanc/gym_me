@@ -1,3 +1,33 @@
 // Place all the styles related to the personal_messages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.speech-bubble {
+	position: relative;
+  padding: 1em;
+	background: #b9fa9f;
+  margin: auto;
+  width: 90%;
+  /* Add shadows to create the "card" effect */
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+	transition: 0.3s;
+	border-radius: 5px; /* 5px rounded corners */
+	margin-bottom: 1.5em;
+}
+
+.speech-bubble:after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	width: 0;
+	height: 0;
+	border: 20px solid transparent;
+	border-top-color: #b9fa9f;
+	border-bottom: 0;
+	margin-left: -20px;
+	margin-bottom: -20px;
+}
+
+.created_by_message {
+  font-size: 0.8em;
+}

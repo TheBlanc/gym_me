@@ -1,4 +1,4 @@
-<h2>Edit Profile</h2>
+<h1>Edit Profile</h1>
 
 <%= form_for( @user, url: user_path(@user.id) ) do |f| %>
 
@@ -19,7 +19,7 @@
 
   <div class="field">
     <%= f.label "Gender" %><br/>
-    <%= f.select :gender, ["Male", "Female", "Non-Binary", ["Rather Not Say", nil]]%>
+    <%= f.select :gender, ["Male", "Female", ["Rather Not Say", nil]]%>
   </div>
 
   <div class="field">
@@ -35,6 +35,19 @@
   <div class="field">
     <%= f.label "A Bit About Yourself" %><br/>
     <%= f.text_area :description %>
+  </div>
+
+  <div class"field">
+    <h2>WOROKOUT SCHEDULE</h2>
+    <% Date::DAYNAMES.each do |day| %>
+   <%= f.check_box :day, {multiple: true}, day, nil %>
+   <%= day %>
+  <% end %>
+  </div>
+
+  <div class"field">
+    <%= f.label :time_of_day %>
+    <%= f.select :time_of_day, ['Morning', 'Afternoon', 'Evening', 'Twilight'], {}, {} %>
   </div>
 
   <div  class="field">
