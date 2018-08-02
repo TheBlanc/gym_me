@@ -4,10 +4,13 @@
   padding: 11px 10px;
   margin: 1em;
   width: 50%;
+  background-color: var(--main-white);
+
+
 }
     .big-button:hover {
       background-color: var(--main-dark-grey);
       color: var(--main-white);
       border: 1px solid var(--main-black);
-
+      z-index: 10;
     }

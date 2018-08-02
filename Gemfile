@@ -33,6 +33,8 @@ gem 'geocoder'
 #
 gem 'jquery-rails'
 
+gem 'jquery-ui-rails'
+
 gem 'emoji'
 
 # Use ActiveStorage variant

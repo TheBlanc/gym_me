@@ -31,29 +31,28 @@
           <div class="user-options-avatar">
             <%= image_tag url_for(current_user.avatar) %>
           </div>
-
           <% else %>
             <div class="user-options-avatar">
               <%= image_tag(user_avatar(current_user)) %>
             </div>
-
         <% end %>
         <p class="current-user"><%= current_user.email %></p>
       </div>
       <ul class="user-options">
         <%= link_to new_event_path do %>
-          <li class="user-options-item">Create Event</li>
+          <li class="big-button">Create Event</li>
         <% end %>
         <%= link_to user_path(current_user.id) do %>
-          <li class="user-options-item">My Profile</li>
+          <li class="big-button">My Profile</li>
         <% end %>
         <%= link_to destroy_user_session_path, method: :delete do %>
-          <li class="user-options-item">Logout</li>
+          <li class="big-button logout">Logout</li>
         <% end %>
-          <div class="logo-image">
-              <%= image_tag("steam.png", class: "logo-image", alt: "Gym Me Logo") %>
-          </div>
       </ul>
+      <div class="logo-image">
+          <%= image_tag("steam.png", class: "logo-image", alt: "Gym Me Logo") %>
+      </div>
+
     </section>
 
   <% end %>
