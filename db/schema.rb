@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_31_181423) do
+ActiveRecord::Schema.define(version: 2018_08_02_143617) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "hstore"
@@ -58,7 +58,6 @@ ActiveRecord::Schema.define(version: 2018_07_31_181423) do
     t.integer "receiver_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    # index ensuring the uniqueness of the author_id and receiver_id combination
     t.index ["author_id", "receiver_id"], name: "index_conversations_on_author_id_and_receiver_id", unique: true
   end
 
@@ -102,6 +101,13 @@ ActiveRecord::Schema.define(version: 2018_07_31_181423) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "schedules", force: :cascade do |t|
+    t.string "name"
+    t.datetime "start_time"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "tickets", force: :cascade do |t|
     t.integer "user_id"
     t.integer "event_id"
@@ -128,6 +134,8 @@ ActiveRecord::Schema.define(version: 2018_07_31_181423) do
     t.float "latitude"
     t.float "longitude"
     t.string "gender"
+    t.string "day"
+    t.string "time_of_day"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
