@@ -31,10 +31,12 @@
           <div class="user-options-avatar">
             <%= image_tag url_for(current_user.avatar) %>
           </div>
+
           <% else %>
             <div class="user-options-avatar">
               <%= image_tag(user_avatar(current_user)) %>
             </div>
+
         <% end %>
         <p class="current-user"><%= current_user.email %></p>
       </div>
