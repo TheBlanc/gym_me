@@ -25,12 +25,24 @@
    box-sizing: border-box;
  }
 
+html {
+  font-family: sans-serif;
+}
  body {
    background-color: #dddddd;
  }
 
  img {
    width: 100%;
+ }
+
+ h1, h2, h3, h4 {
+   font-weight: bold;
+   margin: 0.5em 0;
+ }
+
+ p {
+   margin: 0.5em 0;
  }
 
 

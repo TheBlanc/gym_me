@@ -4,6 +4,15 @@
   text-align: center;
 }
 
+h1.home-page {
+  font-size: 1.5em;
+  margin: 2em 0;
+}
+
+p.no-rsvps {
+  font-style: italic;
+}
+
 .home a {
   text-decoration: none;
   color: black;
@@ -11,8 +20,6 @@
 .home a:active {
   background-color: #c3c3c3;
 }
-
-
 
 .event-card {
   background-color: white;

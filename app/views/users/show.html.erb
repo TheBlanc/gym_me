@@ -2,6 +2,12 @@
   <div class="profile-avatar">
     <%= image_tag url_for(@user.avatar) %>
   </div>
+<% else %>
+  <div class="profile-avatar">
+    <%= image_tag(user_avatar(@user)) %>
+  </div>
+
+
 <% end %>
 
     <h2><%= @user.first_name %> <%= @user.last_name %></h2>

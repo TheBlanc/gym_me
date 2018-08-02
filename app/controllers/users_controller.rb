@@ -67,7 +67,10 @@ class UsersController < ApplicationController
     @user.location = params[:user][:location]
     @user.description = params[:user][:description]
     @user.matching = params[:user][:matching]
-    @user.avatar.attach(params[:user][:avatar])
+
+    unless params[:user][:avatar] == nil
+      @user.avatar.attach(params[:user][:avatar])
+    end
 
     if @user.save
       redirect_to user_path(@user.id)

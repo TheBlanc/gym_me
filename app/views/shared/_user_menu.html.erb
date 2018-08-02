@@ -11,8 +11,8 @@
           <%= image_tag url_for(current_user.avatar) %>
         </div>
       <% else %>
-        <div class="avatar">
-          <%= image_tag("jimmy.png") %>
+        <div class="profile-avatar">
+          <%= image_tag(user_avatar(@user)) %>
         </div>
       <% end %>
       <span>&#x25BC;</span>
