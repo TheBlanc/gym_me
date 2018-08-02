@@ -3,16 +3,19 @@ document.addEventListener("DOMContentLoaded", function(){
     var contentString;
     //events map
     var eventName = document.getElementById('eventName');
-    console.log(eventName);
     var eventMapID = $('#map');
     var eventlatLong = { lat: eventMapID.data('latitude'), lng: eventMapID.data('longitude') };
     //event show page map
     var eventsLatLongClass = $('.eventsLatLong');
     var eventsCoordinates = {lat: eventsLatLongClass.data('latitude') , lng: eventsLatLongClass.data('longitude') };
+    var eventsMapID = $('#eventsMap')
+
+    console.log(eventsMapID.length);
 
     //initMap call google api to displau the makp
     function initMap(){
-        eventMap()
+        eventMap();
+        eventsMap();
         function eventMap() {
             //event map
             if (eventMapID.length > 0) {
@@ -32,13 +35,12 @@ document.addEventListener("DOMContentLoaded", function(){
         //evetns map
         function eventsMap() {
 
-            if (eventsMap.length > 0){
-                var eventsMap = new google.maps.Map(document.getElementById('eventsMapID'), {
+            if (eventsMapID.length > 0){
+                var eventsMap = new google.maps.Map(document.getElementById('eventsMap'), {
                 center: eventsCoordinates,
                 zoom: 11
                 });
-
-                addMarkerWithTimeout(eventsCoordinates, eventsMap, timeout());
+                drop(eventsLatLongClass, eventsMap)
 
         };
         }
@@ -84,6 +86,14 @@ document.addEventListener("DOMContentLoaded", function(){
          markers[i].setMap(null);
        }
        markers = [];
+    }
+    function drop(cordinatesArray, map) {
+       clearMarkers();
+       for (var i = 0; i < cordinatesArray.length; i++) {
+           var position = {lat: parseFloat(cordinatesArray[i].attributes[1].value), lng: parseFloat(cordinatesArray[i].attributes[2].value)};
+         addMarkerWithTimeout(position, map, i * 200);
+         infoWindow('<h1>'+eventName.innerHTML+'</h1>').open(eventMap, this);
+       }
     }
 
     initMap()
