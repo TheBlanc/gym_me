@@ -8,16 +8,19 @@
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
-
   </head>
 
   <body>
-    <!-- Renders nav bar -->
-    <%= render "shared/menu" %>
 
-    <div class="container">
+    <!-- Renders user avatar and drop down menu -->
+    <%= render "shared/user_menu" %>
+
+    <!-- Renders main nav bar -->
+    <%= render "shared/nav_bar" %>
+
+    <section class="container">
       <%= yield %>
-    </div>
+    </section>
 
   </body>
 
