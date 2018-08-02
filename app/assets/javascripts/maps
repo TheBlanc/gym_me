@@ -1,0 +1,106 @@
+document.addEventListener("DOMContentLoaded", function() {
+    var markers = [];
+
+    function initMap() {
+        //for event#show
+        var mapPlaceholder = $('#map');
+        if (mapPlaceholder.length > 0) {
+            // latLong is a hash that contain the latitude and longitude for the map.
+            var latLong = {
+                lat: mapPlaceholder.data('latitude'),
+                lng: mapPlaceholder.data('longitude')
+            };
+            // creates the map
+            var map = new google.maps.Map(document.getElementById('map'), {
+                center: latLong,
+                zoom: 18
+            });
+            //eventName gets the marker name .
+            var eventName = document.getElementById('eventName');
+            //mapMarker creates the marker on the map.
+            var mapMarker = new google.maps.Marker({
+                map: map,
+                draggable: false,
+                animation: google.maps.Animation.DROP,
+                position: latLong,
+                title: eventName.innerHTML,
+            });
+
+            mapMarker.addListener('click', toggleBounce);
+            //toggleBounce function is the animation for the maker.
+            function toggleBounce() {
+                if (mapMarker.getAnimation() !== null) {
+                    mapMarker.setAnimation(null);
+                } else {
+                    mapMarker.setAnimation(google.maps.Animation.BOUNCE);
+                }
+            };
+
+        }
+
+
+        //Events map
+        var discoverLatLong = $('.discoverLatLong');
+        if (discoverLatLong.length > 0) {
+            var discoverCenter = { lat: discoverLatLong.data('latitude'), lng: discoverLatLong.data('longitude')
+            };
+            var discoverMap = new google.maps.Map(document.getElementById('discoverMap'), {
+                center: discoverCenter,
+                zoom: 11
+            });
+        }
+        var eventMarkerTitle = $('.eventMarkerTitle')
+        //For to diplay all the markers
+        for (var i = 0; i < discoverLatLong.length; i++) {
+            var position = {lat: parseFloat(discoverLatLong[i].attributes[1].value), lng: parseFloat(discoverLatLong[i].attributes[2].value)};
+            var title  = eventMarkerTitle[i].attributes[1].value
+            var contentString = eventMarkerTitle[i].attributes[1].value
+            var infoWindow = new google.maps.infoWindow({
+                content: contentString
+            });
+
+            function drop(discoverLatLong, timeout) {
+                clearMarkers();
+                for (var i = 0; i < discoverLatLong.length; i++) {
+                    addMarkerWithTimeout({lat: parseFloat(discoverLatLong[i].attributes[1].value), lng: parseFloat(discoverLatLong[i].attributes[2].value)},i * 200)
+                    }
+                }
+            }
+            function eventmapMarker(position, timeout, title) {
+                window.setTimeout(function() {
+                    markers.push(new google.maps.Marker({
+                        position: position,
+                        map: discoverMap,
+                        draggable: false,
+                        animation: google.maps.Animation.DROP,
+                        title: title,
+                    }));
+                }, timeout);
+            }
+
+        }//initMap end
+
+
+        if (eventmapMarker != null) {
+            eventmapMarker.addListener('click', toggleBounce);
+            //toggleBounce function is the animation for the maker.
+            function toggleBounce() {
+                if (eventmapMarker.getAnimation() != null) {
+                    eventmapMarker.setAnimation(null);
+                } else {
+                    eventmapMarker.setAnimation(google.maps.Animation.BOUNCE);
+                    infoWindow.open(discoverMap, eventmapMarker);
+                }
+            };
+        }
+    }
+
+    // function clearMarkers(markers) {
+    //     for (var i = 0; i < markers.length; i++) {
+    //         markers[i].setMap(null);
+    //     }
+    //     markers = [];
+    // }
+
+    initMap();
+});

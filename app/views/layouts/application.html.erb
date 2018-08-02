@@ -21,9 +21,6 @@
         <%= link_to user_path(current_user.id) do %>
           <div class="user-options-item">My Profile</div>
         <% end %>
-        <%= link_to new_chat_room_path do %>
-          <div class="user-options-item">New Chat Room</div>
-        <% end %>
         <%= link_to destroy_user_session_path, method: :delete do %>
           <div class="user-options-item">Logout</div>
         <% end %>
