@@ -1,4 +1,4 @@
-<h2>Edit Profile</h2>
+<h1>Edit Profile</h1>
 
 <%= form_for( @user, url: user_path(@user.id) ) do |f| %>
 
@@ -38,7 +38,7 @@
   </div>
 
   <div class"field">
-    WOROKOUT dramatically
+    <h2>WOROKOUT SCHEDULE</h2>
     <% Date::DAYNAMES.each do |day| %>
    <%= f.check_box :day, {multiple: true}, day, nil %>
    <%= day %>
