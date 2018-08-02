@@ -69,7 +69,11 @@ class UsersController < ApplicationController
     @user.matching = params[:user][:matching]
     @user.day= params[:user][:day]
     @user.time_of_day= params[:user][:time_of_day]
-    @user.avatar.attach(params[:user][:avatar])
+    
+    unless params[:user][:avatar] == nil
+      @user.avatar.attach(params[:user][:avatar])
+    end
+
 
     if @user.save
       redirect_to user_path(@user.id)

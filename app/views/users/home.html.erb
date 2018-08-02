@@ -1,7 +1,8 @@
 <section class="home">
+  <h1 class="home-page">Your Schedule</h1>
   <% if @user == current_user %>
-      <h2 class="home-heading">Upcomming RSVPs</h2>
     <% if @events.length > 0 %>
+      <h2 class="home-heading">Upcomming RSVPs</h2>
       <% @events.each do |event| %>
         <%= link_to event_url(event.id) do %>
           <div class="event-card">
@@ -12,6 +13,13 @@
           </div>
         <% end %>
       <% end %>
+    <% else %>
+      <p class="no-rsvps">No current RSPVs...</p>
+      <h2 class="home-greeting">Let Jimmy help you with that!</h2>
+      <%= link_to discover_path do %>
+        <div class="big-button">Find Event</div>
+      <% end %>
+
     <% end %>
     <% if @owned_events.length > 0 %>
       <h2 class="home-heading">Events You're Hosting</h2>

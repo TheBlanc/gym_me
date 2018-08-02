@@ -1,5 +1,5 @@
 .profile-area {
-  background-color: var(--main-red)
+  background-color: var(--main-grey)
 }
 
 .close-button {
@@ -54,7 +54,7 @@
   padding: 7px 10px;
   border-bottom: 1px solid black;
 }
-    .user-options-item:hover {
-      background-color: var(--main-red);
+    .user-options li:hover {
+      background-color: var(--main-dark-grey);
       color: white;
 }
