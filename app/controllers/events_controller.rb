@@ -1,7 +1,7 @@
 class EventsController < ApplicationController
 
   def discover
-    
+
   end
 
   def index
@@ -10,7 +10,7 @@ class EventsController < ApplicationController
     # check if search parameter is being passed and isnt an empty string
     if params[:search] && !params[:search].empty?
        radius = 10;
-       search_events = Event.near(params[:search] ,radius , units: :km).where(activity_type: params[:activity_type])
+       search_events = Event.near(params[:search], radius, units: :km).where(activity_type: params[:activity_type])
 
         # iterate through the events and check if the there are spots available (capacity > 0)
         # and that the event has not started

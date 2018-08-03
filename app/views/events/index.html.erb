@@ -6,7 +6,7 @@
   <nav class="search">
     <%= form_tag events_path, method: :get do %>
 
-        <%= select_tag :activity_type, options_for_select([["All Fitness Types", nil], "Cardio", "Weight Lifting", "Boxing", "Yoga", "Cross Fit", "Swimming"], selected: params[:activity_type]), include_blank: false %>
+        <%= select_tag :activity_type, options_for_select([["All Fitness Types", nil], "Yoga/Pilates", "Resistence Training", "Cardio", "Recreation"], selected: params[:activity_type]), include_blank: false %>
         <%= text_field_tag :search, params[:search] %>
 
         <%= submit_tag "Filter" %>

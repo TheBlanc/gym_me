@@ -3,16 +3,18 @@
     <h1>Gym Buddy Results</h1>
     <nav class="search">
       <%= form_tag users_path, method: :get do %>
-        <%= label_tag "Search Users" %>
-        <%= text_field_tag :search, params[:search] %>
-        <%= submit_tag "Find Gym Buddy" %>
+
+          <%= select_tag :activity_goal, options_for_select([["All Fitness Types", nil], "Yoga/Pilates", "Resistence Training", "Cardio", "Recreation"], selected: params[:activity_goal]), include_blank: false %>
+          <%= text_field_tag :search, params[:search] %>
+
+          <%= submit_tag "Filter" %>
       <% end %>
     </nav>
   </header>
 
   <section class="user-reults">
     <% @users.each do |user| %>
-      <div class="user-card">
+      <div class="event-card">
         <h3><%= link_to user.full_name, user_url(user.id) %></h3>
         <p>Fitness Level: <%= user.fitness_level %></p>
         <p>Location: <%= user.location %></p>
