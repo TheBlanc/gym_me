@@ -27,7 +27,6 @@ end
   e.address = "100 King St. W"
   e.description = "This is event #{n+1}"
   e.capacity = 2
-  e.activity_type = "Cardio"
   e.user_id = (n+1)
   e.time = Time.now + 1000000
   e.persistence = false
