@@ -22,7 +22,7 @@
 
 <p>Description: <%= @event.description %></p>
 <!-- GOOGLE MAPS-->
-<div id="map" data-latitude="<%= @event.latitude %>" data-longitude="<%= @event.longitude %>"></div>
+<div class="event-show-map" id="map" data-latitude="<%= @event.latitude %>" data-longitude="<%= @event.longitude %>"></div>
 <div id="infowindow-content">
       <img src="" width="16" height="16" id="place-icon">
       <span id="place-name"  class="title"></span><br>

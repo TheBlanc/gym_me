@@ -25,15 +25,18 @@ end
 
 10.times do |n|
   e = Event.new
+
   e.title = FFaker::Sport.name
   e.address = ["#{rand(500)} King St. W", "#{rand(500)} Yonge St.", "#{rand(400)} Queen St. E"].sample
   e.description = FFaker::CheesyLingo.sentence
   e.capacity = rand(10)
   e.activity_type = ["Yoga/Pilates", "Resistence Training", "Cardio", "Recreation"].sample
+
   e.user_id = (n+1)
   e.time = Time.now + 1000000
   e.persistence = false
   e.end_date = Time.now + 100000000000
+
   if e.activity_type == "Yoga/Pilates"
     e.activity_icon = "noun_pilates.png"
   elsif e.activity_type == "Resistence Training"
@@ -43,6 +46,7 @@ end
   else e.activity_type == "Recreation"
     e.activity_icon = "noun_soccer.png"
   end
+
   e.save!
 end
 
