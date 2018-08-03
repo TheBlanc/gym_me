@@ -22,8 +22,13 @@ document.addEventListener("DOMContentLoaded", function(){
                 // latLong is a hash that contain the latitude and longitude for the map.
                 var eventMap = new google.maps.Map(document.getElementById('map'), {
                 center: eventlatLong,
+                mapTypeControl: false,
                 zoom: 18
                 });
+
+                // Map start off as hidden for mobile
+                eventMap.className += "hidden";
+                
                 var eventMapMarker = mapMarker(eventMap, eventlatLong)
                     eventMapMarker.addListener('click', function(){
                     toggleBounce(this);
@@ -38,9 +43,13 @@ document.addEventListener("DOMContentLoaded", function(){
             if (eventsMapID.length > 0){
                 var eventsMap = new google.maps.Map(document.getElementById('eventsMap'), {
                 center: eventsCoordinates,
-                zoom: 11
+                mapTypeControl: false,
+                zoom: 13
                 });
-                drop(eventsLatLongClass, eventsMap)
+                drop(eventsLatLongClass, eventsMap);
+
+                // Map start off as hidden for mobile
+                eventsMap.className += "hidden";
 
         };
         }
@@ -48,7 +57,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
     //mapMarker creates markers
     function mapMarker(map, latLong, title) {
-        marker= new google.maps.Marker({
+        marker = new google.maps.Marker({
         map: map,
         draggable: false,
         animation: google.maps.Animation.DROP,
@@ -104,5 +113,6 @@ document.addEventListener("DOMContentLoaded", function(){
     }
 
     initMap()
+    eventsMap.classList.add("hidden");
 
 });

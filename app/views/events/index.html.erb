@@ -1,22 +1,23 @@
 <header class="event-index">
-  <h1>Discover Events</h1>
+  <div class="map-icon" id="map-button">
+    <%= image_tag("placeholder.png") %>
+  </div>
+  <h1 class="index-header">Discover Events</h1>
   <nav class="search">
     <%= form_tag events_path, method: :get do %>
 
-        <%= label_tag "Activity Type" %>
-        <%= select_tag :activity_type, options_for_select(["Cardio", "Weight Lifting", "Boxing", "Yoga", "Cross Fit", "Swimming"], selected: params[:activity_type]), include_blank: true %>
-        <br>
-        <%= label_tag "Events Nearby:" %>
+        <%= select_tag :activity_type, options_for_select([["All Fitness Types", nil], "Cardio", "Weight Lifting", "Boxing", "Yoga", "Cross Fit", "Swimming"], selected: params[:activity_type]), include_blank: false %>
         <%= text_field_tag :search, params[:search] %>
 
-        <%= submit_tag "Find Event" %>
-   <% end %>
+        <%= submit_tag "Filter" %>
+    <% end %>
+
 
       <!-- eventsMap is the map -->
-      <div id ="eventsMap" ></div>
+      <div class"event-index-map" id="eventsMap" ></div>
 
       <% @events.each do | event | %>
-      <div class ="eventsLatLong" data-latitude="<%= event.latitude %>" data-longitude="<%= event.longitude %>"></div>
+      <div class="eventsLatLong" data-latitude="<%= event.latitude %>" data-longitude="<%= event.longitude %>"></div>
       <div class="eventsMarkerTitle" data-title="<%= event.title %>"></div>
       <%end %>
     </nav>
