@@ -38,6 +38,7 @@ gem 'gemoji'
 
 gem 'jquery-ui-rails'
 
+gem 'ffaker'
 
 
 # Use ActiveStorage variant

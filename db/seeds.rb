@@ -6,34 +6,47 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-
-5.times do |n|
+10.times do |n|
   u = User.new
-  u.email = "test#{n+1}@gmail.com"
+  u.email = FFaker::Internet.email
   u.password = "passpass"
-  u.first_name = "Testy"
-  u.last_name = "#{n+1}erson"
-  u.fitness_level = 2
-  u.location = "10#{n+1} King St. W"
-  u.gender = "Female"
+  u.first_name = FFaker::Name.first_name
+  u.last_name = FFaker::Name.first_name
+  u.fitness_level = rand(3)
+  u.location = "#{rand(300)} King St. W"
+  u.gender = ["Male", "Female", ["Rather Not Say", nil]].sample
+  u.description = FFaker::CheesyLingo.sentence
   u.matching = true
+  u.time_of_day = ['Morning', 'Afternoon', 'Evening', 'Twilight'].sample
+  u.day = Date::DAYNAMES.sample
+  u.age = rand(100)
   u.save
-
 end
 
-5.times do |n|
+10.times do |n|
   e = Event.new
-  e.title = "Event #{n+1}"
-  e.address = "100 King St. W"
-  e.description = "This is event #{n+1}"
-  e.capacity = 2
-  e.activity_type = "Cardio"
+
+  e.title = FFaker::Sport.name
+  e.address = ["#{rand(500)} King St. W", "#{rand(500)} Yonge St.", "#{rand(400)} Queen St. E"].sample
+  e.description = FFaker::CheesyLingo.sentence
+  e.capacity = rand(10)
+  e.activity_type = ["Yoga/Pilates", "Resistence Training", "Cardio", "Recreation"].sample
+
   e.user_id = (n+1)
   e.time = Time.now + 1000000
   e.persistence = false
   e.end_date = Time.now + 100000000000
-  e.activity_type = ["Cardio", "Weight Lifting", "Boxing", "Yoga", "Cross Fit", "Swimming"].sample
-  e.activity_icon = "noun_Running.png"
+
+  if e.activity_type == "Yoga/Pilates"
+    e.activity_icon = "noun_pilates.png"
+  elsif e.activity_type == "Resistence Training"
+    e.activity_icon = "noun_Gym_icon.png"
+  elsif e.activity_type == "Cardio"
+    e.activity_icon = "noun_Running.png"
+  else e.activity_type == "Recreation"
+    e.activity_icon = "noun_soccer.png"
+  end
+
   e.save!
 end
 

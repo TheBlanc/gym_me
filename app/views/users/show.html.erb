@@ -1,4 +1,4 @@
-<section class="user-profile-card">
+<section class="user-profile-card profile">
 <% if @user.avatar.attached? %>
   <div class="profile-avatar">
     <%= image_tag url_for(@user.avatar) %>
@@ -22,13 +22,16 @@
     <p>About Me:</p>
     <p><%= @user.description %></p>
 
-  <%= link_to image_tag("noun_message.png", class:"send-message-icon"), new_personal_message_path(receiver_id: params[:id]) %>
-  
+  <% if current_user != @user %>
+    <div class="icon-button message">
+      <%= link_to image_tag("noun_message.png", class:"send-message-icon"), new_personal_message_path(receiver_id: params[:id]) %>
+    </div>
+  <% end %>
+
 <% if @user == current_user %>
-  <div class="icon-button" id="close-button">
+  <div class="icon-button">
     <%= link_to edit_user_path(current_user.id) do %>
       <%= image_tag("settings.svg") %>
     <% end %>
   </div>
 <% end %>
-

@@ -1,11 +1,13 @@
 .nav-bar {
   width: 100%;
-  background-color: var(--main-grey);
+  background-color: white;
   position: fixed;
   bottom: 0;
   text-align: center;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
+  z-index: 100;
+
 }
 
 .nav-button {

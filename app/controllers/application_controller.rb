@@ -24,6 +24,8 @@ end
 
   helper_method :joined_event?
   helper_method :user_avatar
+  helper_method :event_activity_icon
+
 
   private
 
@@ -43,5 +45,21 @@ end
       return "blank-avatar.svg"
     end
   end
+
+  # gives event icon based on activity_type
+  def event_activity_icon(event)
+    if event.activity_type == "Yoga/Pilates"
+      return "noun_pilates.png"
+    elsif event.activity_type == "Resistence Training"
+      return "noun_Gym_icon.png"
+    elsif event.activity_type == "Cardio"
+      return "noun_Running.png"
+    elsif event.activity_type == "Recreation"
+      return "noun_Ultimate.png"
+    else
+      return "image.png"
+    end
+  end
+
 
 end
