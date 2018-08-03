@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
                 // Map start off as hidden for mobile
                 eventMap.className += "hidden";
-                
+
                 var eventMapMarker = mapMarker(eventMap, eventlatLong)
                     eventMapMarker.addListener('click', function(){
                     toggleBounce(this);
@@ -113,6 +113,5 @@ document.addEventListener("DOMContentLoaded", function(){
     }
 
     initMap()
-    eventsMap.classList.add("hidden");
 
 });
