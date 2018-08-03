@@ -1,43 +1,47 @@
 <header class="event-index">
   <h1 class="discover-header">Discover Events</h1>
   <nav class="search">
-    <h2 class="activity-type-header">Select a category</h1>
+    <h2 class="activity-type-header">Select an activity type</h1>
     <%= form_tag events_path, method: :get do %>
       <div class="activity-icons-wrapper">
         <div class="activity-icon">
+          <p class="activity-type-description">Yoga/Pilates</p>
           <label class="activity-type">
             <%= radio_button_tag :activity_type, "Yoga/Pilates", checked = false %>
             <%= image_tag("noun_pilates.png") %>
           </label>
         </div>
         <div class="activity-icon">
+          <p class="activity-type-description">Resistence</p>
           <label class="activity-type">
             <%= radio_button_tag :activity_type, "Resistence Training", checked = false %>
             <%= image_tag("noun_Gym_icon.png") %>
           </label>
         </div>
         <div class="activity-icon">
+          <p class="activity-type-description">Cardio</p>
           <label class="activity-type">
             <%= radio_button_tag :activity_type, "Cardio", checked = false %>
             <%= image_tag("noun_Running.png") %>
           </label>
         </div>
         <div class="activity-icon">
+          <p class="activity-type-description">Recreation</p>
           <label class="activity-type">
             <%= radio_button_tag :activity_type, "Recreation", checked = false %>
-            <%= image_tag("noun_soccer.png") %>
+            <%= image_tag("noun_Ultimate.png") %>
           </label>
         </div>
         <label class="activity-type">
           <%= radio_button_tag :activity_type, "", checked = true %>
-          <div class="activity-icon-all">All Events</div>
+          <div class="activity-icon-all">All Activity Types</div>
         </label>
       </div>
         <div class="location-search">
           <%= text_field_tag :search %>
         </div>
         <div class="large-submit-button">
-          <%= submit_tag "Find Event" %>
+          <%= submit_tag "Find Events" %>
         </div>
 
     <% end %>

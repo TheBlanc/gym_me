@@ -3,6 +3,9 @@
   color: var(--main-white);
   text-align: center;
   border-bottom: 0.5px solid var(--main-dark-grey);
+  position: fixed;
+  width: 100%;
+  top: 0;
 }
 
 .profile-button {
