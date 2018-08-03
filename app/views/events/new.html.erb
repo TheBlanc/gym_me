@@ -1,7 +1,10 @@
-<h1>New Event</h1>
+<section class="new-event">
 
-<% if flash[:notice] %>
-  <p><%= flash[:notice] %></p>
-<% end %>
+  <h1 class="new-event-heading">New Event</h1>
 
-<%= render "event_form", event: @event %>
+  <% if flash[:notice] %>
+    <p><%= flash[:notice] %></p>
+  <% end %>
+
+  <%= render "event_form", event: @event %>
+</section>
