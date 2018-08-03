@@ -1,0 +1,67 @@
+.log-in {
+  text-align: center;
+  margin: 5em 0 0 0;
+}
+
+.log-in .large-submit-button > input[type="submit"] {
+  margin: 0;
+}
+
+.log-in .field {
+  margin: 17px 0;
+}
+
+
+.log-in-heading {
+  font-size: 2em;
+}
+
+.login-avatar {
+  display: inline-block;
+  width: 8em;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.speech {
+  position: absolute;
+  bottom: 0;
+  left: 11em;
+  width: 10em;
+}
+
+.login-greeting {
+  margin: 0.5em 0;
+  position: relative;
+  bottom: -3.4em;
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.field > label {
+  font-size: 1.3em;
+  margin: 0.3em 0;
+}
+
+.field > input {
+  width: 12.3em;
+  height: 2.1em;
+  font-size: 1.4em;
+}
+
+.check-field > input {
+  width: 2em;
+  height: 2em;
+  font-size: 1.4em;
+  vertical-align: middle;
+}
+
+.links {
+  margin: 1em 0;
+}
+
+.links a {
+  font-size: 1.4em;
+
+}
