@@ -1,0 +1,75 @@
+.event-index {
+  text-align: center;
+}
+
+.discover-header {
+  margin: 1em 0;
+  font-size: 2em;
+
+}
+
+.activity-type-header {
+  margin: 1em 0;
+  font-size: 1.3em;
+  font-weight: normal;
+}
+
+.activity-icons-wrapper {
+  margin: 10px 15%;
+}
+
+.activity-icon {
+  margin: 7px;
+  display: inline-block;
+  width: 14vh;
+  // color: #333;
+  // box-shadow: -3px 3px var(--main-dark-grey), -2px 2px var(--main-dark-grey), -1px 1px var(--main-dark-grey);
+  // border: 1px solid var(--main-dark-grey);
+}
+
+.activity-type > img {
+  box-shadow: -3px 3px var(--main-dark-grey), -2px 2px var(--main-dark-grey), -1px 1px var(--main-dark-grey);
+  border: 1px solid var(--main-dark-grey);
+}
+
+.activity-icon-all {
+  margin: 7px auto;
+  display: block;
+  padding: 10px 0px;
+  width: 16vh;
+  color: #333;
+  border: 1px solid var(--main-dark-grey);
+  box-shadow: -3px 3px var(--main-dark-grey), -2px 2px var(--main-dark-grey), -1px 1px var(--main-dark-grey);
+}
+
+label.activity-type > input {
+  visibility: hidden;
+  position: absolute;
+}
+
+label.activity-type > input + img {
+  cursor: pointer;
+}
+
+label.activity-type > input + .activity-icon-all {
+  cursor: pointer;
+}
+
+label.activity-type > input:checked + img {
+  // border: 1px solid var(--main-green);
+  background-color: var(--main-green);
+  box-shadow: none;
+}
+
+label.activity-type > input:checked + .activity-icon-all {
+  box-shadow: none;
+  background-color: var(--main-green);
+
+  // border: 1px solid var(--main-green);
+}
+
+.location-search > input {
+  width: 14em;
+  height: 2em;
+  font-size: 1.4em;
+}

@@ -12,12 +12,14 @@
         <%= submit_tag "Find Event" %>
    <% end %>
 
-      <!-- discovermap is the map -->
-      <div id ="discovermap" ></div>
+
+      <!-- eventsMap is the map -->
+      <div id ="eventsMap" ></div>
+
 
       <% @events.each do | event | %>
-      <div class ="discoverLatLong" data-latitude="<%= event.latitude %>" data-longitude="<%= event.longitude %>"></div>
-    <div class="eventmarkertitle" data-title="<%= event.title %>"></div>
+      <div class ="eventsLatLong" data-latitude="<%= event.latitude %>" data-longitude="<%= event.longitude %>"></div>
+      <div class="eventsMarkerTitle" data-title="<%= event.title %>"></div>
       <%end %>
     </nav>
 
