@@ -81,8 +81,6 @@ GEM
       railties (>= 4.1.0, < 6.0)
       responders
       warden (~> 1.2.3)
-    emoji (1.0.7)
-      json
     erubi (1.7.1)
     execjs (2.7.0)
     factory_bot (4.10.0)
@@ -93,6 +91,7 @@ GEM
     ffi (1.9.25)
     figaro (1.1.1)
       thor (~> 0.14)
+    gemoji (3.0.0)
     geocoder (1.4.9)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
@@ -237,9 +236,9 @@ DEPENDENCIES
   chromedriver-helper
   coffee-rails (~> 4.2)
   devise
-  emoji
   factory_bot_rails
   figaro
+  gemoji
   geocoder
   gravatar_image_tag
   jbuilder (~> 2.5)

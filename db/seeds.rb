@@ -32,6 +32,7 @@ end
   e.persistence = false
   e.end_date = Time.now + 100000000000
   e.activity_type = ["Cardio", "Weight Lifting", "Boxing", "Yoga", "Cross Fit", "Swimming"].sample
+  e.activity_icon = "noun_Running.png"
   e.save!
 end
 
