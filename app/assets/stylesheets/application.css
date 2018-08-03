@@ -28,14 +28,19 @@
    box-sizing: border-box;
  }
 
+
 html {
-  font-family: sans-serif;
+  font-family: "Raleway";
   font-size: 16px;
 }
+
  body {
+  background-color: white;
   background-color: var(--main-background-color);
   margin-bottom: 67px;
-  margin-top: 46px; }
+  margin-top: 46px; 
+}
+
 
  img {
    width: 100%;

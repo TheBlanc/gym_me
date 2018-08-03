@@ -22,9 +22,11 @@
     <p>About Me:</p>
     <p><%= @user.description %></p>
 
-  <div class="icon-button message">
-    <%= link_to image_tag("noun_message.png"), new_personal_message_path(receiver_id: params[:id]) %>
-  </div>
+  <% if current_user != @user %>
+    <div class="icon-button message">
+      <%= link_to image_tag("noun_message.png", class:"send-message-icon"), new_personal_message_path(receiver_id: params[:id]) %>
+    </div>
+  <% end %>
 
 <% if @user == current_user %>
   <div class="icon-button">
