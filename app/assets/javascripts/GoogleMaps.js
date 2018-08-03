@@ -10,7 +10,14 @@ document.addEventListener("DOMContentLoaded", function(){
     var eventsCoordinates = {lat: eventsLatLongClass.data('latitude') , lng: eventsLatLongClass.data('longitude') };
     var eventsMapID = $('#eventsMap');
     var eventsMarkerTitle = document.getElementsByClassName('eventsMarkerTitle');
+
+
+    document.querySelector('#eventsMap').className += "hidden"
+    document.querySelector('#eventsMap').style.height = "500px"
+    console.log(eventsMarkerTitle[0].attributes[1].value);
+
     // console.log(eventsMarkerTitle[0].attributes[1].value);
+
 
     //initMap call google api to displau the makp
     function initMap(){
@@ -28,6 +35,8 @@ document.addEventListener("DOMContentLoaded", function(){
 
                 // Map start off as hidden for mobile
                 eventMap.className += "hidden";
+                eventMap.style.height = "500px";
+
 
                 var eventMapMarker = mapMarker(eventMap, eventlatLong)
                     eventMapMarker.addListener('click', function(){
