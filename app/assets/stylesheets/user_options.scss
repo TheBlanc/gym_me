@@ -21,6 +21,11 @@
   cursor: pointer;
 }
 
+.logout {
+  position: relative;
+  z-index: 10;
+}
+
 .user-options-avatar {
   display: inline-block;
   width: 5em;
@@ -63,10 +68,10 @@
   font-family: sans-serif;
   text-decoration: none;
 }
-.user-options-item {
-  padding: 7px 10px;
-  border-bottom: 1px solid black;
-}
+// .user-options-item {
+//   padding: 7px 10px;
+//   border-bottom: 1px solid black;
+// }
     .user-options li:hover {
       background-color: var(--main-dark-grey);
       color: white;
