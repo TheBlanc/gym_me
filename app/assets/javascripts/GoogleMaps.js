@@ -11,9 +11,13 @@ document.addEventListener("DOMContentLoaded", function(){
     var eventsMapID = $('#eventsMap');
     var eventsMarkerTitle = document.getElementsByClassName('eventsMarkerTitle');
 
+
     document.querySelector('#eventsMap').className += "hidden"
     document.querySelector('#eventsMap').style.height = "500px"
     console.log(eventsMarkerTitle[0].attributes[1].value);
+
+    // console.log(eventsMarkerTitle[0].attributes[1].value);
+
 
     //initMap call google api to displau the makp
     function initMap(){
