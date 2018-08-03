@@ -1,7 +1,7 @@
 class EventsController < ApplicationController
 
   def discover
-
+    
   end
 
   def index
@@ -23,7 +23,6 @@ class EventsController < ApplicationController
           end
         end
         @events = available_events
-
     else
 
         available_events = []
@@ -67,6 +66,15 @@ class EventsController < ApplicationController
     @event.capacity = params[:event][:capacity]
     @event.need_approval = params[:event][:need_approval]
     @event.user_id = current_user.id
+      if params[:event][:activity_type] == "Yoga/Pilates"
+        @event.activity_icon = "noun_pilates.png"
+      elsif params[:event][:activity_type] == "Resistence Training"
+        @event.activity_icon = "noun_Gym_icon.png"
+      elsif params[:event][:activity_type] == "Cardio"
+        @event.activity_icon = "noun_Running.png"
+      else params[:event][:activity_type] == "Recreation"
+        @event.activity_icon = "noun_soccer.png"
+      end
 
     if @event.save
       redirect_to root_url
