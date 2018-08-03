@@ -11,7 +11,7 @@
 
         <%= submit_tag "Find Event" %>
    <% end %>
-   
+
       <!-- discovermap is the map -->
       <div id ="discovermap" ></div>
 
@@ -21,15 +21,14 @@
       <%end %>
     </nav>
 
-
 </header>
 
 <section class="event-reults">
   <% @events.each do |event| %>
     <div class="event-card">
+      <%= image_tag(event.activity_icon, class:"event_type_icon") %>
       <h3><%= link_to event.title, event_url(event.id)%></h3>
-      <p>Event Description: <%= event.description %></p>
-      <p>Activity Type: <%= event.activity_type %></p>
+      <p>Information:<%= event.description %></p>
       <p>Event Address: <%= event.address %></p>
       <p>When: <%= event.time.strftime("%m/%d/%Y at %I:%M%p") %></p>
     </div>

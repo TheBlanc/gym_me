@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_02_183011) do
+ActiveRecord::Schema.define(version: 2018_08_02_201312) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "hstore"
@@ -81,6 +81,7 @@ ActiveRecord::Schema.define(version: 2018_08_02_183011) do
     t.float "longitude"
     t.date "end_date"
     t.boolean "persistence"
+    t.string "activity_icon"
   end
 
   create_table "messages", force: :cascade do |t|
