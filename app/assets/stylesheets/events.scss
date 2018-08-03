@@ -1,5 +1,6 @@
 
 .event-card {
+  position: relative;
   background-color: white;
   margin: 1em 2em;
   padding: 1em;
@@ -8,12 +9,36 @@
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
   border-radius: 5px; /* 5px rounded corners */
+  z-index: -1;
 }
     .event-card:active{
     }
 
-.event_type_icon {
-  height: 20%;
-  width: 20%;
+.icon-button.message {
+  width: 2.8em;
+  position: absolute;
+  right: 13px;
+  bottom: 5px;
 }
 
+.new-event {
+  text-align: center;
+  margin: 5em 0;
+}
+
+.form-item {
+  font-size: 1.2em;
+}
+.form-item input {
+  font-size: 1em;
+}
+.form-item select {
+  font-size: 1em;
+}
+.form-item textarea {
+  font-size: 1em;
+}
+
+.new-event-heading {
+  font-size: 1.8em;
+}

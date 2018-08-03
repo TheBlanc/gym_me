@@ -6,34 +6,34 @@
   <nav class="search">
     <%= form_tag events_path, method: :get do %>
 
-        <%= select_tag :activity_type, options_for_select([["All Fitness Types", nil], "Cardio", "Weight Lifting", "Boxing", "Yoga", "Cross Fit", "Swimming"], selected: params[:activity_type]), include_blank: false %>
+        <%= select_tag :activity_type, options_for_select([["All Fitness Types", nil], "Yoga/Pilates", "Resistence Training", "Cardio", "Recreation"], selected: params[:activity_type]), include_blank: false %>
         <%= text_field_tag :search, params[:search] %>
 
         <%= submit_tag "Filter" %>
     <% end %>
 
+  </nav>
+  <!-- eventsMap is the map -->
+  <div class="map-container">
+    <div class"event-index-map" id="eventsMap" ></div>
 
-
-      <!-- eventsMap is the map -->
-      <div class"event-index-map" id="eventsMap" ></div>
-
-
-      <% @events.each do | event | %>
+    <% @events.each do | event | %>
       <div class="eventsLatLong" data-latitude="<%= event.latitude %>" data-longitude="<%= event.longitude %>"></div>
       <div class="eventsMarkerTitle" data-title="<%= event.title %>"></div>
-      <%end %>
-    </nav>
+    <% end %>
+  </div>
+
 
 </header>
 
 <section class="event-reults">
   <% @events.each do |event| %>
     <div class="event-card">
-      <%= image_tag(event.activity_icon, class:"event_type_icon") %>
-      <h3><%= link_to event.title, event_url(event.id)%></h3>
-      <p>Information:<%= event.description %></p>
+      <p class="date">When: <%= event.time.strftime("%m/%d/%Y at %I:%M%p") %></p>
+      <h3 class="event-title"><%= link_to event.title, event_url(event.id)%></h3>
+      <p>Information: <%= event.description %></p>
       <p>Event Address: <%= event.address %></p>
-      <p>When: <%= event.time.strftime("%m/%d/%Y at %I:%M%p") %></p>
+      <div class="event-icon"><%= image_tag(event_activity_icon(event)) %></div>
     </div>
   <% end %>
 </section>

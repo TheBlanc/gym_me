@@ -1,7 +1,9 @@
-.log-in {
+.session-form {
   text-align: center;
   margin: 5em 0 0 0;
 }
+
+
 
 .log-in .large-submit-button > input[type="submit"] {
   margin: 0;
@@ -39,15 +41,19 @@
   font-weight: bold;
 }
 
+.sign-up .field {
+  margin: 10px 0;
+}
+
 .field > label {
   font-size: 1.3em;
   margin: 0.3em 0;
 }
 
 .field > input {
-  width: 12.3em;
+  width: 15.3em;
   height: 2.1em;
-  font-size: 1.4em;
+  font-size: 1.2em;
 }
 
 .check-field > input {
