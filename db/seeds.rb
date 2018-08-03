@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-10.times do |n|
+5.times do |n|
   u = User.new
   u.email = FFaker::Internet.email
   u.password = "passpass"
@@ -23,7 +23,7 @@
   u.save
 end
 
-10.times do |n|
+5.times do |n|
   e = Event.new
 
   e.title = FFaker::Sport.name
