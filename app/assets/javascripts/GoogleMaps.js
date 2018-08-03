@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function(){
     var eventsCoordinates = {lat: eventsLatLongClass.data('latitude') , lng: eventsLatLongClass.data('longitude') };
     var eventsMapID = $('#eventsMap');
     var eventsMarkerTitle = document.getElementsByClassName('eventsMarkerTitle');
-    console.log(eventsMarkerTitle[0].attributes[1].value);
+    // console.log(eventsMarkerTitle[0].attributes[1].value);
 
     //initMap call google api to displau the makp
     function initMap(){
