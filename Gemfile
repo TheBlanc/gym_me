@@ -33,7 +33,6 @@ gem 'geocoder'
 #
 gem 'jquery-rails'
 
-
 gem 'gemoji'
 
 gem 'jquery-ui-rails'
