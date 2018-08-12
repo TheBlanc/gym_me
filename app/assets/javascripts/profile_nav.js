@@ -1,19 +1,25 @@
 document.addEventListener("DOMContentLoaded", function(){
 
-  var avatarButton = document.querySelector('div#profile-avatar-button');
-  var userMenu = document.querySelector('#user-menu');
-  var closeButton = document.querySelector('#close-button');
+  // var avatarButton = document.querySelector('div#profile-avatar-button');
+  // var userMenu = document.querySelector('#user-menu');
+  // var closeButton = document.querySelector('#close-button');
 
-  avatarButton.addEventListener("click", function(e) {
-    $('#user-menu').toggleClass('hidden');
+  // avatarButton.addEventListener("click", function(e) {
+  //   $('#user-menu').toggleClass('hidden');
+  // });
+  //
+  // closeButton.addEventListener("click", function(e) {
+  //   $('#user-menu').toggleClass('hidden');
+  // });
+
+
+  $('#profile-avatar-button').click(function(e) {
+    $('#user-menu').toggle( "slide", { direction: "down" }, 330);
   });
 
-  closeButton.addEventListener("click", function(e) {
-    $('#user-menu').toggleClass('hidden');
+  $('#close-button').click(function() {
+    $('#user-menu').toggle( "slide", { direction: "down" }, 330);
   });
-
-
-
 
 
 
