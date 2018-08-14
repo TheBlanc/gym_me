@@ -5,6 +5,8 @@ document.addEventListener("DOMContentLoaded", function(){
 
   mapButton.addEventListener("click", function(e) {
     $('#eventsMap').toggleClass('hidden');
+    $('#map').toggleClass('hidden');
+
   });
 
 
