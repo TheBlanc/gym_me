@@ -18,6 +18,15 @@
     <!-- Renders main nav bar -->
     <%= render "shared/nav_bar" %>
 
+
+  <% if !current_user %>
+    <nav class="sign-in">
+      <p>Already a User?</p>
+      <div class="sign-in-button" id="sign-in-button"><p>Sign In</p></div>
+    </nav>
+  <% end %>
+
+
     <section class="container">
       <%= yield %>
     </section>

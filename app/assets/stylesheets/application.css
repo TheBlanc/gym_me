@@ -24,7 +24,7 @@
    --main-green: #79dacb;
  }
 
- *, *::before, *::after {
+ *, *:before, *:after {
    box-sizing: border-box;
  }
 
@@ -38,7 +38,7 @@ html {
   background-color: white;
   background-color: var(--main-background-color);
   margin-bottom: 67px;
-  margin-top: 46px; 
+  margin-top: 46px;
 }
 
 

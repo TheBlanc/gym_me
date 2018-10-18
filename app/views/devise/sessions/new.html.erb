@@ -1,4 +1,4 @@
-<section class="session-form">
+<section class="sign-in-modal" id="sign-in-modal">
   <h2 class="log-in-heading">Log in</h2>
 
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
@@ -27,13 +27,7 @@
   <div class="links">
     <%= render "devise/shared/links" %>
   </div>
-
-  <div class="speech login-avatar">
-    <p class="login-greeting">Yo!</p>
-    <%= image_tag("chat.png") %>
-  </div>
-  <div class="login-avatar">
-    <%= image_tag("jimmy.png") %>
-  </div>
-
 </section>
+
+<div class="overlay" id="sign-in-overlay">
+</div>
