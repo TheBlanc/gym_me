@@ -16,15 +16,15 @@
 
 .profile-button {
   cursor: pointer;
-  position: absolute;
   top: 2px;
   right: 3px;
+  display: inline-block;
 }
 
 .avatar {
   display: inline-block;
-  width: 2.6em;
-  height: 2.6em;
+  width: 2em;
+  height: 2em;
   border: 1px var(--main-white) solid;
   border-radius: 100%;
   vertical-align: middle;

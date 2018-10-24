@@ -14,11 +14,11 @@ document.addEventListener("DOMContentLoaded", function(){
 
 
   $('#profile-avatar-button').click(function(e) {
-    $('#user-menu').toggle( "slide", { direction: "down" }, 330);
+    $('#user-menu').toggle( "slide", { direction: "up" }, 330);
   });
 
   $('#close-button').click(function() {
-    $('#user-menu').toggle( "slide", { direction: "down" }, 330);
+    $('#user-menu').toggle( "slide", { direction: "up" }, 330);
   });
 
 
