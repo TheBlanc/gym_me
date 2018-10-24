@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
   <head>
     <title>GymMe</title>
     <%= csrf_meta_tags %>
@@ -11,29 +12,7 @@
   </head>
 
   <body>
-
-    <!-- Renders user avatar and drop down menu -->
-    <%= render "shared/user_menu" %>
-
-    <!-- Renders main nav bar -->
-    <% if current_user %>
-      <%= render "shared/nav_bar" %>
-    <% else %>
-      <%= render "shared/landing_nav_bar" %>
-    <% end %>
-
-    <% if !current_user %>
-    <nav class="sign-in">
-      <p>Already a User?</p>
-      <div class="sign-in-button" id="sign-in-button"><p>Sign In</p></div>
-    </nav>
-    <% end %>
-
-
-    <section class="container">
-      <%= yield %>
-    </section>
-
+    <%= yield %>
   </body>
 
 </html>

@@ -36,10 +36,9 @@ html {
 
  body {
   background-color: white;
-  background-color: var(--main-background-color);
-  margin-bottom: 67px;
-  margin-top: 46px;
+  background-size: cover;
 }
+
 
 
  img {
