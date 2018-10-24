@@ -1,43 +1,61 @@
 <%= form_for event do |f| %>
 
-  <div class="form-item">
-    <p><%= f.label "Where will your event be located?" %></p>
-    <p><%= f.text_field :address, placeholder: "ex. Toronto, ON" %></p>
+  <div class="form-card">
+    <div class="form-item-icon">
+      <%= image_tag "worldwide.svg" %>
+    </div>
+    <div class="form-item">
+      <h3><%= f.label "Where will your event be located?" %></h3>
+      <p><%= f.text_field :address, placeholder: "ex. Toronto, ON" %></p>
+    </div>
   </div>
 
-
-  <div class="form-item">
-    <p><%= f.label :title %></p>
-    <p><%= f.text_field :title, placeholder: "Event title"%></p>
+  <div class="form-card">
+    <div class="form-item-icon">
+      <%= image_tag "calendar.svg" %>
+    </div>
+    <div class="form-item">
+      <h3><%= f.label "What date and time?" %></h3>
+      <p><%= f.datetime_field :time %></p>
+    </div>
   </div>
 
-
-  <div class="form-item">
-    <p><%= f.label :activity_type %></p>
-    <p><%= f.select :activity_type, ["Yoga/Pilates", "Resistence Training", "Cardio", "Recreation"]%></p>
+  <div class="form-card">
+    <div class="form-item-icon">
+      <%= image_tag "gym.svg" %>
+    </div>
+    <div class="form-item">
+      <h3><%= f.label "What type of activity will you be doing?" %></h3>
+      <p><%= f.select :activity_type, ["Yoga/Pilates", "Resistence Training", "Cardio", "Recreation"]%></p>
+    </div>
   </div>
 
-
-  <div class="form-item">
-    <p><%= f.label "Start time" %></p>
-    <p><%= f.datetime_field :time %></p>
+  <div class="form-card">
+    <div class="form-item-icon">
+      <%= image_tag "group-of-students.svg" %>
+    </div>
+    <div class="form-item">
+      <h3><%= f.label "How many people do you want to join?" %></h3>
+      <p><%= f.number_field :capacity, placeholder: "ex. 7" %></p>
+    </div>
   </div>
 
-
-  <div class="form-item">
-    <p><%= f.label :description %></p>
-    <p><%= f.text_area :description, placeholder: "What kind of event?" %></p>
+  <div class="form-card description">
+    <div class="form-item-icon">
+      <%= image_tag "tag.svg" %>
+    </div>
+    <div class="form-item">
+      <h3><%= f.label "What do you want the event to be called?" %></h3>
+      <p><%= f.text_field :title, placeholder: "ex. Jog By The Lake"%></p>
+    </div>
+    <div class="form-item description">
+      <h3><%= f.label "What is a quick description?" %></h3>
+      <p><%= f.text_area :description, placeholder: "Looking for a group to go for a 10k run by the lake" %></p>
+    </div>
   </div>
 
-
-  <div class="form-item">
-    <p><%= f.label "Available Spots" %></p>
-    <p><%= f.number_field :capacity %></p>
-  </div>
-
-
-  <div class="form-item">
-    <p><%= f.submit "Submit" %></p>
+  <div class="form-item submit">
+    <h3><%= f.submit "Create Event" %></h3>
   </div>
 
 <% end %>
