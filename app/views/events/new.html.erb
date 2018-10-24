@@ -13,5 +13,7 @@
     <p><%= flash[:notice] %></p>
   <% end %>
 
-  <%= render "event_form", event: @event %>
+  <section class="new-event-form">
+    <%= render "event_form", event: @event %>
+  </section>
 </section>

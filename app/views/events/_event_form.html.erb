@@ -1,8 +1,16 @@
 <%= form_for event do |f| %>
+
+  <div class="form-item">
+    <p><%= f.label "Where will your event be located?" %></p>
+    <p><%= f.text_field :address, placeholder: "ex. Toronto, ON" %></p>
+  </div>
+
+
   <div class="form-item">
     <p><%= f.label :title %></p>
     <p><%= f.text_field :title, placeholder: "Event title"%></p>
   </div>
+
 
   <div class="form-item">
     <p><%= f.label :activity_type %></p>
@@ -13,12 +21,6 @@
   <div class="form-item">
     <p><%= f.label "Start time" %></p>
     <p><%= f.datetime_field :time %></p>
-  </div>
-
-
-  <div class="form-item">
-    <p><%= f.label :address %></p>
-    <p><%= f.text_field :address, placeholder: "Address" %></p>
   </div>
 
 
