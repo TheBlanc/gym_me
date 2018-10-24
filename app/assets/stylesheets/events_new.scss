@@ -1,0 +1,28 @@
+.new-event {
+  position: absolute;
+  background-color: white;
+  color: black;
+  padding: 5px 5px;
+
+}
+
+.top-heading {
+  top: 96px;
+  left: 242px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.sub-heading {
+  top: 146px;
+  left: 242px;
+  font-size: 10px;
+}
+
+.hero-image {
+  background-image: url(/assets/balancing.jpg);
+  background-size: 107%;
+  background-position: 37% 85%;
+  background-repeat: no-repeat;
+  height: 200px;
+}

@@ -52,10 +52,12 @@
 .user-options-modal {
   position: absolute;
   right: 0;
-  top: 0;
+  top: 92px;
   background-color: white;
-  width: 100%;
+  width: 300px;
   z-index: 200;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+
 }
 
 .user-options-modal.hidden {
