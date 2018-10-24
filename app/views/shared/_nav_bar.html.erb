@@ -21,4 +21,38 @@
         <% end %>
       </div>
     </ul>
+
+    <% if current_user %>
+      <div class="profile-button" id="profile-avatar-button">
+        <% if current_user.avatar.attached? %>
+          <div class="avatar">
+            <%= image_tag url_for(current_user.avatar) %>
+          </div>
+        <% else %>
+          <div class="avatar">
+            <%= image_tag(user_avatar(current_user)) %>
+          </div>
+        <% end %>
+        <span>&#x25BC;</span>
+      </div>
+
+      <section class="user-options-modal hidden" id="user-menu">
+        <div class="icon-button close-button" id="close-button">
+          <%= image_tag("close.svg") %>
+        </div>
+        <ul class="user-options">
+          <%= link_to new_event_path do %>
+            <li class="big-button">Create Event</li>
+          <% end %>
+          <%= link_to user_path(current_user.id) do %>
+            <li class="big-button">Profile</li>
+          <% end %>
+          <%= link_to destroy_user_session_path, method: :delete do %>
+            <li class="big-button logout">Logout</li>
+          <% end %>
+        </ul>
+
+      </section>
+
+    <% end %>
 </nav>

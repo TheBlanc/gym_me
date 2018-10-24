@@ -3,11 +3,13 @@
   // position: absolute;
   // top: 17px;
   // right: 23px;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  transition: 0.3s;
+  // box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  // transition: 0.3s;
   z-index: 100;
-  margin-left: 400px;
-  margin-right: 100px;
+
+  text-align: right;
+  padding: 0 5px;
+
 
 }
 
@@ -17,7 +19,7 @@
 }
 
 .nav-item {
-  padding: 8px 21px;
+  padding: 8px 12px;
 }
 
 // .icon {
@@ -31,10 +33,12 @@
 
 .nav-bar-items {
   text-align: center;
+  display: inline-block;
 }
 
 .nav-bar-items a {
   color: black;
+  font-size: 13px;
   font-family: sans-serif;
   text-decoration: none;
   display: inline-block;
