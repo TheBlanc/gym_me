@@ -1,19 +1,18 @@
 Rails.application.routes.draw do
+
     mount ActionCable.server => '/cable'
 
     devise_for :users, controllers: { registrations: 'users/registrations' }
-
     authenticated :user do
+
       root 'users#home', as: :authenticated_root
       get '/home', to: 'users#home'
     end
 
-    devise_scope :user do
-      root "devise/sessions#new"
-    end
+    root 'landings#index'
 
     resources :users, only: [:index, :show, :edit, :update]
-
+    resources :landings, only: [:index]
 
     resources :personal_messages, only: [:new, :create]
     resources :conversations, only: [:index, :show]
