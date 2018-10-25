@@ -14,6 +14,19 @@
       z-index: 10;
     }
 
+.user-options-link {
+  display: block;
+  border-bottom: 1px solid var(--main-dark-grey);
+  padding: 6px 10px;
+  margin: 0 auto;
+  width: 55%;
+  font-size: 1.1em;
+}
+
+.user-options-link.logout {
+  border: none;
+}
+
 .large-submit-button > input[type=submit] {
   border-radius: 5px;
   border: 0;
@@ -23,6 +36,8 @@
   font-size: 1.4em;
   cursor: pointer;
   margin: 1em 0;
+  background: #ff8888;
+  color: white;
 }
 
 .large-submit-button > input[type=submit]:hover {

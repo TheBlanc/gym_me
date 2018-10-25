@@ -1,6 +1,8 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
 .user-card {
   background-color: white;
   margin: 1em 2em;
@@ -11,6 +13,12 @@
   transition: 0.3s;
   border-radius: 5px; /* 5px rounded corners */
 }
+
+.user-reults {
+  max-width: 42em;
+  margin: auto;
+}
+
 
 .profile-avatar {
   display: inline-block;
@@ -56,3 +64,14 @@
     width: 5em;
     height: 5em;
   }
+
+  // ----------- Discover and Results page -----------
+
+.gym-buddy-hero-image {
+  background-image: url(/assets/woman-basketball.jpg);
+  background-size: 100%;
+  background-position: 0 45%;
+  background-repeat: no-repeat;
+  height: 200px;
+
+}
