@@ -1,3 +1,11 @@
+<div class="navBar">
+<% if current_user %>
+  <%= render "shared/nav_bar" %>
+<% else %>
+  <%= render "shared/landing_nav_bar" %>
+<% end %>
+</div>
+
 <header class="event-index">
   <div class="map-icon" id="map-button">
     <%= image_tag("placeholder.png") %>

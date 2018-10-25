@@ -1,3 +1,12 @@
+<div class="navBar">
+<% if current_user %>
+  <%= render "shared/nav_bar" %>
+<% else %>
+  <%= render "shared/landing_nav_bar" %>
+<% end %>
+</div>
+
+
 <% if current_user %>
   <header class="user-index">
     <h1>Gym Buddy Results</h1>

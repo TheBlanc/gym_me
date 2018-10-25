@@ -1,3 +1,11 @@
+<div class="navBar">
+<% if current_user %>
+  <%= render "shared/nav_bar" %>
+<% else %>
+  <%= render "shared/landing_nav_bar" %>
+<% end %>
+</div>
+
 <section class="user-profile-card profile">
 <% if @user.avatar.attached? %>
   <div class="profile-avatar">

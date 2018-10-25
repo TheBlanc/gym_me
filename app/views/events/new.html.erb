@@ -1,3 +1,12 @@
+<div class="navBar">
+<% if current_user %>
+  <%= render "shared/nav_bar" %>
+<% else %>
+  <%= render "shared/landing_nav_bar" %>
+<% end %>
+</div>
+
+
 <section class="create-new-event">
 
   <div class="new-event top-heading">
@@ -8,10 +17,6 @@
   </div>
   <div class="hero-image">
   </div>
-
-  <% if flash[:notice] %>
-    <p><%= flash[:notice] %></p>
-  <% end %>
 
   <section class="new-event-form">
     <%= render "event_form", event: @event %>

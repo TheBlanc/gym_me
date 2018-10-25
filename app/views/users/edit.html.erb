@@ -1,3 +1,11 @@
+<div class="navBar">
+<% if current_user %>
+  <%= render "shared/nav_bar" %>
+<% else %>
+  <%= render "shared/landing_nav_bar" %>
+<% end %>
+</div>
+
 <section class="edit-profile">
   <div class="new-event top-heading">
     <h1 class="new-event-heading">Edit Your Profile</h1>
