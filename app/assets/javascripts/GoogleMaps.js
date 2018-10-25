@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function(){
     var eventsMarkerTitle = document.getElementsByClassName('eventsMarkerTitle');
 
 
-    document.querySelector('#eventsMap').className += "hidden"
+    document.querySelector('#eventsMap').className += "show"
     document.querySelector('#eventsMap').style.height = "500px"
     console.log(eventsMarkerTitle[0].attributes[1].value);
 
