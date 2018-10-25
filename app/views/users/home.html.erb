@@ -9,6 +9,17 @@
 <% end %>
 </div>
 
+<div  class="signIn">
+<% if !current_user %>
+<nav class="sign-in">
+  <p>Already a Member?</p>
+  <a href="/users/sign_in" class="sign-in-button">Sign In</a>
+</nav>
+<% end %>
+</div>
+
+
+
 <section class="home-page">
   <div class="new-event top-heading">
     <h1 class="new-event-heading">Your Schedule</h1>
@@ -21,6 +32,7 @@
 </section>
 
 <section class="event-results home">
+
   <% if @user == current_user %>
     <% if @events.length > 0 %>
       <h2 class="home-heading">Upcomming RSVPs</h2>

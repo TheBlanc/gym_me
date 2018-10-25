@@ -1,7 +1,7 @@
 // Place all the styles related to the conversations controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.conversation_index_card {
+.conversation {
   margin: auto;
   text-align: left;
   background-color: white;
@@ -18,9 +18,4 @@
   max-height: 600px;
   overflow-y: auto;
   margin-bottom: 2em;
-}
-
-
-.conversation_index_card:hover {
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
