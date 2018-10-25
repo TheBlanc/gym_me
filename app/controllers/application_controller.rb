@@ -49,15 +49,15 @@ end
   # gives event icon based on activity_type
   def event_activity_icon(event)
     if event.activity_type == "Yoga/Pilates"
-      return "noun_pilates.png"
+      return "lotus-position.svg"
     elsif event.activity_type == "Resistence Training"
-      return "noun_Gym_icon.png"
+      return "dumbbell.svg"
     elsif event.activity_type == "Cardio"
-      return "noun_Running.png"
+      return "athletics.svg"
     elsif event.activity_type == "Recreation"
-      return "noun_Ultimate.png"
+      return "american-football.svg"
     else
-      return "image.png"
+      return "gym.svg"
     end
   end
 

@@ -1,16 +1,40 @@
+<div class="navBar">
 <% if current_user %>
-  <header class="user-index">
-    <h1>Gym Buddy Results</h1>
-    <nav class="search">
-      <%= form_tag users_path, method: :get do %>
+  <%= render "shared/nav_bar" %>
+<% else %>
+  <%= render "shared/landing_nav_bar" %>
+<% end %>
+</div>
 
-          <%= select_tag :activity_goal, options_for_select([["All Fitness Types", nil], "Yoga/Pilates", "Resistence Training", "Cardio", "Recreation"], selected: params[:activity_goal]), include_blank: false %>
-          <%= text_field_tag :search, params[:search] %>
+<section class="create-new-event">
 
-          <%= submit_tag "Filter" %>
-      <% end %>
-    </nav>
-  </header>
+  <div class="new-event top-heading">
+    <h1 class="new-event-heading">Find a Gym Buddy</h1>
+  </div>
+  <div class="new-event sub-heading">
+    <h2 class="new-event-heading">We’ll connect you with someone to keep you motivated.</h2>
+  </div>
+  <div class="gym-buddy-hero-image">
+  </div>
+</section>
+
+
+<header class="event-index">
+  <h1 class="index-header">Refine Your Search</h1>
+  <nav class="search">
+    <%= form_tag users_path, method: :get do %>
+
+        <%= select_tag :activity_goal, options_for_select([["All Fitness Types", nil], "Yoga/Pilates", "Resistence Training", "Cardio", "Recreation"], selected: params[:activity_type]), include_blank: false %>
+        <%= text_field_tag :search, params[:search] %>
+
+        <%= submit_tag "Filter" %>
+    <% end %>
+
+  </nav>
+
+</header>
+
+
 
   <section class="user-reults">
     <% @users.each do |user| %>
@@ -21,4 +45,3 @@
       </div>
     <% end %>
   </section>
-<% end %>
