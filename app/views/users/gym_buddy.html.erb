@@ -1,3 +1,11 @@
+<div class="navBar">
+<% if current_user %>
+  <%= render "shared/nav_bar" %>
+<% else %>
+  <%= render "shared/landing_nav_bar" %>
+<% end %>
+</div>
+
 <header class="event-index">
   <h1 class="discover-header">Find Gym Buddy</h1>
   <nav class="search">
