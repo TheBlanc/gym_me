@@ -1,3 +1,4 @@
+// ------------- HEADING AND HERO IMAGE -------------
 .new-event {
   position: absolute;
   background-color: white;
@@ -8,15 +9,19 @@
 
 .top-heading {
   top: 96px;
-  left: 242px;
+  left: 31%;
   font-size: 18px;
   font-weight: bold;
+  letter-spacing: 2px;
+
 }
 
 .sub-heading {
   top: 146px;
-  left: 242px;
+  left: 31%;
   font-size: 10px;
+  letter-spacing: 1px;
+
 }
 
 .hero-image {
@@ -25,4 +30,56 @@
   background-position: 37% 85%;
   background-repeat: no-repeat;
   height: 200px;
+}
+
+// ------------- FORM -------------
+.new-event-form {
+  margin: 25px auto 50px auto;
+  padding: 0 50px;
+  max-width: 700px;
+}
+
+.form-card {
+  border-bottom: solid grey 1px;
+  padding: 30px 80px;
+}
+
+.form-item {
+  display: inline-block;
+  padding: 0 5px;
+}
+
+.form-item.description {
+  padding: 0 58px;
+}
+
+textarea {
+  width: 370px;
+  height: 100px;
+}
+
+.description {
+  border-bottom: none;
+}
+
+.form-item h3 {
+  font-weight: bold;
+  padding: 10px 0 5px 0;
+}
+
+.form-item.submit {
+  padding: 0 72px;
+}
+
+.form-item.submit input {
+  padding: 7px 12px;
+  background-color: #86d9f1;
+
+}
+
+
+// ------------- ICONS -------------
+.form-item-icon {
+  display: inline-block;
+  width: 50px;
 }
