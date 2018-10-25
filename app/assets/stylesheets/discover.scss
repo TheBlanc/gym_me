@@ -1,6 +1,24 @@
+.discover-hero-image {
+  background-image: url(/assets/mountain.jpg);
+  background-size: 148%;
+  background-position: 0 65%;
+  background-repeat: no-repeat;
+  height: 200px;
+}
+
+.form-card.discover{
+  text-align: center;
+
+}
 .event-index {
   text-align: center;
+  margin: 1em 0;
 }
+
+.discover h2 {
+  font-weight: bold;
+}
+
 
 .discover-header {
   margin: 2em 0 0 0;
@@ -14,12 +32,12 @@
 }
 
 .activity-type-description {
-  font-style: italic;
   margin: 0 0 5px 0;
 }
 
 .activity-icons-wrapper {
-  margin: 10px 15%;
+  max-width: 257px;
+  margin: 10px auto;
 }
 
 .activity-icon {
@@ -27,11 +45,7 @@
   display: inline-block;
   background: white;
   width: 7em;
-  /* Add shadows to create the "card" effect */
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  transition: 0.3s;
-  border-radius: 5px; /* 5px rounded corners */
- /* width: 14vh; */
+  border-radius: 27%;
 }
 
 .activity-type > img {
@@ -66,13 +80,14 @@ label.activity-type > input:checked + img {
   // border: 1px solid var(--main-green);
   background-color: var(--main-green);
   box-shadow: none;
+  border: none;
 }
 
 label.activity-type > input:checked + .activity-icon-all {
   box-shadow: none;
   background-color: var(--main-green);
-
-  // border: 1px solid var(--main-green);
+  font-weight: bold;
+  border: 2px solid black;
 }
 
 .location-search > input {

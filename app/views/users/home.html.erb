@@ -1,3 +1,6 @@
+<div>
+  <h1 class="gymmeLogo">Gymme</h1>
+</div>
 <div class="navBar">
 <% if current_user %>
   <%= render "shared/nav_bar" %>
@@ -6,8 +9,18 @@
 <% end %>
 </div>
 
-<section class="home">
-  <h1 class="home-page-heading">Your Schedule</h1>
+<section class="home-page">
+  <div class="new-event top-heading">
+    <h1 class="new-event-heading">Your Schedule</h1>
+  </div>
+  <div class="new-event sub-heading">
+    <h2 class="new-event-heading">Look how organized you are.</h2>
+  </div>
+  <div class="home-hero-image">
+  </div>
+</section>
+
+<section class="event-results home">
   <% if @user == current_user %>
     <% if @events.length > 0 %>
       <h2 class="home-heading">Upcomming RSVPs</h2>

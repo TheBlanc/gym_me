@@ -4,9 +4,32 @@
   text-align: center;
 }
 
+.home-hero-image{
+  background-image: url(/assets/ocean-horizon.jpg);
+  background-size: 100%;
+  background-position: 0 45%;
+  background-repeat: no-repeat;
+  height: 200px;
+}
+
+.home-page .top-heading {
+  top: 129px;
+  left: 31%;
+}
+
+.home-page .sub-heading {
+  top: 187px;
+  left: 31%;
+}
+
+
 .home-page-heading {
   font-size: 1.5em;
   margin: 4em 0 2em 0;
+}
+
+.home p.date {
+  margin: 0;
 }
 
 .no-rsvps {
