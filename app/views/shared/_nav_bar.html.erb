@@ -42,13 +42,13 @@
         </div>
         <ul class="user-options">
           <%= link_to new_event_path do %>
-            <li class="big-button">Create Event</li>
+            <li class="user-options-link">Create Event</li>
           <% end %>
           <%= link_to user_path(current_user.id) do %>
-            <li class="big-button">Profile</li>
+            <li class="user-options-link">Profile</li>
           <% end %>
           <%= link_to destroy_user_session_path, method: :delete do %>
-            <li class="big-button logout">Logout</li>
+            <li class="user-options-link logout">Logout</li>
           <% end %>
         </ul>
 
