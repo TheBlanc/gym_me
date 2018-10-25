@@ -1,3 +1,21 @@
+<div>
+  <h1 class="gymmeLogo">Gymme</h1>
+</div>
+<div class="navBar">
+<% if current_user %>
+  <%= render "shared/nav_bar" %>
+<% else %>
+  <%= render "shared/landing_nav_bar" %>
+<% end %>
+</div>
+<div  class="signIn">
+<% if !current_user %>
+<nav class="sign-in">
+  <p>Already a Member?</p>
+  <a href="/users/sign_in" class="sign-in-button">Sign In</a>
+</nav>
+<% end %>
+</div>
 <section class="home">
   <h1 class="home-page-heading">Your Schedule</h1>
   <% if @user == current_user %>
