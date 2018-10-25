@@ -18,16 +18,13 @@
   max-width: 1440px;
 }
 
-button {
-  background-color: white;
-}
 
 .mainpagebox {
   width: 60%;
   height: 250px;
   color: white;
   padding-left: 25px;
-  background-color: rgba(0,0,255,0.5);
+  background-color: rgba(0,0,0,0.5);
   margin-top: 100px;
   margin-left: 20px;
   padding: 40px 0 40px 75px;
@@ -76,8 +73,12 @@ button {
   flex-direction: column;
   align-items: center;
   width: 100%;
-  line-height: 2rem;
+  line-height: 3rem;
   padding: 0 50px 0 50px;
+} .meetMatch h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  letter-spacing: 0.4rem;
 }
 
 .findBalance {
@@ -85,19 +86,20 @@ button {
   width: 100%;
   background-size: cover;
   background-image: url(yogalanding.png);
-  padding-top: 50px;
+  padding: 50px;
 }
 
 .balanceBox {
   background-color: rgba(0,0,0,0.5);
   color: white;
   margin: 0 50% 0 20%;
-
+  padding: 25px;
 }
 
 .creatorBox {
   height: 300px;
-  background-czsdolor: black;
+  background-color: black;
+  align-items: center;
 }
 
 .gymmeLogo {
@@ -121,4 +123,10 @@ button {
   flex-direction: column;
   width: 100%;
   margin: auto 0;
+}
+
+.joinNow {
+  background-color: lightblue;
+  text-decoration: none;
+  padding: 10px 30px;
 }

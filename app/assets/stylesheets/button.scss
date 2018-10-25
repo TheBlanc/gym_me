@@ -47,3 +47,14 @@
 .large-submit-button > input[type=submit]:active {
   background-color: var(--main-green);
 }
+
+button {
+    background-color: white;
+    border: black;
+    color: black;
+    padding: 15px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}

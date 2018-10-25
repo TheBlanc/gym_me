@@ -27,16 +27,25 @@
 
 .sign-in {
   padding: 5px 0 5px 0;
+  margin: 20px 20px 0 0;
   text-align: right;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+
 }
 
 .sign-in-button {
  width: 100px;
  align-self: flex-end;
+ margin-top: 10px;
+ background-color: white;
+ text-decoration: none;
+ color: black;
+ text-align: center;
+ padding: 15px 15px;
 }
+
   .sign-in-button:hover {
     background-color: white;
     cursor: pointer;
