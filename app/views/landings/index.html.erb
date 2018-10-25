@@ -1,30 +1,43 @@
+<section class="landingPageContainer">
+<div>
+  <h1 class="gymmeLogo">Gymme</h1>
+</div>
+<div class="navBar">
 <% if current_user %>
   <%= render "shared/nav_bar" %>
 <% else %>
   <%= render "shared/landing_nav_bar" %>
 <% end %>
-
+</div>
+<div  class="signIn">
 <% if !current_user %>
 <nav class="sign-in">
-  <p>Already a User?</p>
-  <div class="sign-in-button" id="sign-in-button"><p>Sign In</p></div>
+  <p>Already a Member?</p>
+  <a href="/users/sign_in" class="sign-in-button">Sign In</a>
 </nav>
 <% end %>
+</div>
 <div class="landingbox">
   <div class="mainpagebox">
     <h1>Get Motivated</h1>
     <p>Find a gym buddy</p>
     <p>Meet new people</p>
-    <p>Learn more</p>
+    <button>Learn more</button>
   </div>
   <div class="mainpagebox2">
-    <h1>Meet you match</h1>
+    <h1>Find Your FITNESS</h1>
+    <p>Search for events in your area. Grow your community.</p>
+    <p>Get active.<p>
     <button>Join now</button>
   </div>
 </div>
+</section>
+
 <section class="meetMatch">
-  <h1>This is the about area!</h1>
-  <p>comments hence forth shall be placed here!</p>
+  <h1>Find an Event</h1>
+  <h2>Join events nearby</h2>
+  <p>Gymme will help you find and event based in your location, and fitness interests. Prepare to meet your new squard.</p>
+  <button>Join Now</button>
 </section>
 <section class="findBalance">
   <div class="balanceBox">
@@ -35,6 +48,7 @@
     <button>Join Now</button>
   </div>
 </section>
+
 <section class="findEvent">
   <div class="eventBox">
     <h2>Find an Event</h2>

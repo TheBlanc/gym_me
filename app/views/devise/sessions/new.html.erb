@@ -1,4 +1,15 @@
-<section class="sign-in-modal" id="sign-in-modal">
+<div class="signInBox">
+<div>
+  <h1 class="gymmeLogo">Gymme</h1>
+</div>
+<div class="navBar">
+<% if current_user %>
+  <%= render "shared/nav_bar" %>
+<% else %>
+  <%= render "shared/landing_nav_bar" %>
+<% end %>
+</div>
+<div class="loginBOX">
   <h2 class="log-in-heading">Log in</h2>
 
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
@@ -27,7 +38,5 @@
   <div class="links">
     <%= render "devise/shared/links" %>
   </div>
-</section>
-
-<div class="overlay" id="sign-in-overlay">
+</div>
 </div>
