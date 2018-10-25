@@ -38,13 +38,13 @@ end
   e.end_date = Time.now + 100000000000
 
   if e.activity_type == "Yoga/Pilates"
-    e.activity_icon = "noun_pilates.png"
+    e.activity_icon = "lotus-position.svg"
   elsif e.activity_type == "Resistence Training"
-    e.activity_icon = "noun_Gym_icon.png"
+    e.activity_icon = "dumbbell.svg"
   elsif e.activity_type == "Cardio"
-    e.activity_icon = "noun_Running.png"
+    e.activity_icon = "athletics.svg"
   else e.activity_type == "Recreation"
-    e.activity_icon = "noun_soccer.png"
+    e.activity_icon = "american-football.svg"
   end
 
   e.save!

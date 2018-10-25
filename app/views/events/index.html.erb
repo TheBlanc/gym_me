@@ -6,11 +6,23 @@
 <% end %>
 </div>
 
+<section class="create-new-event">
+
+  <div class="new-event top-heading">
+    <h1 class="new-event-heading">Find an Event</h1>
+  </div>
+  <div class="new-event sub-heading">
+    <h2 class="new-event-heading">We’ll connect you with a new squad.</h2>
+  </div>
+  <div class="discover-hero-image">
+  </div>
+</section>
+
 <header class="event-index">
   <div class="map-icon" id="map-button">
-    <%= image_tag("placeholder.png") %>
+    <%= image_tag("noun_Map.png") %>
   </div>
-  <h1 class="index-header">Discover Events</h1>
+  <h1 class="index-header">Refine Your Search</h1>
   <nav class="search">
     <%= form_tag events_path, method: :get do %>
 
@@ -36,12 +48,14 @@
 
 <section class="event-reults">
   <% @events.each do |event| %>
-    <div class="event-card">
-      <p class="date"><%= event.time.strftime("%m/%d/%Y at %I:%M%p") %></p>
-      <h3 class="event-title"><%= link_to event.title, event_url(event.id)%></h3>
-      <p><%= event.description %></p>
-      <p class="address"><%= event.address %></p>
-      <div class="event-icon"><%= image_tag(event_activity_icon(event)) %></div>
+    <div class="event">
+      <p class="date"><%= event.time.strftime("%m/%d/%Y @ %I:%M%p") %></p>
+      <div class="event-card">
+        <h3 class="event-title"><%= link_to event.title, event_url(event.id)%></h3>
+        <p><%= event.description %></p>
+        <p class="address"><%= event.address %></p>
+        <div class="event-icon"><%= image_tag(event_activity_icon(event)) %></div>
+      </div>
     </div>
   <% end %>
 </section>

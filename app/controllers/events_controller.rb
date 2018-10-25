@@ -67,13 +67,13 @@ class EventsController < ApplicationController
     @event.need_approval = params[:event][:need_approval]
     @event.user_id = current_user.id
       if params[:event][:activity_type] == "Yoga/Pilates"
-        @event.activity_icon = "noun_pilates.png"
+        @event.activity_icon = "lotus-position.svg"
       elsif params[:event][:activity_type] == "Resistence Training"
-        @event.activity_icon = "noun_Gym_icon.png"
+        @event.activity_icon = "dumbbell.svg"
       elsif params[:event][:activity_type] == "Cardio"
-        @event.activity_icon = "noun_Running.png"
+        @event.activity_icon = "athletics.svg"
       else params[:event][:activity_type] == "Recreation"
-        @event.activity_icon = "noun_soccer.png"
+        @event.activity_icon = "american-football.svg"
       end
 
     if @event.save
