@@ -24,12 +24,19 @@
 .user-name {
   display: block;
   border-bottom: solid black 1px;
-  margin: 10px 0;
+  margin: 5px 0;
+  padding: 5px 0;
 
 }
 
 .profile-item {
   display: inline-block;
+  padding: 0 10px;
+  margin: 10px 0;
+}
+
+.profile-item h2, .profile-item h3 {
+  padding: 3px 0;
 }
 
 .user-name h1 {
@@ -67,7 +74,7 @@
 
 .user-profile-card {
     padding: 1em;
-  	background: #2cd9d0;
+  	background: white;
     margin: auto;
     width: 90%;
     margin-top: 1em;
