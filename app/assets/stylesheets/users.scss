@@ -11,10 +11,21 @@
 
 .user-profile-card {
   max-width: 800px;
+  text-align: left;
 }
 
+.user-name {
+  display: block;
+  border-bottom: solid black 1px;
+  margin: 10px 0;
 
-.profile-card h1 {
+}
+
+.profile-item {
+  display: inline-block;
+}
+
+.user-name h1 {
   text-align: left;
   font-size: 1.3em;
 }
@@ -64,7 +75,6 @@
 
 .profile {
     position: relative;
-    text-align: center;
     padding: 1em;
   	background: white;
     margin: auto;
