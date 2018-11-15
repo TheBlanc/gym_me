@@ -7,42 +7,45 @@
 </div>
 
 <section class="user-profile-card profile">
-<% if @user.avatar.attached? %>
-  <div class="profile-avatar">
-    <%= image_tag url_for(@user.avatar) %>
-  </div>
-<% end %>
-  <div class="user-name">
-    <h1><%= @user.first_name %> <%= @user.last_name %></h1>
-  </div>
-  <div class="profile-card">
-    <div class="profile-item">
-      <h2>Age:</h2> <h3><%= @user.age %></h3>
+  <div class="profile-info">
+    <div class="user-name">
+      <h1><%= @user.first_name %> <%= @user.last_name %></h1>
     </div>
-    <div class="profile-item">
-      <h2>Gender:</h2> <h3><%= @user.gender %></h3>
+    <div class="profile-card">
+      <div class="profile-item">
+        <h2>Age:</h2> <h3><%= @user.age %></h3>
+      </div>
+      <div class="profile-item">
+        <h2>Gender:</h2> <h3><%= @user.gender %></h3>
+      </div>
+      <div class="profile-item">
+        <h2>Fitness Level:</h2> <h3><%= @user.fitness_level %></h3>
+      </div>
     </div>
-    <div class="profile-item">
-      <h2>Fitness Level:</h2> <h3><%= @user.fitness_level %></h3>
+    <div class="profile-card">
+      <div class="profile-item">
+        <h2>Preferred Workout Location:</h2> <h3><%= @user.location %></h3>
+      </div>
+      <div class="profile-item">
+        <h2>Availability=:</h2> <h3>Mon - Friday</h3><h3>Evening</h3>
+      </div>
+      <div class="profile-item">
+        <h2>Fitness Level:</h2> <h3><%= @user.fitness_level %></h3>
+      </div>
     </div>
-  </div>
-  <div class="profile-card">
-    <div class="profile-item">
-      <h2>Preferred Workout Location:</h2> <h3><%= @user.location %></h3>
-    </div>
-    <div class="profile-item">
-      <h2>Availability=:</h2> <h3>Mon - Friday</h3><h3>Evening</h3>
-    </div>
-    <div class="profile-item">
-      <h2>Fitness Level:</h2> <h3><%= @user.fitness_level %></h3>
-    </div>
-  </div>
-  <div class="profile-card">
-    <div class="profile-item">
-      <h2>About Me:</h2>
-      <p><%= @user.description %><p>
+    <div class="profile-card">
+      <div class="profile-item">
+        <h2>About Me:</h2>
+        <p><%= @user.description %><p>
+      </div>
     </div>
   </div>
+  <% if @user.avatar.attached? %>
+    <div class="profile-avatar">
+      <%= image_tag url_for(@user.avatar) %>
+    </div>
+  <% end %>
+
 
   <% if current_user != @user %>
     <div class="icon-button message">
