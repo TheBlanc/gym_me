@@ -29,7 +29,8 @@
 }
 
 .home p.date {
-  margin: 0;
+  margin: 0.2em;
+  font-size: 0.8em;
 }
 
 .no-rsvps {
@@ -52,16 +53,16 @@
 }
 
 .event-icon {
-  width: 4em;
+  width: 6em;
   position: absolute;
   right: 8px;
-  bottom: 4px;
+  bottom: 9px;
 }
 
 
 
 .home-heading {
-  text-align: left;
+  text-align: center;
   margin: 1em 0.5em 0 1.7em;
   font-size: 1.2em;
 }

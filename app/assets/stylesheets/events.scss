@@ -6,8 +6,8 @@
 .event-card {
   position: relative;
   background-color: white;
-  margin: 0 2em 1em 2em;
-  padding: 1em 5em 0 1em;
+  margin: 1em 2em 1em 2em;
+  padding: 1em 7em 0 1em;
   border: 1px solid black;
   text-align: left;
   transition: 0.3s;
@@ -21,8 +21,9 @@
   color: grey;
 }
 
-.event-card p {
-  margin: 1em 0;
+.event-description {
+  margin: 0.5em 0 1em 0;
+  line-height: 20px;
 }
 
 .event-card.address {

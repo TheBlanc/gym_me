@@ -26,7 +26,7 @@
 }
 
 .activity-type-header {
-  margin: 0.5em 0;
+  margin: 0 0 0.5em 0;
   font-size: 1.3em;
   font-weight: normal;
 }
@@ -87,7 +87,7 @@ label.activity-type > input:checked + .activity-icon-all {
   box-shadow: none;
   background-color: var(--main-green);
   font-weight: bold;
-  border: 2px solid black;
+  border: 1px solid black;
 }
 
 .location-search > input {
