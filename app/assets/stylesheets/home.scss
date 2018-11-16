@@ -53,10 +53,21 @@
 }
 
 .event-icon {
-  width: 6em;
-  position: absolute;
-  right: 8px;
-  bottom: 9px;
+  display: inline-block;
+  width: 80px;
+  margin: auto;
+}
+
+.event-icon-container {
+  display: inline-block;
+  width: 15%;
+  vertical-align: top;
+  text-align: center;
+}
+
+.event-info {
+  display: inline-block;
+  width: 78%;
 }
 
 
