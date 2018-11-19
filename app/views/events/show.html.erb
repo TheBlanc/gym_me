@@ -12,13 +12,38 @@
 
 <section class="event-page">
 
-  <div class="event-show-info">
-    <p class="event-date"><%= @event.time.strftime("%A %b %d, %Y") %></p>
-    <h1 id="eventName" class="event-name"><%= @event.title %></h1>
+  <div class="event-show-info-container">
+    <div class="event-show-info">
+      <p class="event-date"><%= @event.time.strftime("%A %b %d, %Y") %></p>
+      <h1 id="eventName" class="event-name"><%= @event.title %></h1>
 
-    <p class="event-info-title">Hosted by <span class="event-owner"><%= link_to @event.owner.email, user_path(@event.owner.id) %></span></p>
-    <p class="event-info-title">Located at <span class="event-address"><%= @event.address %></span></p>
-    <p class="event-info-title">@ <%= @event.time.strftime("%I:%M%p") %></p>
+      <p class="event-info-title">Hosted by <span class="event-owner"><%= link_to @event.owner.email, user_path(@event.owner.id) %></span></p>
+      <p class="event-info-title">Located at <span class="event-address"><%= @event.address %></span></p>
+      <p class="event-info-title">@ <%= @event.time.strftime("%I:%M%p") %></p>
+    </div>
+
+    <div class="event-ticket">
+      <!-- Check if user is signed in, and if they have joined this event  -->
+      <% if current_user == @event.owner %>
+        <%= link_to "edit event", edit_event_path(@event.id) %>
+      <% elsif joined_event? %>
+        <h4>You are signed up for this event!</h4>
+        <%= link_to "Cancel rsvp", event_ticket_path(@event.id, @ticket.id), method: :delete %>
+      <% elsif current_user && current_user != @event.owner && @event.capacity > 0 %>
+        <%= button_to "Join Event", event_tickets_path(@event) %>
+      <% elsif @event.capacity == 0 %>
+        <h4>Event is currently full.</h4>
+      <% elsif !current_user %>
+        <h4><%= link_to "Log-in", new_user_session_path %> to join event</h4>
+      <% end %>
+      <p><%= @event.activity_type %></p>
+      <% if @event.capacity %>
+        <p>(<%= @event.users.length %> attending)</p>
+        <p>Tickets Remaining: <%= @event.capacity %></p>
+      <% end %>
+    </div>
+  </div>
+
 
     <div class="event-details-continer">
       <h3 class="event-header">Details</h3>
@@ -32,11 +57,6 @@
             <span id="place-address"></span>
       </div>
 
-    <p><%= @event.activity_type %></p>
-    <% if @event.capacity %>
-      <p>(<%= @event.users.length %> attending)</p>
-      <p>Tickets Remaining: <%= @event.capacity %></p>
-    <% end %>
 
     <section class="comment-area">
       <% if current_user && joined_event? %>
@@ -65,23 +85,7 @@
 
       <% end %>
     </section>
-  </div>
 
-  <div class="event-ticket">
-    <!-- Check if user is signed in, and if they have joined this event  -->
-    <% if current_user == @event.owner %>
-      <%= link_to "edit event", edit_event_path(@event.id) %>
-    <% elsif joined_event? %>
-      <h4>You are signed up for this event!</h4>
-      <%= link_to "Cancel rsvp", event_ticket_path(@event.id, @ticket.id), method: :delete %>
-    <% elsif current_user && current_user != @event.owner && @event.capacity > 0 %>
-      <%= button_to "Join Event", event_tickets_path(@event) %>
-    <% elsif @event.capacity == 0 %>
-      <h4>Event is currently full.</h4>
-    <% elsif !current_user %>
-      <h4><%= link_to "Log-in", new_user_session_path %> to join event</h4>
-    <% end %>
-  </div>
 
 
 </section>

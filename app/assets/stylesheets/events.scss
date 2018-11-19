@@ -62,7 +62,6 @@
 }
 
 .event-ticket {
-  margin: 0 20px;
 
 }
 
@@ -106,4 +105,12 @@
 
 .comment-area .field label {
   font-size: 0.8em;
+}
+
+.event-show-info-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.event-ticket {
 }
