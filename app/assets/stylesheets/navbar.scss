@@ -1,17 +1,14 @@
 .nav-bar {
-  background-color: white;
-
-  // position: absolute;
-  // top: 17px;
-  // right: 23px;
-  // box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  // transition: 0.3s;
-  text-align: right;
-  padding: 0 5px;
-
+  padding: 0px 5px 0 0;
+  display: flex;
+  justify-content: space-between;
 
 }
 
+.nav-item-container {
+  display: flex;
+  align-items: center;
+}
 
 .nav-button {
   display: inline-block;
@@ -35,7 +32,8 @@
 
 .nav-bar-items {
   text-align: center;
-  display: inline-block;
+  flex-direction: row-reverse;
+
 }
 
 .nav-bar-items a {
