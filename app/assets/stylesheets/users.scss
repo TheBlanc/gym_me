@@ -117,6 +117,10 @@
   // ----------- Discover and Results page -----------
 
 .gym-buddy-hero-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
   background-image: url(/assets/woman-basketball.jpg);
   background-size: 100%;
   background-position: 0 45%;

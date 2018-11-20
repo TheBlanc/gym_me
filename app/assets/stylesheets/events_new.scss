@@ -1,15 +1,13 @@
 // ------------- HEADING AND HERO IMAGE -------------
 .new-event {
-  position: absolute;
   background-color: white;
   color: black;
   padding: 5px 5px;
+  margin: 10px 0;
 
 }
 
 .top-heading {
-  top: 96px;
-  left: 31%;
   font-size: 18px;
   font-weight: bold;
   letter-spacing: 2px;
@@ -25,6 +23,10 @@
 }
 
 .create-new-event .hero-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
   background-image: url(/assets/balancing.jpg);
   background-size: 148%;
   background-position: 0 65%;

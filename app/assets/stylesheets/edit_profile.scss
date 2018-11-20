@@ -1,6 +1,5 @@
 // ------------- HEADING AND HERO IMAGE -------------
 .new-event {
-  position: absolute;
   background-color: white;
   color: black;
   padding: 5px 5px;
@@ -8,8 +7,6 @@
 }
 
 .top-heading {
-  top: 96px;
-  left: 31%;
   font-size: 18px;
   font-weight: bold;
   letter-spacing: 2px;
@@ -17,14 +14,16 @@
 }
 
 .sub-heading {
-  top: 146px;
-  left: 31%;
   font-size: 10px;
   letter-spacing: 1px;
 
 }
 
 .edit-profile .hero-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
   background-image: url(/assets/ocean-horizon.jpg);
   background-size: 100%;
   background-position: 0 10%;
