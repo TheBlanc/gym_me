@@ -5,12 +5,15 @@
 }
 
 .home-hero-image{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
   background-image: url(/assets/ocean-horizon.jpg);
   background-size: 100%;
   background-position: 0 45%;
   background-repeat: no-repeat;
-  height: 200px;
-}
+  height: 200px;}
 
 .home-page .top-heading {
   top: 87px;
