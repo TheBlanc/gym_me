@@ -3,6 +3,9 @@
     <h1 class="gymmeLogo">Gymme</h1>
   </div>
   <div class="nav-item-container">
+    <div class="hamburger-menu-icon">
+      <%= image_tag("menu.svg") %>
+    </div>
     <ul class="nav-bar-items">
       <div class="nav-button">
         <%= link_to home_path(current_user.id) do %>
