@@ -55,3 +55,23 @@
 // .desktop.nav-item {
 //   display: none;
 // }
+
+.nav-bar-items {
+  display: none;
+}
+
+.hamburger-menu-icon {
+  width: 25px;
+  margin: 0 10px;
+}
+
+
+
+@media screen and (min-width: 658px){
+  .nav-bar-items {
+    display: block;
+  }
+  .hamburger-menu-icon {
+    display: none;
+  }
+}
