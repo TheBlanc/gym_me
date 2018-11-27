@@ -3,10 +3,7 @@
     <h1 class="gymmeLogo">Gymme</h1>
   </div>
   <div class="nav-item-container">
-    <div class="hamburger-menu-icon">
-      <%= image_tag("menu.svg") %>
-    </div>
-    <ul class="nav-bar-items">
+    <ul class="nav-bar-items" id="navBarItems">
       <div class="nav-button">
         <%= link_to home_path(current_user.id) do %>
           <li class="desktop nav-item"> Home </li>
@@ -28,6 +25,32 @@
         <% end %>
       </div>
     </ul>
+    <ul class="nav-bar-items drop-down-items" id="dropDownItems">
+      <div class="nav-button">
+        <%= link_to home_path(current_user.id) do %>
+          <li class="desktop nav-item"> Home </li>
+        <% end %>
+      </div>
+      <div class="nav-button">
+        <%= link_to discover_path do %>
+          <li class="desktop nav-item"> Discover Events </li>
+        <% end %>
+      </div>
+      <div class="nav-button">
+        <%= link_to gymbuddy_path do %>
+          <li class="desktop nav-item"> Find Gym Buddy </li>
+        <% end %>
+      </div>
+      <div class="nav-button">
+        <%= link_to conversations_path do %>
+          <li class="desktop nav-item"> Messages </li>
+        <% end %>
+      </div>
+    </ul>
+
+    <div class="hamburger-menu-icon" id="hamburgerMenuIcon">
+      <%= image_tag("menu.svg") %>
+    </div>
 
   <% if current_user %>
     <div class="profile-button" id="profile-avatar-button">

@@ -63,6 +63,21 @@
 .hamburger-menu-icon {
   width: 25px;
   margin: 0 10px;
+  cursor: pointer;
+}
+
+.drop-down-items {
+  display: none;
+  position: absolute;
+  background: white;
+  right: 0;
+  top: 38px;
+  width: 100%;
+}
+
+.nav-button {
+  display: block;
+  margin: 15px 0;
 }
 
 
@@ -71,7 +86,15 @@
   .nav-bar-items {
     display: block;
   }
+  .drop-down-items {
+    display: none;
+  }
+  .nav-button {
+    display: inline-block;
+    margin: 0;
+  }
   .hamburger-menu-icon {
     display: none;
   }
+
 }

@@ -21,6 +21,9 @@ document.addEventListener("DOMContentLoaded", function(){
     $('#user-menu').toggle( "slide", { direction: "up" }, 330);
   });
 
+  $('#hamburgerMenuIcon').click(function(e) {
+    $('#dropDownItems').toggle( "slide", { direction: "up" }, 330);
+  });
 
 
 
