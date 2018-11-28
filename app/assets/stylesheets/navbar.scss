@@ -7,6 +7,15 @@
 
 .landing-page-nav-bar {
   padding: 20px 20px 0 10px;
+  height: 60px;
+  align-items: center;
+}
+
+.landing-nav-item-container {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  height: 35px;
 }
 
 .nav-item-container {
@@ -14,6 +23,7 @@
   align-items: center;
   background-color: white;
 }
+
 
 .nav-button {
   display: inline-block;
@@ -74,6 +84,11 @@
   top: 38px;
   width: 100%;
   z-index: 100;
+}
+
+.drop-down-items-landing {
+  top: 58px;
+
 }
 
 .nav-button {
