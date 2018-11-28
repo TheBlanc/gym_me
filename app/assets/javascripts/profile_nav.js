@@ -14,16 +14,25 @@ document.addEventListener("DOMContentLoaded", function(){
 
 
   $('#profile-avatar-button').click(function(e) {
-    $('#user-menu').toggle( "slide", { direction: "up" }, 330);
+    $('#userMenu').toggle( "slide", { direction: "up" }, 330);
+    $('#userScreenCover').toggle();
   });
 
-  $('#close-button').click(function() {
-    $('#user-menu').toggle( "slide", { direction: "up" }, 330);
+  $('#userScreenCover').click(function() {
+    $('#userMenu').toggle( "slide", { direction: "up" }, 330);
+    $('#userScreenCover').toggle();
   });
 
   $('#hamburgerMenuIcon').click(function(e) {
     $('#dropDownItems').toggle( "slide", { direction: "up" }, 330);
+    $('#dropDownScreenCover').toggle();
   });
+
+  $('#dropDownScreenCover').click(function() {
+    $('#dropDownItems').toggle( "slide", { direction: "up" }, 330);
+    $('#dropDownScreenCover').toggle();
+  });
+
 
 
 

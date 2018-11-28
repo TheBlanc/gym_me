@@ -67,10 +67,7 @@
     </div>
   </div>
 
-  <section class="user-options-modal hidden" id="user-menu">
-    <div class="icon-button close-button" id="close-button">
-      <%= image_tag("close.svg") %>
-    </div>
+  <section class="user-options-modal hidden" id="userMenu">
     <ul class="user-options">
       <%= link_to new_event_path do %>
         <li class="user-options-link">Create Event</li>
@@ -82,8 +79,10 @@
         <li class="user-options-link logout">Logout</li>
       <% end %>
     </ul>
-
   </section>
+  <div class="screen-cover" id="userScreenCover"></div>
+  <div class="screen-cover drop-down-screen-cover" id="dropDownScreenCover"></div>
+
 
 <% end %>
 </nav>
