@@ -94,9 +94,28 @@
   font-size: 2rem;
   font-weight: bold;
   letter-spacing: 0.3rem;
+  padding: 0 0 10px 0;
 } .balanceBox p {
-  padding: 5px;
+  padding: 5px 0;
 }
+
+.findEvent {
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  line-height: 3rem;
+  padding: 0 50px 0 50px;
+  margin: 30px 0;
+} .findEvent h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  letter-spacing: 0.4rem;
+}
+
 
 .creatorBox {
   height: 300px;
