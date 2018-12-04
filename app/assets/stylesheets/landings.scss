@@ -62,11 +62,13 @@
   height: 300px;
   display: flex;
   justify-content: center;
+  text-align: center;
   flex-direction: column;
   align-items: center;
   width: 100%;
   line-height: 3rem;
   padding: 0 50px 0 50px;
+  margin: 30px 0;
 } .meetMatch h1 {
   font-size: 2rem;
   font-weight: bold;
@@ -76,16 +78,24 @@
 .findBalance {
   height: 300px;
   width: 100%;
-  background-size: cover;
   background-image: url(yogalanding.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: left;
+
   padding: 50px;
 }
 
 .balanceBox {
-  background-color: rgba(0,0,0,0.5);
+  background-color: rgba(0, 0, 0, 0.19);
   color: white;
-  margin: 0 50% 0 20%;
   padding: 25px;
+} .balanceBox h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  letter-spacing: 0.3rem;
+} .balanceBox p {
+  padding: 5px;
 }
 
 .creatorBox {
