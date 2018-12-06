@@ -119,11 +119,38 @@
   letter-spacing: 0.4rem;
 }
 
+.creators {
+  height: 350px;
+  width: 100%;
+  background-image: url(ocean-horizon.jpg);
+  background-size: cover;
+  background-position-y: bottom;
+  background-position-x: center;
+  background-repeat: no-repeat;
+  padding: 50px;
+}
 
 .creatorBox {
-  height: 300px;
-  background-color: black;
+  text-align: center;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
   align-items: center;
+} .creatorBox h2 {
+  color: white;
+  font-size: 2em;
+  font-weight: bold;
+  letter-spacing: 0.4rem;
+  padding: 20px 0;
+}
+
+.divCircle {
+  width: 25%;
+  height: 60%;
+  background-color: white;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 0 10px;
+
 }
 
 .landing-gymme-logo {
@@ -163,6 +190,7 @@
   text-decoration: none;
   padding: 10px 30px;
 }
+
 
 @media screen and (min-width: 820px){
 
