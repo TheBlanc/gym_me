@@ -87,21 +87,31 @@
   background-image: url(yogalanding.png);
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: left;
+  background-position: top;
 
   padding: 50px;
 }
 
+.findBalance .joinNow {
+  margin: 10px 0;
+  padding: 15px 30px;
+  display: inline-block;
+}
+
 .balanceBox {
-  background-color: rgba(0, 0, 0, 0.19);
-  color: white;
-  padding: 25px;
+  color: black;
+  padding: 0 21%;
 } .balanceBox h2 {
   font-size: 2rem;
   font-weight: bold;
   letter-spacing: 0.3rem;
   padding: 0 0 10px 0;
-} .balanceBox p {
+} .balanceBox h3 {
+  font-size: 1.3rem;
+  letter-spacing: 0.1rem;
+  margin: 5px 0;
+}
+.balanceBox p {
   padding: 5px 0;
 }
 
@@ -133,13 +143,14 @@
   background-position-y: bottom;
   background-position-x: center;
   background-repeat: no-repeat;
-  padding: 50px;
 }
 
 .creatorBox {
   text-align: center;
   background-color: rgba(0, 0, 0, 0.5);
   align-items: center;
+  height: 100%;
+  padding: 40px;
 } .creatorBox h2 {
   color: white;
   font-size: 2em;
@@ -151,7 +162,7 @@
 .divCircle {
   width: 170px;
   height: 170px;
-  background-color: white;
+  background-color: #ababab;
   border-radius: 50%;
   display: inline-block;
   margin: 10px 10px 25px 10px;
@@ -162,7 +173,6 @@
   font-family: 'Monofett', cursive;
   font-size: 3.3em;
   padding: 0 0 7px 10px;
-
 }
 
 .gymme-logo {
@@ -182,11 +192,17 @@
 }
 
 .loginBOX {
+  color: white;
   display: flex;
   align-items: center;
   flex-direction: column;
   width: 100%;
   margin: auto 0;
+  background-color: rgba(0, 0, 0, 0.19);
+  padding-top: 12px;
+}
+.loginBOX a {
+  color: white;
 }
 
 .joinNow {
@@ -201,6 +217,7 @@
 
   .landingbox {
     display: flex;
+    margin: 0 105px;
   }
 
   .mainpagebox {
