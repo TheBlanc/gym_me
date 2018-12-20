@@ -88,7 +88,7 @@
   background-image: url(yogalanding.png);
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: top;
+  background-position: left;
 
   padding: 50px;
 }
@@ -137,7 +137,7 @@
 }
 
 .creators {
-  height: 350px;
+  // height: 350px;
   width: 100%;
   background-image: url(ocean-horizon.jpg);
   background-size: cover;
@@ -272,4 +272,11 @@
   }
 
 
+}
+
+@media screen and (max-width: 660px){
+  .divCircle {
+    display: block;
+    margin: 15px auto;
+  }
 }
