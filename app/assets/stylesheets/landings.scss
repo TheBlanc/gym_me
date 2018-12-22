@@ -86,11 +86,9 @@
   height: 350px;
   width: 100%;
   background-image: url(yogalanding.png);
-  background-size: cover;
+  background-size: 190%;
   background-repeat: no-repeat;
-  background-position: left;
-
-  padding: 50px;
+  background-position: 88% 10%;
 }
 
 .findBalance .joinNow {
@@ -101,7 +99,10 @@
 
 .balanceBox {
   color: black;
-  padding: 0 21%;
+  padding: 74px 0 0 0;
+  background-color: #ffffff6b;
+  height: 100%;
+  text-align: center;
 } .balanceBox h2 {
   font-size: 2rem;
   font-weight: bold;
