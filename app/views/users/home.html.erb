@@ -50,15 +50,16 @@
       <% end %>
       </div>
     <% else %>
-      <p class="no-rsvps">No Upcomming Events...</p>
-      <h2 class="home-greeting">Let Jimmy help you with that!</h2>
-      <%= link_to discover_path do %>
-        <div class="big-button">Find Event</div>
-      <% end %>
-      <div class="greeting-help">
-        <%= image_tag("gym.svg") %>
+      <div class="event-cards-container">
+        <p class="no-rsvps">No Upcomming Events...</p>
+        <h2 class="home-greeting">Let Jimmy help you with that!</h2>
+        <%= link_to discover_path do %>
+          <div class="big-button">Find Event</div>
+        <% end %>
+        <div class="greeting-help">
+          <%= image_tag("gym.svg") %>
+        </div>
       </div>
-
     <% end %>
     <% if @owned_events.length > 0 %>
       <h2 class="home-heading">Events You're Hosting</h2>
