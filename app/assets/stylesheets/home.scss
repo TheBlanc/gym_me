@@ -4,6 +4,15 @@
   text-align: center;
 }
 
+.home {
+  display: flex;
+  justify-content: center;
+}
+
+.event-reults {
+  display: block;
+}
+
 .home-hero-image{
   display: flex;
   align-items: center;
@@ -45,11 +54,6 @@
 .home-greeting {
   font-size: 1.2em;
 
-}
-
-.home {
-  display: flex;
-  justify-content: center;
 }
 
 .home a {
