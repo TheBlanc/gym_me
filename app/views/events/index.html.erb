@@ -19,9 +19,6 @@
 </section>
 
 <header class="event-index">
-  <div class="map-icon" id="map-button">
-    <%= image_tag("noun_Map.png") %>
-  </div>
   <h1 class="index-header">Refine Your Search</h1>
   <nav class="search">
     <%= form_tag events_path, method: :get do %>
@@ -33,7 +30,17 @@
     <% end %>
 
   </nav>
+
+</header>
+
+<section class="event-reults home">
+
   <!-- eventsMap is the map -->
+  <p class="map-icon-description" id="hide-map-desc">Hide Map</p>
+  <p class="hidden map-icon-description" id="show-map-desc">Show Map</p>
+  <div class="map-icon" id="map-button">
+    <%= image_tag("noun_Map.png") %>
+  </div>
   <div class="map-container">
     <div class"event-index-map" id="eventsMap" ></div>
 
@@ -43,10 +50,6 @@
     <% end %>
   </div>
 
-
-</header>
-
-<section class="event-reults home">
 
   <% @events.each do |event| %>
     <%= link_to event_url(event.id) do %>

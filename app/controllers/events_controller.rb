@@ -9,6 +9,7 @@ class EventsController < ApplicationController
     # if params[:search] && params[:activity_type]
     # check if search parameter is being passed and isnt an empty string
     if params[:search] && !params[:search].empty?
+        # google maps API for search radius
         radius = 10;
         search_events = Event.near(params[:search], radius, units: :km).where(activity_type: params[:activity_type])
 
