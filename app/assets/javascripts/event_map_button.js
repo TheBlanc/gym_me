@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
 
   mapButton.addEventListener("click", function(e) {
-    $('#eventsMap').toggleClass('hidden');
+    $('#eventsMap').slideToggle();
     $('#map').toggleClass('hidden');
     $('#hide-map-desc').toggleClass('hidden');
     $('#show-map-desc').toggleClass('hidden');
