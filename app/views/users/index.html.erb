@@ -36,26 +36,30 @@
 
 
 
-  <section class="user-reults">
+  <section class="user-results">
     <% @users.each do |user| %>
-    <div class="user-card">
-      <%= link_to user_url(user.id) do %>
-        <div class="user-card-content">
-          <% if user.avatar.attached? %>
-            <div class="profile-avatar">
-              <%= image_tag url_for(user.avatar) %>
-            </div>
-          <% else %>
-            <div class="profile-avatar">
-              <%= image_tag url_for("blank-avatar.svg") %>
-            </div>
-          <% end %>
+    <%= link_to user_url(user.id) do %>
 
-          <h3><%= user.full_name %></h3>
-          <p>Fitness Level: <%= user.fitness_level %></p>
-          <p>Location: <%= user.location %></p>
+      <div class="user-card">
+
+      <% if user.avatar.attached? %>
+        <div class="profile-avatar">
+          <%= image_tag url_for(user.avatar) %>
+        </div>
+      <% else %>
+        <div class="profile-avatar">
+          <%= image_tag url_for("blank-avatar.svg") %>
         </div>
       <% end %>
-    </div>
+
+        <div class="user-card-content">
+          <h3 class="index-user-name"><%= user.full_name %></h3>
+          <p class="fitness-level">Fitness Level: <%= user.fitness_level %></p>
+          <p class="user-location"><%= user.location %></p>
+        </div>
+
+      </div>
+    <% end %>
+
     <% end %>
   </section>
