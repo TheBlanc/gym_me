@@ -30,18 +30,6 @@ class UsersController < ApplicationController
 
     if params[:availability_check].present?
       available_users = []
-      current_user.availability.each do |day|
-        @users.each do |user|
-          if user.availability.include?(day)
-            available_users << user if !available_users.include?(user)
-          end
-        end
-      end
-      @users = available_users
-    end
-
-    if params[:availability_check].present?
-      available_users = []
       @users.each do |user|
         current_user.availability.each do |day|
           if user.availability.include?(day)
