@@ -14,6 +14,7 @@ class AppearancesChannel < ApplicationCable::Channel
                                  online: false
   end
 
+
   private
 
   def redis

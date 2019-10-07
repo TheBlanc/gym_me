@@ -1,5 +1,5 @@
 jQuery(document).on 'ready page:load', ->
-  App.personal_chat = App.cable.subscriptions.create {
+  App.personal_note = App.cable.subscriptions.create {
     channel: "AppearancesChannel"
   },
   connected: ->
