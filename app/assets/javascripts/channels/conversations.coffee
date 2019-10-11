@@ -29,10 +29,24 @@ jQuery(document).on 'ready page:load', ->
   if messages.length > 0
     messages_to_bottom()
     $('#new_personal_message').submit (e) ->
-      $this = $(this)
-      textarea = $this.find('#personal_message_body')
-      if $.trim(textarea.val()).length > 1
-        App.personal_chat.send_message textarea.val(), $this.find('#conversation_id').val()
-        textarea.val('')
       e.preventDefault()
-      return false
+    $('#new_personal_message').on 'keypress', (e) ->
+      if event.keyCode is 13 # return/enter = send
+        $this = $(this)
+        textarea = $this.find('#personal_message_body')
+        if $.trim(textarea.val()).length > 1
+          App.personal_chat.send_message textarea.val(), $this.find('#conversation_id').val()
+          textarea.val('')
+        e.preventDefault()
+        return false
+
+
+
+    # $('#new_personal_message').submit (e) ->
+    #   $this = $(this)
+    #   textarea = $this.find('#personal_message_body')
+    #   if $.trim(textarea.val()).length > 1
+    #     App.personal_chat.send_message textarea.val(), $this.find('#conversation_id').val()
+    #     textarea.val('')
+    #   e.preventDefault()
+    #   return false
