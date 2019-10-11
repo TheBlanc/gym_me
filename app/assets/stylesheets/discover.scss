@@ -10,10 +10,26 @@
   height: 200px;
 }
 
-.form-card.discover{
+.form-card.discover {
   text-align: center;
 
 }
+
+.filter-search form {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+}
+
+.filter-search #filterButton {
+  margin: 0 10px;
+}
+
+.form-submit {
+  text-align: center;
+  margin: 10px 0;
+}
+
 .event-index {
   text-align: center;
   margin: 1em 0;
@@ -31,16 +47,17 @@
 
 .activity-type-header {
   margin: 0 0 0.5em 0;
-  font-size: 1.3em;
+  font-size: 1.2rem;
   font-weight: normal;
 }
 
 .activity-type-description {
   margin: 0 0 5px 0;
+  font-size: 0.9em
 }
 
 .activity-icons-wrapper {
-  max-width: 257px;
+  max-width: 403px;
   margin: 10px auto;
 }
 
@@ -52,9 +69,14 @@
   border-radius: 27%;
 }
 
+.discover .activity-icon {
+  width: 5em
+}
+
+
 .activity-type > img {
-  box-shadow: -3px 3px var(--main-dark-grey), -2px 2px var(--main-dark-grey), -1px 1px var(--main-dark-grey);
-  border: 1px solid var(--main-dark-grey);
+  // box-shadow: -3px 3px var(--main-dark-grey), -2px 2px var(--main-dark-grey), -1px 1px var(--main-dark-grey);
+  border: 2px solid white;
 }
 
 .activity-icon-all {
@@ -63,16 +85,16 @@
   padding: 10px 0px;
   width: 20vh;
   // color: var(--main-black);
-  border: 1px solid var(--main-dark-grey);
+  border: 2px solid var(--main-dark-grey);
   box-shadow: -3px 3px var(--main-dark-grey), -2px 2px var(--main-dark-grey), -1px 1px var(--main-dark-grey);
 }
 
-label.activity-type > input {
+label.hide-radio-button > input {
   visibility: hidden;
   position: absolute;
 }
 
-label.activity-type > input + img {
+label.hide-radio-button > input + img {
   cursor: pointer;
 }
 
@@ -84,14 +106,14 @@ label.activity-type > input:checked + img {
   // border: 1px solid var(--main-green);
   background-color: var(--main-green);
   box-shadow: none;
-  border: none;
+  border: 2px #ff8887 solid;
 }
 
 label.activity-type > input:checked + .activity-icon-all {
   box-shadow: none;
   background-color: var(--main-green);
   font-weight: bold;
-  border: 1px solid black;
+  border: 2px #ff8887 solid;
 }
 
 .location-search > input {
@@ -102,4 +124,27 @@ label.activity-type > input:checked + .activity-icon-all {
 
 .location-search {
   margin: 16px 0 0 0;
+}
+
+.fitness-level-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.form-label {
+  font-size: 2em;
+  margin: 4px;
+  padding: 1px 6px;
+  border: solid white 2px;
+}
+
+label.fitness-level > input:checked + .form-label {
+  // border: 1px solid var(--main-green);
+  background-color: var(--main-green);
+  border: 2px #ff8887 solid;
+  color: var(--main-white);
+}
+
+label.hide-radio-button > p {
+  cursor: pointer;
 }

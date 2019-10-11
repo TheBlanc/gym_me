@@ -23,54 +23,54 @@
           <%= image_tag "worldwide.svg" %>
         </div>
         <div class="form-item">
-          <h2 class="activity-type-header">Find Event Near</h2>
-          <%= text_field_tag :search %>
+          <h2 class="activity-type-header">Find Events Near</h2>
+          <%= text_field_tag :search, current_user.location, id: "locationSearchField" %>
         </div>
       </div>
       <div class="form-card discover">
-        <h2 class="activity-type-header">What type of activity are you looking for?</h1>
+        <h2 class="activity-type-header">What type of activity are you looking for?</h2>
         <div class="activity-icons-wrapper">
           <div class="activity-icon">
             <p class="activity-type-description">Yoga/Pilates</p>
-            <label class="activity-type">
+            <label class="activity-type hide-radio-button">
               <%= radio_button_tag :activity_type, "Yoga/Pilates", checked = false %>
               <%= image_tag("lotus-position.svg") %>
             </label>
           </div>
           <div class="activity-icon">
             <p class="activity-type-description">Resistence</p>
-            <label class="activity-type">
+            <label class="activity-type hide-radio-button">
               <%= radio_button_tag :activity_type, "Resistence Training", checked = false %>
               <%= image_tag("dumbbell.svg") %>
             </label>
           </div>
           <div class="activity-icon">
             <p class="activity-type-description">Cardio</p>
-            <label class="activity-type">
+            <label class="activity-type hide-radio-button">
               <%= radio_button_tag :activity_type, "Cardio", checked = false %>
               <%= image_tag("athletics.svg") %>
             </label>
           </div>
           <div class="activity-icon">
             <p class="activity-type-description">Recreation</p>
-            <label class="activity-type">
+            <label class="activity-type hide-radio-button">
               <%= radio_button_tag :activity_type, "Recreation", checked = false %>
               <%= image_tag("american-football.svg") %>
             </label>
           </div>
-          <label class="activity-type">
+          <label class="activity-type hide-radio-button">
             <%= radio_button_tag :activity_type, "", checked = true %>
-            <div class="activity-icon-all">Show All</div>
+            <div class="activity-icon-all">All Types</div>
           </label>
         </div>
+      </div>
+      <div class="form-submit">
         <div class="large-submit-button">
           <%= submit_tag "Find Events" %>
         </div>
-
+      </div>
       <% end %>
     </nav>
-
-      </div>
 
 
 </section>

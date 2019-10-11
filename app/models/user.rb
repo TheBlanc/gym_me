@@ -5,6 +5,10 @@ class User < ApplicationRecord
 
   has_many :comment
 
+  geocoded_by :location
+  after_validation :geocode
+
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -15,6 +19,11 @@ class User < ApplicationRecord
   has_many :personal_messages, dependent: :destroy
   # active_storage module for giving users avatar photos
   has_one_attached :avatar
+
+  # Define scope for user index 'gym buddy' search
+  scope :activity_goal, -> (activity_goal) { where activity_goal: activity_goal }
+  scope :fitness_level, -> (fitness_level) { where fitness_level: fitness_level }
+  scope :gender, -> (gender) { where gender: gender }
 
   def name
     email.split('@')[0]
@@ -29,4 +38,6 @@ class User < ApplicationRecord
       "#{first_name} #{last_name}"
     end
   end
+
+
 end

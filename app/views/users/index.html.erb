@@ -21,13 +21,20 @@
 
 <header class="event-index">
   <h1 class="index-header">Refine Your Search</h1>
-  <nav class="search">
+  <nav class="filter-search">
     <%= form_tag users_path, method: :get do %>
 
-        <%= select_tag :activity_goal, options_for_select([["All Fitness Types", nil], "Yoga/Pilates", "Resistence Training", "Cardio", "Recreation"], selected: params[:activity_type]), include_blank: false %>
-        <%= text_field_tag :search, params[:search] %>
+        <%= select_tag :activity_goal, options_for_select([["All Fitness Interests", nil], "Yoga/Pilates", "Resistence Training", "Cardio", "Recreation"], selected: params[:activity_goal]), include_blank: false %>
+        <h3 class="label-style-1">Near</h3>
+        <%= text_field_tag :search, params[:search], id: "locationSearchField" %>
+        <h3 class="label-style-1">Radius</h3>
+        <%= select_tag :radius, options_for_select([["10km", 10], ["20km", 20], ["30km", 30], ["40km", 40], ["50km", 50], ["60km", 60], ["70km", 70], ["80km", 80], ["90km", 90], ["100km", 100]], selected: params[:radius]), include_blank: false %>
+        <h3 class="label-style-1">Gender</h3>
+        <%= select_tag :gender, options_for_select([["All", nil], "Female", "Male", "Non-Binary"], selected: params[:gender]), include_blank: false %>
+        <h3 class="label-style-1">Fitness Level</h3>
+        <%= select_tag :fitness_level, options_for_select([1, 2, 3, ["All", ""]], selected: params[:fitness_level]), include_blank: false %>
 
-        <%= submit_tag "Filter" %>
+        <%= submit_tag "Filter", id: "filterButton" %>
     <% end %>
 
   </nav>
@@ -36,12 +43,31 @@
 
 
 
-  <section class="user-reults">
-    <% @users.each do |user| %>
-      <div class="event-card">
-        <h3><%= link_to user.full_name, user_url(user.id) %></h3>
-        <p>Fitness Level: <%= user.fitness_level %></p>
-        <p>Location: <%= user.location %></p>
-      </div>
+  <section class="user-results">
+    <% if @users.length == 0 %>
+      <h3 class="index-user-name">Sorry! No users found </h3>
+    <% else %>
+      <% @users.each do |user| %>
+        <% unless user == current_user %>
+          <%= link_to user_url(user.id) do %>
+            <div class="user-card">
+            <% if user.avatar.attached? %>
+              <div class="profile-avatar">
+                <%= image_tag url_for(user.avatar) %>
+              </div>
+            <% else %>
+              <div class="profile-avatar">
+                <%= image_tag url_for(user_avatar(user)) %>
+              </div>
+            <% end %>
+              <div class="user-card-content">
+                <h3 class="index-user-name"><%= user.full_name %></h3>
+                <p class="fitness-level">Fitness Level: <%= user.fitness_level %></p>
+                <p class="user-location"><%= user.location %></p>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+      <% end %>
     <% end %>
   </section>

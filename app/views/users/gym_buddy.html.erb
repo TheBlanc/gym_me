@@ -27,45 +27,88 @@
         </div>
         <div class="form-item">
           <h2 class="activity-type-header">Find People Near</h2>
-          <%= text_field_tag :search %>
+          <%= text_field_tag :search, current_user.location, id: "locationSearchField" %>
+        </div>
+        <div class="form-item">
+          <h2 class="activity-type-header">Radius</h2>
+          <%= select_tag :radius, options_for_select([["10km", 10], ["20km", 20], ["30km", 30], ["40km", 40], ["50km", 50], ["60km", 60], ["70km", 70], ["80km", 80], ["90km", 90], ["100km", 100]], selected: 60), include_blank: false %>
         </div>
       </div>
       <div class="form-card discover">
-        <h2 class="activity-type-header">What type of activity are you looking to do?</h1>
+        <div class="form-item">
+          <h2 class="activity-type-header">Gender</h2>
+          <%= select_tag :gender, options_for_select([["All", nil], "Female", "Male", "Non-Binary"], selected: "All"), include_blank: false %>
+        </div>
+      </div>
+      <div class="form-card discover">
+        <h2 class="activity-type-header">What type of fitness will you be looking to do?</h2>
         <div class="activity-icons-wrapper">
           <div class="activity-icon">
             <p class="activity-type-description">Yoga/Pilates</p>
-            <label class="activity-type">
+            <label class="activity-type hide-radio-button">
               <%= radio_button_tag :activity_goal, "Yoga/Pilates", checked = false %>
               <%= image_tag("lotus-position.svg") %>
             </label>
           </div>
           <div class="activity-icon">
             <p class="activity-type-description">Resistence</p>
-            <label class="activity-type">
+            <label class="activity-type hide-radio-button">
               <%= radio_button_tag :activity_goal, "Resistence Training", checked = false %>
               <%= image_tag("dumbbell.svg") %>
             </label>
           </div>
           <div class="activity-icon">
             <p class="activity-type-description">Cardio</p>
-            <label class="activity-type">
+            <label class="activity-type hide-radio-button">
               <%= radio_button_tag :activity_goal, "Cardio", checked = false %>
               <%= image_tag("athletics.svg") %>
             </label>
           </div>
           <div class="activity-icon">
             <p class="activity-type-description">Recreation</p>
-            <label class="activity-type">
+            <label class="activity-type hide-radio-button">
               <%= radio_button_tag :activity_goal, "Recreation", checked = false %>
               <%= image_tag("american-football.svg") %>
             </label>
           </div>
-          <label class="activity-type">
+          <label class="activity-type hide-radio-button">
             <%= radio_button_tag :activity_goal, "", checked = true %>
-            <div class="activity-icon-all">Show All</div>
+            <div class="activity-icon-all">All Types</div>
           </label>
         </div>
+      </div>
+
+      <div class="form-card discover">
+        <h2 class="activity-type-header">Fitness Level</h2>
+        <div class="fitness-level-wrapper">
+          <label class="fitness-level hide-radio-button">
+            <%= radio_button_tag :fitness_level, 1, checked = false %>
+            <p class="form-label">1</p>
+          </label>
+          <label class="fitness-level hide-radio-button">
+            <%= radio_button_tag :fitness_level, 2, checked = false %>
+            <p class="form-label">2</p>
+          </label>
+          <label class="fitness-level hide-radio-button">
+            <%= radio_button_tag :fitness_level, 3, checked = false %>
+            <p class="form-label">3</p>
+          </label>
+          <label class="fitness-level hide-radio-button">
+            <%= radio_button_tag :fitness_level, "", checked = true %>
+            <p class="form-label">All</p>
+          </label>
+        </div>
+        <div class="form-card discover">
+          <h2 class="activity-type-header">Fitness Level</h2>
+          <div class="fitness-level-wrapper">
+            <label class="fitness-level hide-radio-button">
+              <%= check_box_tag :availability_check, true, checked = true %>
+              <p class="form-label">Availability Check</p>
+            </label>
+          </div>
+
+      </div>
+      <div class="form-submit">
         <div class="large-submit-button">
           <%= submit_tag "Find Buddy" %>
         </div>

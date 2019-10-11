@@ -12,14 +12,21 @@
   u.password = "passpass"
   u.first_name = FFaker::Name.first_name
   u.last_name = FFaker::Name.first_name
-  u.fitness_level = rand(3)
+  u.fitness_level = rand(1..3)
   u.location = "#{rand(300)} King St. W"
-  u.gender = "Male"
+  u.gender = ["Male", "Female"].sample
   u.description = FFaker::CheesyLingo.sentence
   u.matching = true
   u.time_of_day = ['Morning', 'Afternoon', 'Evening', 'Twilight'].sample
   u.day = Date::DAYNAMES.sample
   u.age = rand(100)
+  u.activity_goal = ["Yoga/Pilates", "Resistence Training", "Cardio", "Recreation"].sample
+  u.availability = []
+  options = ["mon_morn", "mon_aft", "mon_eve", "tues_morn", "tues_aft", "tues_eve", "wed_morn", "wed_aft", "wed_eve", "thurs_morn", "thurs_aft", "thurs_eve", "fri_morn", "fri_aft", "fri_eve", "sat_morn", "sat_aft", "sat_eve", "sun_morn", "sun_aft", "sun_eve"]
+  10.times do
+    day = options.sample
+    u.availability << day unless u.availability.include?(day)
+  end
   u.save
 end
 
@@ -27,7 +34,7 @@ end
   e = Event.new
 
   e.title = FFaker::Sport.name
-  e.address = ["#{rand(500)} King St. W", "#{rand(500)} Yonge St.", "#{rand(400)} Queen St. E"].sample
+  e.address = ["#{rand(500)} King St. W", "#{rand(500)} Yonge St.", "#{rand(400)} Queen St. E, Toronto, ON, Canada"].sample
   e.description = FFaker::CheesyLingo.sentence
   e.capacity = rand(10)
   e.activity_type = ["Yoga/Pilates", "Resistence Training", "Cardio", "Recreation"].sample

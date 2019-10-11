@@ -5,30 +5,42 @@ class UsersController < ApplicationController
   end
 
   def index
-    # check if search parameter is being passed and isnt an empty string
-    if params[:search] && !params[:search].empty?
 
-      search_users = User.basic_search(params[:search])
-      # iterate through the users and check if the they are looking for gym buddy (ie. user.matching == true)
+    @users = User.all
+    # check if location param is passed, then calcualte lon and lat for the location
+    if params[:search].present?
+      radius = params[:radius];
+      search_location_lat = Geocoder.search(params[:search])[0].data["lat"]
+      search_location_lon = Geocoder.search(params[:search])[0].data["lon"]
+      @users = User.near([search_location_lat, search_location_lon], radius, units: :km)
+    end
+    @users = @users.where(matching: true)
+
+    filtering_params(params).each do |key, value|
+      @users = @users.public_send(key, value) if value.present?
+    end
+
+
+    # Above makes use of filtering_params private method and public_send ruby method to reduce the following redundant code.
+    # Also, if more search params are added, they are automatically accounted for.
+    # @users = @users.activity_goal(params[:activity_goal]) if params[:activity_goal].present?
+    # @users = @users.fitness_level(params[:fitness_level]) if params[:fitness_level].present?
+    # @users = @users.gender(params[:gender]) if params[:gender].present?
+
+
+    if params[:availability_check].present?
       available_users = []
-      search_users.each do |user|
-        if user.matching == true
-          available_users << user
-        end
-      end
-      @users = available_users
-
-    else
-      all_users = User.all
-      available_users = []
-
-      all_users.each do |user|
-        if user.matching == true
-          available_users << user
+      @users.each do |user|
+        current_user.availability.each do |day|
+          if user.availability.include?(day)
+            available_users << user
+            break
+          end
         end
       end
       @users = available_users
     end
+
 
   end
 
@@ -63,13 +75,18 @@ class UsersController < ApplicationController
     @user.last_name = params[:user][:last_name]
     @user.age = params[:user][:age]
     @user.gender = params[:user][:gender]
+    @user.activity_goal = params[:user][:activity_goal]
     @user.fitness_level = params[:user][:fitness_level]
     @user.location = params[:user][:location]
     @user.description = params[:user][:description]
     @user.matching = params[:user][:matching]
-    @user.day= params[:user][:day]
-    @user.time_of_day= params[:user][:time_of_day]
-    
+
+    if params[:user][:availability]
+      @user.availability = params[:user][:availability]
+    else
+      @user.availability = []
+    end
+
     unless params[:user][:avatar] == nil
       @user.avatar.attach(params[:user][:avatar])
     end
@@ -81,5 +98,13 @@ class UsersController < ApplicationController
       render :edit
     end
   end
+
+  private
+
+  # Params that can be used to filter search results
+  def filtering_params(params)
+    params.slice(:activity_goal, :fitness_level, :gender)
+  end
+
 
 end

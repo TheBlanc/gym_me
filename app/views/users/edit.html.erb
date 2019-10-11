@@ -7,13 +7,13 @@
 </div>
 
 <section class="edit-profile">
-  <div class="new-event top-heading">
-    <h1 class="new-event-heading">Edit Your Profile</h1>
-  </div>
-  <div class="new-event sub-heading">
-    <h2 class="new-event-heading">Tell us about yourself.</h2>
-  </div>
   <div class="hero-image">
+    <div class="new-event top-heading">
+      <h1 class="new-event-heading">Edit Your Profile</h1>
+    </div>
+    <div class="new-event sub-heading">
+      <h2 class="new-event-heading">Tell us about yourself.</h2>
+    </div>
   </div>
 
   <section class="edit-profile-form">
@@ -54,7 +54,7 @@
         </div>
         <div class="form-item">
           <h3><%= f.label "What gender do you identify as?" %></h3>
-          <%= f.select :gender, ["Female", "Male", ["Non-Binary", nil], ["Rather Not Say", nil]]%>
+          <%= f.select :gender, [["Leave Blank", nil], "Female", "Male", "Non-Binary"]%>
         </div>
       </div>
 
@@ -64,7 +64,7 @@
         </div>
         <div class="form-item">
           <h3><%= f.label "What is your preferred workout location?" %></h3>
-          <%= f.text_field :location, id: :postal_code, placeholder: "Enter Address" %>
+          <%= f.text_field :location, id: "locationSearchField", placeholder: "Enter Address" %>
         </div>
       </div>
 
@@ -73,8 +73,12 @@
           <%= image_tag "gym.svg" %>
         </div>
         <div class="form-item">
+          <h3><%= f.label "What is your favorite fitness activity?" %></h3>
+          <p><%= f.select :activity_goal, ["Yoga/Pilates", "Resistence Training", "Cardio", "Recreation"]%></p>
+        </div>
+        <div class="form-item">
           <h3><%= f.label "What is your fitness level?" %></h3>
-          <%= f.select :fitness_level, [1, 2, 3]%>
+          <%= f.select :fitness_level, [["I just started exercising (level 1)", 1], ["I exercise a few times a week (level 2)", 2], ["I exercise every day (level 3)", 3]] %>
         </div>
       </div>
 
@@ -84,7 +88,7 @@
         </div>
         <div class="form-item">
           <h3><%= f.label "What are some of your favorite things?" %></h3>
-          <%= f.text_area :description, placeholder: "The gym is cool, but I really love chips!"  %>
+          <%= f.text_area :description, placeholder: "The gym is cool, but I really love chips!" %>
         </div>
       </div>
 
@@ -95,14 +99,53 @@
         <div class="form-item">
           <h3>What is your preffered workout schedule?</h3>
         </div>
-        <div class="form-item">
-          <% Date::DAYNAMES.each do |day| %>
-             <%= f.check_box :day, {multiple: true}, day, nil %>
-             <%= day %>
-          <% end %>
-          <div class="form-item schedule">
-            <h3><%= f.label "Usually, in the" %></h3>
-            <%= f.select :time_of_day, ['Morning', 'Afternoon', 'Evening', 'Twilight'], {}, {} %>
+        <div class="schedule">
+          <div class="schedule-day timeOfDayLabels">
+            <h3 class="label-style-schedule">Morning</h3>
+            <h3 class="label-style-schedule">Afternoon</h3>
+            <h3 class="label-style-schedule">Evening</h3>
+          </div>
+          <div class="schedule-day">
+            <h3 class="label-style-schedule">MON</h3>
+            <%= f.check_box :availability, {multiple: true}, 'mon_morn', false %>
+            <%= f.check_box :availability, {multiple: true}, 'mon_aft', false %>
+            <%= f.check_box :availability, {multiple: true}, 'mon_eve', false %>
+          </div>
+          <div class="schedule-day">
+            <h3 class="label-style-schedule">TUE</h3>
+            <%= f.check_box :availability, {multiple: true}, 'tues_morn', false %>
+            <%= f.check_box :availability, {multiple: true}, 'tues_aft', false %>
+            <%= f.check_box :availability, {multiple: true}, 'tues_eve', false %>
+          </div>
+          <div class="schedule-day">
+            <h3 class="label-style-schedule">WED</h3>
+            <%= f.check_box :availability, {multiple: true}, 'wed_morn', false %>
+            <%= f.check_box :availability, {multiple: true}, 'wed_aft', false %>
+            <%= f.check_box :availability, {multiple: true}, 'wed_eve', false %>
+          </div>
+          <div class="schedule-day">
+            <h3 class="label-style-schedule">THU</h3>
+            <%= f.check_box :availability, {multiple: true}, 'thurs_morn', false %>
+            <%= f.check_box :availability, {multiple: true}, 'thurs_aft', false %>
+            <%= f.check_box :availability, {multiple: true}, 'thurs_eve', false %>
+          </div>
+          <div class="schedule-day">
+            <h3 class="label-style-schedule">FRI</h3>
+            <%= f.check_box :availability, {multiple: true}, 'fri_morn', false %>
+            <%= f.check_box :availability, {multiple: true}, 'fri_aft', false %>
+            <%= f.check_box :availability, {multiple: true}, 'fri_eve', false %>
+          </div>
+          <div class="schedule-day">
+            <h3 class="label-style-schedule">SAT</h3>
+            <%= f.check_box :availability, {multiple: true}, 'sat_morn', false %>
+            <%= f.check_box :availability, {multiple: true}, 'sat_aft', false %>
+            <%= f.check_box :availability, {multiple: true}, 'sat_eve', false %>
+          </div>
+          <div class="schedule-day">
+            <h3 class="label-style-schedule">SUN</h3>
+            <%= f.check_box :availability, {multiple: true}, 'sun_morn', false %>
+            <%= f.check_box :availability, {multiple: true}, 'sun_aft', false %>
+            <%= f.check_box :availability, {multiple: true}, 'sun_eve', false %>
           </div>
         </div>
       </div>
@@ -122,7 +165,7 @@
           <%= image_tag "friends.svg" %>
         </div>
         <div class="form-item">
-          <h3><%= f.label "Do your profile to be visible to others?" %></h3>
+          <h3><%= f.label "Do you want your profile to be visible to others?" %></h3>
           <%= f.label :matching, "Yes", :value => "true" %>
           <%= f.radio_button :matching, true, :checked => true %>
           <%= f.label :matching, "No", :value => "false"  %>
