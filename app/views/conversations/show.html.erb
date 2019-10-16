@@ -1,6 +1,13 @@
-<h1>Chatting with <%= @conversation.with(current_user).name %></h1>
+<div class="navBar">
+<% if current_user %>
+  <%= render "shared/nav_bar" %>
+<% else %>
+  <%= render "shared/landing_nav_bar" %>
+<% end %>
+</div>
 
 <div id="conversation-main">
+  <h1>Chatting with <%= @conversation.with(current_user).name %></h1>
   <div id="conversation-body" data-conversation-id="<%= @conversation.id %>">
     <%= render @conversation.personal_messages %>
   </div>

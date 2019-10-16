@@ -1,3 +1,12 @@
+<div class="navBar">
+<% if current_user %>
+  <%= render "shared/nav_bar" %>
+<% else %>
+  <%= render "shared/landing_nav_bar" %>
+<% end %>
+</div>
+
+
 <h1>New message to <%= @receiver.name %></h1>
 
 <%= form_for @personal_message do |f| %>
