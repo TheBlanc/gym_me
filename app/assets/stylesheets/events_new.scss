@@ -89,6 +89,8 @@ textarea {
 
 .form-item.submit {
   padding: 0 72px;
+  display: flex;
+  justify-content: center;
 }
 
 .form-item.submit input {
