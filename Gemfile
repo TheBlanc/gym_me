@@ -39,6 +39,7 @@ gem 'jquery-ui-rails'
 
 gem 'ffaker'
 
+gem 'owlcarousel-rails'
 
 
 # Use ActiveStorage variant

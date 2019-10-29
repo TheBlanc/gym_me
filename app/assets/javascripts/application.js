@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery-ui
+//= require owl.carousel
 //= require rails-ujs
 //= require activestorage
 //= require cable
