@@ -5,9 +5,10 @@
     <title>GymMe</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
     <link href="https://fonts.googleapis.com/css?family=Monofett" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <%= javascript_include_tag "https://maps.google.com/maps/api/js?key=#{ENV["GYMME_MAPS_KEY"]}&libraries=places" %>
-    <%= stylesheet_link_tag    'application', "https://fonts.googleapis.com/css?family=Open+Sans" %>
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
   </head>
