@@ -20,11 +20,10 @@
   padding-left: 25px;
   background-color: rgba(0, 0, 0, 0.19);
   margin: 30px 20px 0 20px;
-  padding: 40px 0 40px 75px;
   align-items: flex-start;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   letter-spacing: 0.4rem;
 } .mainpagebox h1, .mainpagebox2 h1 {
   font-size: 2em;
@@ -40,6 +39,9 @@
 }
 
 @media screen and (min-width: 575px) {
+  .mainpagebox {
+    padding: 40px 0 40px 75px;
+  }
   .mainpagebox2 {
     align-items: flex-end;
     padding: 40px 75px 40px 0;
