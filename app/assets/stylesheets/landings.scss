@@ -15,23 +15,29 @@
 
 
 .mainpagebox, .mainpagebox2 {
-  height: 250px;
+  // height: 250px;
   color: white;
   padding-left: 25px;
   background-color: rgba(0, 0, 0, 0.19);
-  margin: 30px 20px 0 20px;
+  margin: 18px 20px 27px 20px;
   align-items: flex-start;
   display: flex;
   flex-direction: column;
   justify-content: center;
   letter-spacing: 0.4rem;
 } .mainpagebox h1, .mainpagebox2 h1 {
-  font-size: 2em;
+  font-size: 1.9em;
   display: block;
+  letter-spacing: 0.2rem;
+  margin: 20px 0 9px 0;
 } .mainpagebox p, .mainpagebox2 p {
   padding-left: 15px;
   font-size: 1.5em;
   display: block;
+  letter-spacing: 0.2rem;
+  margin: 2px 0;
+} .mainpagebox button, .mainpagebox2 button {
+  margin: 20px 0 20px 0;
 }
 
 .mainpagebox2 {
@@ -48,28 +54,7 @@
   }
 }
 
-// .mainpagebox2 {
-//   height: auto;
-//   color: white;
-//   padding-left: 25px;
-//   background-color: rgba(255, 255, 255, 0.11);
-//   display: flex;
-//   margin: 30px 20px 0 20px;
-//   padding: 40px 75px 40px 75px;
-//   flex-direction: column;
-//   justify-content: space-around;
-//   align-items: flex-end;
-// } .mainpagebox2 h1 {
-//       font-weight: bold;
-//       font-size: 2em;
-//       text-align: center;
-//       letter-spacing: 0.4rem;
-
-  // font-size: 2em;
-// }
- .mainpagebox2 button {
-  margin: 0;
-} .mainpagebox2 p {
+  .mainpagebox2 p {
   font-size: 1.2em;
   line-height: 1.5rem;
   padding: 0 10px 0 10px;
@@ -79,31 +64,35 @@
 
 .meetMatch {
   height: 300px;
-  display: flex;
   justify-content: center;
   text-align: center;
   flex-direction: column;
   align-items: center;
   width: 100%;
   line-height: 3rem;
-  padding: 0 50px 0 50px;
-  margin: 30px 0;
+  padding: 0 30px;
+  margin: 28px 0;
 } .meetMatch h1 {
-  font-size: 2rem;
+  font-size: 1.9rem;
   font-weight: bold;
-  letter-spacing: 0.4rem;
+  letter-spacing: 0.2rem;
 } .meetMatch h2 {
   font-size: 1.5rem;
   letter-spacing: 0.1rem;
+} .meetMatch p {
+  line-height: 2em;
+  letter-spacing: 0.1rem;
+} .meetMatchCopy {
+  margin-bottom: 20px;
 }
 
 .findBalance {
   height: 350px;
   width: 100%;
   background-image: url(yogalanding.png);
-  background-size: 190%;
+  background-size: 433%;
   background-repeat: no-repeat;
-  background-position: 88% 10%;
+  background-position: 54% 30%;
 }
 
 .findBalance .joinNow {
@@ -114,8 +103,8 @@
 
 .balanceBox {
   color: black;
-  padding: 74px 0 0 0;
-  background-color: #ffffff36;
+  padding: 100px 0 0 0;
+  background-color: #ffffff8c;
   height: 100%;
   text-align: center;
 } .balanceBox h2 {
@@ -257,7 +246,8 @@
   background-color: lightblue;
   color: black;
   text-decoration: none;
-  padding: 10px 30px;
+  padding: 15px 15px;
+  font-family: system-ui;
 }
 
 
