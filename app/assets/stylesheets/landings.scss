@@ -30,9 +30,11 @@
   display: block;
   letter-spacing: 0.2rem;
   margin: 20px 0 9px 0;
+  font-weight: bold;
 } .mainpagebox p, .mainpagebox2 p {
   padding-left: 15px;
-  font-size: 1.5em;
+  font-size: 1.3em;
+  line-height: 1.5rem;
   display: block;
   letter-spacing: 0.2rem;
   margin: 2px 0;
@@ -54,91 +56,68 @@
   }
 }
 
-  .mainpagebox2 p {
-  font-size: 1.2em;
-  line-height: 1.5rem;
-  padding: 0 10px 0 10px;
-  text-align: left;
-  letter-spacing: 0.1rem;
-}
+// .mainpagebox2 p {
+//   font-size: 1.2em;
+//   line-height: 1.5rem;
+//   padding: 0 10px 0 10px;
+//   text-align: left;
+//   letter-spacing: 0.1rem;
+// }
 
-.meetMatch {
-  height: 300px;
-  justify-content: center;
+.landingSectionStyle {
   text-align: center;
-  flex-direction: column;
-  align-items: center;
   width: 100%;
   line-height: 3rem;
-  padding: 0 30px;
+  padding: 0 25px;
   margin: 28px 0;
-} .meetMatch h1 {
+} .landingSectionStyle h1 {
   font-size: 1.9rem;
   font-weight: bold;
   letter-spacing: 0.2rem;
-} .meetMatch h2 {
+} .landingSectionStyle h2 {
   font-size: 1.5rem;
   letter-spacing: 0.1rem;
-} .meetMatch p {
+} .landingSectionStyle p {
   line-height: 2em;
   letter-spacing: 0.1rem;
-} .meetMatchCopy {
-  margin-bottom: 20px;
 }
 
 .findBalance {
-  height: 350px;
+  height: 325px;
   width: 100%;
   background-image: url(yogalanding.png);
-  background-size: 433%;
+  background-size: 415%;
   background-repeat: no-repeat;
-  background-position: 54% 30%;
-}
+  background-position: 54% 32%;}
 
-.findBalance .joinNow {
-  margin: 10px 0;
-  padding: 15px 30px;
-  display: inline-block;
-}
 
 .balanceBox {
   color: black;
-  padding: 100px 0 0 0;
   background-color: #ffffff8c;
   height: 100%;
-  text-align: center;
-} .balanceBox h2 {
-  font-size: 2rem;
-  font-weight: bold;
-  letter-spacing: 0.3rem;
-  padding: 0 0 10px 0;
-} .balanceBox h3 {
-  font-size: 1.3rem;
-  letter-spacing: 0.1rem;
-  margin: 5px 0;
-}
-.balanceBox p {
-  padding: 5px 0;
-}
-
-.findEvent {
-  height: 300px;
   display: flex;
-  justify-content: center;
-  text-align: center;
   flex-direction: column;
   align-items: center;
-  width: 100%;
-  line-height: 3rem;
-  padding: 0 50px 0 50px;
-  margin: 30px 0;
+  justify-content: center;
+
+}
+//  .balanceBox h2 {
+//   font-size: 2rem;
+//   font-weight: bold;
+//   letter-spacing: 0.3rem;
+//   padding: 0 0 10px 0;
+// } .balanceBox h3 {
+//   font-size: 1.3rem;
+//   letter-spacing: 0.1rem;
+//   margin: 5px 0;
+// }
+// .balanceBox p {
+//   padding: 5px 0;
+// }
+
+.findEvent {
 } .findEvent h1 {
-  font-size: 2rem;
-  font-weight: bold;
-  letter-spacing: 0.4rem;
 } .findEvent h2 {
-  font-size: 1.5rem;
-  letter-spacing: 0.1rem;
 }
 
 
@@ -170,10 +149,7 @@
 
 .divCircle {
   display: inline-block;
-  width: 170px;
-  height: 170px;
-  background-color: #ababab;
-  border-radius: 50%;
+  width: 200px;
   margin: 25px 10px 10px 10px;
 }
 
@@ -189,21 +165,20 @@
   text-align: left;
 }
 
-.testimonials h2 {
-  font-size: 2rem;
-  font-weight: bold;
-  letter-spacing: 0.4rem;
+.testimonials h1 {
   padding-top: 25px;
 }
 
 .testimonials p {
   letter-spacing: 0.05rem;
   line-height: 1.2rem;
+  text-align: center;
 }
 
-.owl-nav {
+.owl-nav span {
   color: white;
-  font-size: 40px;
+  font-size: 47px;
+  padding: 0 18px;
 }
 
 .landing-gymme-logo {
@@ -246,8 +221,10 @@
   background-color: lightblue;
   color: black;
   text-decoration: none;
-  padding: 15px 15px;
+  padding: 0 15px;
   font-family: system-ui;
+  display: inline-block;
+  margin-top: 20px;
 }
 
 
