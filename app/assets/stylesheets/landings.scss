@@ -226,6 +226,12 @@
     align-items: flex-end;
     padding: 40px 25px 40px 0;
   }
+
+  .findBalance {
+    background-size: 180%;
+    background-position: 54% 37%;
+  }
+
 }
 
 @media screen and (min-width: 460px) {
@@ -279,35 +285,12 @@
     padding-right: 35px;
   }
 
-  // .mainpagebox2 {
-  //   width: 40%;
-  //   height: 300px;
-  //   padding-left: 0;
-  //   background-color: rgba(255, 255, 255, 0.11);
-  //   display: flex;
-  //   padding: 0 10px 0 10px;
-  //   margin: 75px 20px 0 0;
-  //
-  //   flex-direction: column;
-  //   justify-content: space-around;
-  // } .mainpagebox2 h1 {
-  //       text-align: center;
-  //       letter-spacing: 0.4rem;
-  //
-  //   font-size: 2em;
-  // } .mainpagebox2 button {
-  //   margin: 0 75px 0 75px;
-  // } .mainpagebox2 p {
-  //   line-height: 2rem;
-  //   padding: 0 10px 0 10px;
-  //   text-align: center;
-  // }
+  .findBalance {
+    background-size: 100%;
+    background-position: 54% 37%;
+  }
 
 }
 
-@media screen and (max-width: 660px){
-  .divCircle {
-    display: block;
-    margin: 15px auto;
-  }
+@media screen and (min-width: 660px){
 }
