@@ -32,7 +32,6 @@
   margin: 10px 0;
   font-weight: bold;
 } .mainpagebox p, .mainpagebox2 p {
-  padding-left: 15px;
   font-size: 1.3em;
   line-height: 1.5rem;
   display: block;
@@ -92,24 +91,6 @@
   justify-content: center;
 
 }
-//  .balanceBox h2 {
-//   font-size: 2rem;
-//   font-weight: bold;
-//   letter-spacing: 0.3rem;
-//   padding: 0 0 10px 0;
-// } .balanceBox h3 {
-//   font-size: 1.3rem;
-//   letter-spacing: 0.1rem;
-//   margin: 5px 0;
-// }
-// .balanceBox p {
-//   padding: 5px 0;
-// }
-
-.findEvent {
-} .findEvent h1 {
-} .findEvent h2 {
-}
 
 
 .testimonials {
@@ -140,8 +121,8 @@
 
 .divCircle {
   display: inline-block;
-  width: 200px;
-  margin: 25px 10px 10px 10px;
+  width: 275px;
+  margin: 15px 10px 0 10px;
 }
 
 .testimonialBox {
@@ -158,6 +139,12 @@
 
 .testimonials h1 {
   padding-top: 25px;
+}
+
+.testimonials h3 {
+  font-size: 2em;
+  letter-spacing: 2px;
+  margin-bottom: 7px;
 }
 
 .testimonials p {
@@ -194,19 +181,25 @@
   flex-direction: column;
 }
 
+.loginWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80%;
+}
 .loginBOX {
   color: white;
   display: flex;
   align-items: center;
   flex-direction: column;
-  width: 100%;
   margin: auto 0;
   background-color: rgba(0, 0, 0, 0.19);
-  padding-top: 12px;
+  padding: 12px;
 }
 .loginBOX a {
   color: white;
 }
+
 
 .joinNow {
   background-color: lightblue;
@@ -245,7 +238,7 @@
 }
 
 
-@media screen and (min-width: 977px){
+@media screen and (min-width: 1055px){
 
   .landingbox {
     display: flex;
@@ -282,7 +275,7 @@
     padding: 0;
     margin-left: 0;
     background-color: rgba(255, 255, 255, 0.11);
-    padding-right: 35px;
+    padding-right: 55px;
   }
 
   .findBalance {
