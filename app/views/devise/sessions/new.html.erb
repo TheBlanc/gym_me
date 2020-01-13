@@ -6,9 +6,16 @@
     <%= render "shared/landing_nav_bar" %>
   <% end %>
   </div>
-  <div class="loginWrapper">
-    <div class="loginBOX">
-      <h2 class="log-in-heading">Log in</h2>
+  <% if !current_user %>
+  <nav class="sign-in">
+    <p>Not a Member?</p>
+    <a href="/users/sign_up" class="sign-in-button">Join Now</a>
+  </nav>
+  <% end %>
+
+  <div class="sessionModalWrapper">
+    <div class="logInModal">
+      <h2 class="logInHeading">Log in</h2>
 
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
         <div class="form-flex-wrapper">

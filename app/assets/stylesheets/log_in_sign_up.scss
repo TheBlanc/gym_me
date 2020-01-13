@@ -44,6 +44,7 @@
   color: black;
   text-align: center;
   padding: 15px 15px;
+  border-radius: 5px;
 }
 
   .sign-in-button:hover {
@@ -64,7 +65,7 @@
 }
 
 
-.log-in-heading {
+.logInHeading {
   font-size: 2em;
 }
 
@@ -97,32 +98,78 @@
 
 .field > label {
   font-size: 1.3em;
-  margin: 0.3em 0;
 }
 
 .field > input {
   width: 15.3em;
   height: 2.1em;
   font-size: 1.2em;
+  margin-top: 5px;
 }
 
 .check-field > input {
-  width: 2em;
-  height: 2em;
-  font-size: 1.4em;
-  vertical-align: middle;
+  width: 1em;
+  height: 1em;
 }
 
 .links {
-  margin: 1em 0;
+  align-self: end;
 }
 
-.links a {
-  font-size: 1.4em;
-
+.links > a {
+  display: block;
 }
 
 .form-flex-wrapper {
   display: flex;
   flex-direction: column;
+}
+
+.field {
+  margin-top: 10px;
+}
+
+.check-field {
+  margin: 5px 0 10px 0;
+}
+
+.check-field > input[type='checkbox'] {
+  width: 1em;
+  height: 1em;
+  font-size: 17px;
+}
+
+.signInBox {
+  background-image: url(background.jpg);
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.sessionModalWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60%;
+}
+.logInModal {
+  color: white;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: auto 0;
+  background-color: rgba(0, 0, 0, 0.19);
+  padding: 20px 35px;
+}
+.logInModal a {
+  color: white;
+}
+
+.signUpLinkWrapper {
+  margin-top: 16px;
+  font-size: 1.3em;
+} .signUpLinkWrapper a {
+    text-decoration: none;
 }
