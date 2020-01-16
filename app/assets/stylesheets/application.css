@@ -34,11 +34,13 @@
 html {
   font-family: "Open Sans", sans-serif;
   font-size: 16px;
+
 }
 
  body {
+  margin: auto;
+  max-width: 3500px;
   background-color: white;
-
   background-size: cover;
 
 }
