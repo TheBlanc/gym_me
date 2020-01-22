@@ -60,10 +60,12 @@
                 <%= image_tag url_for(user_avatar(user)) %>
               </div>
             <% end %>
-              <div class="user-card-content">
-                <h3 class="index-user-name"><%= user.full_name %></h3>
-                <p class="fitness-level">Fitness Level: <%= user.fitness_level %></p>
-                <p class="user-location"><%= user.location %></p>
+              <div class="user-card-flex-container">
+                <div class="user-card-content">
+                  <h3 class="index-user-name"><%= user.full_name %></h3>
+                  <p class="fitness-level">Fitness Level: <%= user.fitness_level %></p>
+                  <p class="user-location"><%= user.location %></p>
+                </div>
               </div>
             </div>
           <% end %>

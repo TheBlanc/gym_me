@@ -15,7 +15,6 @@
   <div class="event-show-info-container">
     <div class="event-show-info">
       <h1 id="eventName" class="event-name"><%= @event.title %></h1>
-
       <p class="event-info-title">Hosted by <span class="event-owner"><%= link_to @event.owner.email, user_path(@event.owner.id) %></span></p>
     </div>
   </div>
@@ -24,7 +23,7 @@
     <div class="event-info-container">
       <p class="event-date"><%= @event.time.strftime("%A %b %d, %Y") %></p>
       <p class="event-info-title">Located at <span class="event-address"><%= @event.address %></span></p>
-      <p class="event-info-title">@ <%= @event.time.strftime("%I:%M%p") %></p>
+      <p class="event-info-title">Starts at: <%= @event.time.strftime("%I:%M%p") %></p>
     </div>
     <div class="event-ticket">
       <!-- Check if user is signed in, and if they have joined this event  -->

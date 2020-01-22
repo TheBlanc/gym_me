@@ -128,19 +128,29 @@
   display: flex;
   justify-content: left;
   background-color: white;
-  margin: 1em 2em 1em 2em;
-  border: 1px solid black;
+  padding: 0 1em 0 0;
+  border: 1px solid #d4d4d4;
   text-align: left;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  border-radius: 5px;
+}
+
+.user-card-flex-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .user-card-content {
-  margin: 1em;
+  margin-bottom: 0.8em;
 }
+
+
 
 .index-user-name {
   font-weight: bold;
   font-size: 1.5em;
-  margin: 10px 0;
 }
 
 p.fitness-level {
@@ -160,7 +170,7 @@ p.fitness-level {
 
 
 .profile-avatar {
-  width: 170px;;
+  width: 170px;
   vertical-align: top;
   margin: 1em;
   }

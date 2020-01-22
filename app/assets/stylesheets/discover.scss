@@ -19,6 +19,7 @@
   display: flex;
   justify-content: center;
   align-items: baseline;
+  overflow: scroll;
 }
 
 .filter-search #filterButton {
@@ -33,6 +34,8 @@
 .event-index {
   text-align: center;
   margin: 1em 0;
+  border-bottom: 1px black solid;
+  padding-bottom: 10px;
 }
 
 .discover h2 {
