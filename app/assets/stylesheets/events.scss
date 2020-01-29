@@ -65,13 +65,13 @@
 }
 
 .event-name {
-  font-size: 1.5em;
+  font-size: 2.5em;
   font-weight: bold;
-  margin-bottom: 10px;
+  margin: 4px 0 10px -2px;
 }
 
 .event-info-title {
-  font-size: 0.8em;
+  font-size: 1em;
 
 }
 
@@ -89,7 +89,7 @@
 }
 
 .event-date {
-  font-size: 0.8em;
+  font-size: 1em;
 }
 
 .event-header {
@@ -107,9 +107,27 @@
 }
 
 .event-show-info-container {
-  display: flex;
-  justify-content: space-between;
+  max-width: 700px;
+  margin: auto;
+}
+
+.event-show-header {
+  margin: 0 0 30px 0;
+  border-top: grey solid 1px;
+  border-bottom: grey solid 1px;
+  padding: 20px 0;
 }
 
 .event-ticket {
+  display: flex;
+  margin: 30px 0;
+  flex-direction: row;
+}
+
+.eventTicketContainer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: block;
+  border-top: grey solid 1px;
 }
