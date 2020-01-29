@@ -1,0 +1,18 @@
+<!-- Check if user is signed in, and if they have joined the event  -->
+
+<% if current_user == @event.owner %>
+  <%= link_to "edit event", edit_event_path(@event.id) %>
+<% elsif joined_event? %>
+  <h4>You are signed up for this event!</h4>
+  <%= link_to "Cancel rsvp", event_ticket_path(@event.id, @ticket.id), method: :delete %>
+<% elsif current_user && current_user != @event.owner && @event.capacity > 0 %>
+  <%= button_to "Join Event", event_tickets_path(@event) %>
+<% elsif @event.capacity == 0 %>
+  <h4>Event is currently full.</h4>
+<% elsif !current_user %>
+  <h4><%= link_to "Log-in", new_user_session_path %> to join event</h4>
+<% end %>
+<% if @event.capacity %>
+  <p>(<%= @event.users.length %> attending)</p>
+  <p>Tickets Remaining: <%= @event.capacity %></p>
+<% end %>
