@@ -52,18 +52,23 @@
 
 // EVENT SHOW PAGE
 
-.eventPageContainer {
-  height: 100vh;
-  background-color: #f1f1f1;}
-
-.event-page {
-  max-width: 700px;
-  margin: auto;
-  padding: 30px 0 0 0;
-
+.eventPageBackground {
+  min-height: 100vh;
+  background-color: #f1f1f1;
+  padding-bottom: 88px;
 }
 
+.eventPageContainer {
+  margin: 0 20px;
+}
 
+.event-page {
+  padding: 30px 0 0 0;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+
+}
 
 .event-name {
   font-size: 2.5em;
@@ -71,14 +76,17 @@
   margin: 4px 0 10px -2px;
 }
 
-.event-info-title {
-  font-size: 1em;
 
-}
 
 .event-header {
   font-weight: bold;
   font-size: 1.1em;
+}
+
+.event-body-container {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
 }
 
 .event-details-continer {
@@ -107,15 +115,19 @@
   font-size: 0.8em;
 }
 
-.event-show-info-container {
-  max-width: 700px;
-  margin: auto;
-}
-
 .eventShowHeader {
   border-top: #eceaea solid 3px;
   border-bottom: #e0dede solid 1px;
-  padding: 20px 0;}
+  padding: 20px 20px;
+
+}
+
+.eventHeaderFlexContainer {
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+
+}
 
 .eventTicket {
   display: flex;
@@ -134,7 +146,15 @@
 
 .eventTicketContainer {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+.eventTicketBounds {
+  margin: 0 20px;
 }
 
 .eventTicketInfo {
@@ -151,4 +171,50 @@
 .eventTicketName {
   font-size: 1.2em;
   font-weight: bold;
+}
+
+.eventInfoBox {
+  background: white;
+  padding: 5px 25px;
+  border-radius: 10px;
+}
+
+.eventInfoBoxText {
+  font-size: 1em;
+  margin: 20px 0;
+}
+
+.comment {
+  width: 365px;
+  background: white;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 10px 0;
+
+}
+
+.comment-user {
+  margin-bottom: 10px;
+  font-size: 1em;
+}
+
+.comment-body {
+
+}
+
+.comment .button_to {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.eventDetailsCommentsContainer {
+
+}
+
+.eventInfoFlexContainer {
+
+}
+
+.event-body-container {
+
 }
