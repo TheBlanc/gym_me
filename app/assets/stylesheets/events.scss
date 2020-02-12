@@ -52,17 +52,18 @@
 
 // EVENT SHOW PAGE
 
+.eventPageContainer {
+  height: 100vh;
+  background-color: #f1f1f1;}
+
 .event-page {
   max-width: 700px;
   margin: auto;
-}
-
-.event-info {
-}
-
-.event-ticket {
+  padding: 30px 0 0 0;
 
 }
+
+
 
 .event-name {
   font-size: 2.5em;
@@ -111,23 +112,43 @@
   margin: auto;
 }
 
-.event-show-header {
-  margin: 0 0 30px 0;
-  border-top: grey solid 1px;
-  border-bottom: grey solid 1px;
-  padding: 20px 0;
-}
+.eventShowHeader {
+  border-top: #eceaea solid 3px;
+  border-bottom: #e0dede solid 1px;
+  padding: 20px 0;}
 
-.event-ticket {
+.eventTicket {
   display: flex;
   margin: 30px 0;
   flex-direction: row;
 }
 
-.eventTicketContainer {
+.eventTicketBar {
   position: fixed;
   bottom: 0;
   width: 100%;
-  display: block;
-  border-top: grey solid 1px;
+  box-shadow: 0 0px 3px 0 rgba(0, 0, 0, 0.2);
+  background: white;
+
+}
+
+.eventTicketContainer {
+  display: flex;
+  justify-content: space-around;
+}
+
+.eventTicketInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.ticketAttendance {
+  margin-right: 30px;
+  font-weight: bold;
+}
+
+.eventTicketName {
+  font-size: 1.2em;
+  font-weight: bold;
 }

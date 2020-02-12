@@ -7,7 +7,7 @@
 </div>
 
 
-<header class="event-show-header">
+<header class="eventShowHeader">
   <div class="event-show-info-container">
     <div class="event-show-info">
       <p class="event-date"><%= @event.time.strftime("%A %b %d, %Y") %></p>
@@ -17,31 +17,34 @@
   </div>
 </header>
 
-<div class="eventTicketContainer">
-  <div class="eventTicketInfo">
-    <p class="event-date"><%= @event.time.strftime("%A %b %d, %Y") %></p>
-    <h1 id="eventName" class="event-name"><%= @event.title %></h1>
+<section class="eventTicketBar">
+  <div class="eventTicketContainer">
+    <div class="eventTicketInfo">
+      <p class="event-date"><%= @event.time.strftime("%A %b %d, %Y") %></p>
+      <h1 id="eventName" class="eventTicketName"><%= @event.title %></h1>
+    </div>
+    <div class="eventTicket">
+      <%= render "event_ticket" %>
+    </div>
   </div>
-  <div class="event-ticket">
-    <%= render "event_ticket" %>
-  </div>
-</div>
+</section>
 
-<section class="event-page">
-  <div class="event-body-container">
-    <div class="event-info-container">
-      <p class="event-info-title">Located at <span class="event-address"><%= @event.address %></span></p>
-      <p class="event-info-title">Starts at: <%= @event.time.strftime("%I:%M%p") %></p>
-    </div>
-    <div class="map-icon" id="map-button">
-      <%= image_tag("placeholder.png") %>
-    </div>
-    <div class="event-details-continer">
-      <h3 class="event-header">Details</h3>
-      <p class="event-details"><%= @event.description %></p>
-    </div>
+<div class="eventPageContainer">
+  <section class="event-page">
+    <div class="event-body-container">
+      <div class="event-info-container">
+        <p class="event-info-title">Located at <span class="event-address"><%= @event.address %></span></p>
+        <p class="event-info-title">Starts at: <%= @event.time.strftime("%I:%M%p") %></p>
+      </div>
+      <div class="map-icon" id="map-button">
+        <%= image_tag("placeholder.png") %>
+      </div>
+      <div class="event-details-continer">
+        <h3 class="event-header">Details</h3>
+        <p class="event-details"><%= @event.description %></p>
+      </div>
       <section class="comment-area">
-        <% if current_user && joined_event? %>
+        <% if current_user  %>
           <% @comments.each do |comment| %>
             <div class="comment">
               <p class="comment-user"><%= comment.user.email %></p>
@@ -67,7 +70,8 @@
 
         <% end %>
       </section>
-  </div>
+    </div>
+  </section>
 
 
-</section>
+</div>

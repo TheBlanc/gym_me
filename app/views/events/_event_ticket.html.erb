@@ -1,5 +1,12 @@
 <!-- Check if user is signed in, and if they have joined the event  -->
 
+<% if @event.capacity %>
+<div class="ticketAttendance">
+  <p><%= @event.capacity %> spots left</p>
+</div>
+<% else %>
+<p><%= @event.users.length %> attending</p>
+<% end %>
 <% if current_user == @event.owner %>
   <%= link_to "edit event", edit_event_path(@event.id) %>
 <% elsif joined_event? %>
@@ -11,8 +18,4 @@
   <h4>Event is currently full.</h4>
 <% elsif !current_user %>
   <h4><%= link_to "Log-in", new_user_session_path %> to join event</h4>
-<% end %>
-<% if @event.capacity %>
-  <p>(<%= @event.users.length %> attending)</p>
-  <p>Tickets Remaining: <%= @event.capacity %></p>
 <% end %>
