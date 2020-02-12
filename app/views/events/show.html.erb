@@ -8,70 +8,77 @@
 
 
 <header class="eventShowHeader">
-  <div class="event-show-info-container">
+  <div class="eventHeaderFlexContainer">
     <div class="event-show-info">
       <p class="event-date"><%= @event.time.strftime("%A %b %d, %Y") %></p>
       <h1 id="eventName" class="event-name"><%= @event.title %></h1>
-      <p class="event-info-title">Hosted by <span class="event-owner"><%= link_to @event.owner.email, user_path(@event.owner.id) %></span></p>
-    </div>
+      <p class="eventInfoBoxText">Hosted by <span class="event-owner"><%= link_to @event.owner.email, user_path(@event.owner.id) %></span></p>
+  </div>
   </div>
 </header>
 
 <section class="eventTicketBar">
-  <div class="eventTicketContainer">
-    <div class="eventTicketInfo">
-      <p class="event-date"><%= @event.time.strftime("%A %b %d, %Y") %></p>
-      <h1 id="eventName" class="eventTicketName"><%= @event.title %></h1>
-    </div>
-    <div class="eventTicket">
-      <%= render "event_ticket" %>
+  <div class="eventTicketBounds">
+    <div class="eventTicketContainer">
+      <div class="eventTicketInfo">
+        <p class="event-date"><%= @event.time.strftime("%A %b %d, %Y") %></p>
+        <h1 id="eventName" class="eventTicketName"><%= @event.title %></h1>
+      </div>
+      <div class="eventTicket">
+        <%= render "event_ticket" %>
+      </div>
     </div>
   </div>
 </section>
 
-<div class="eventPageContainer">
-  <section class="event-page">
-    <div class="event-body-container">
-      <div class="event-info-container">
-        <p class="event-info-title">Located at <span class="event-address"><%= @event.address %></span></p>
-        <p class="event-info-title">Starts at: <%= @event.time.strftime("%I:%M%p") %></p>
-      </div>
-      <div class="map-icon" id="map-button">
-        <%= image_tag("placeholder.png") %>
-      </div>
-      <div class="event-details-continer">
-        <h3 class="event-header">Details</h3>
-        <p class="event-details"><%= @event.description %></p>
-      </div>
-      <section class="comment-area">
-        <% if current_user  %>
-          <% @comments.each do |comment| %>
-            <div class="comment">
-              <p class="comment-user"><%= comment.user.email %></p>
-              <p class="comment-time"><em><%= comment.created_at.strftime("%m/%d/%Y at %I:%M%p") %></em></p>
-              <p class="comment-body">"<%= comment.body %>"</p>
-              <!-- Check if user created comment to have authorization to delete it  -->
-              <% if comment.user.id == current_user.id %>
-                <%= button_to "delete comment", event_comment_path(@event, comment.id), data: { confirm: "Are you sure?" }, method: :delete %>
+<div class="eventPageBackground">
+  <div class="eventPageContainer">
+    <section class="event-page">
+      <div class="event-body-container">
+        <div class="eventInfoFlexContainer">
+          <div class="eventInfoBox">
+            <p class="eventInfoBoxText"><%= @event.time.strftime("%A %b %d, %Y") %> • <%= @event.time.strftime("%I:%M%p") %></p>
+            <p class="eventInfoBoxText"><%= @event.address %></p>
+          </div>
+        </div>
+        <div class="eventDetailsCommentsContainer">
+          <div class="event-details-continer">
+            <h3 class="event-header">Details</h3>
+            <p class="event-details"><%= @event.description %></p>
+          </div>
+          <div class="commentAreaContainer">
+            <section class="comment-area">
+              <%= form_for( @comment, url: event_comments_path(@event.id) ) do |f| %>
+              <div class="field">
+                <%= f.label "Leave a comment" %><br/>
+                <%= f.text_area :body %>
+              </div>
+              <div class="actions">
+                <%= f.submit "Comment" %>
+              </div>
               <% end %>
-            </div>
-          <% end %>
+              <% if current_user  %>
+              <% @comments.reverse_each do |comment| %>
+              <div class="comment">
+                <p class="comment-time"><em><%= comment.created_at.strftime("%m/%d/%Y at %I:%M%p") %></em></p>
+                <p class="comment-user"><%= comment.user.email %></p>
+                <p class="comment-body"><%= comment.body %></p>
+                <!-- Check if user created comment to have authorization to delete it  -->
+                <% if comment.user.id == current_user.id %>
+                <%= button_to "delete", event_comment_path(@event, comment.id), data: { confirm: "Are you sure?" }, method: :delete %>
+                <% end %>
+              </div>
+              <% end %>
 
-          <%= form_for( @comment, url: event_comments_path(@event.id) ) do |f| %>
-            <div class="field">
-              <%= f.label "Leave a comment" %><br/>
-              <%= f.text_area :body %>
-            </div>
 
-            <div class="actions">
-              <%= f.submit "Comment" %>
-            </div>
-          <% end %>
 
-        <% end %>
-      </section>
-    </div>
-  </section>
+              <% end %>
+            </section>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
 
 
 </div>
