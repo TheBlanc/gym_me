@@ -1,37 +1,41 @@
-<div class="navBar">
-<% if current_user %>
-  <%= render "shared/nav_bar" %>
-<% else %>
-  <%= render "shared/landing_nav_bar" %>
-<% end %>
-</div>
-
-
-<header class="eventShowHeader">
-  <div class="eventHeaderFlexContainer">
-    <div class="event-show-info">
-      <p class="event-date"><%= @event.time.strftime("%A %b %d, %Y") %></p>
-      <h1 id="eventName" class="event-name"><%= @event.title %></h1>
-      <p class="eventInfoBoxText">Hosted by <span class="event-owner"><%= link_to @event.owner.email, user_path(@event.owner.id) %></span></p>
+<div class="eventShowBackground">
+  <div class="navBar">
+    <% if current_user %>
+    <%= render "shared/nav_bar" %>
+    <% else %>
+    <%= render "shared/landing_nav_bar" %>
+    <% end %>
   </div>
-  </div>
-</header>
 
-<section class="eventTicketBar">
-  <div class="eventTicketBounds">
-    <div class="eventTicketContainer">
-      <div class="eventTicketInfo">
+
+  <header class="eventShowHeader">
+    <div class="eventHeaderFlexContainer">
+      <div class="event-show-info">
         <p class="event-date"><%= @event.time.strftime("%A %b %d, %Y") %></p>
-        <h1 id="eventName" class="eventTicketName"><%= @event.title %></h1>
-      </div>
-      <div class="eventTicket">
-        <%= render "event_ticket" %>
+        <h1 id="eventName" class="event-name"><%= @event.title %></h1>
+        <% if @event.owner.first_name %>
+        <p class="eventInfoBoxText">Hosted by <span class="event-owner"><%= link_to full_name(@event.owner), user_path(@event.owner.id) %></span></p>
+        <% else %>
+        <p class="eventInfoBoxText">Hosted by <span class="event-owner"><%= link_to @event.owner.email, user_path(@event.owner.id) %></span></p>
+        <% end %>
       </div>
     </div>
-  </div>
-</section>
+  </header>
 
-<div class="eventPageBackground">
+  <section class="eventTicketBar">
+    <div class="eventTicketBounds">
+      <div class="eventTicketContainer">
+        <div class="eventTicketInfo">
+          <p class="event-date"><%= @event.time.strftime("%A %b %d, %Y") %></p>
+          <h1 id="eventName" class="eventTicketName"><%= @event.title %></h1>
+        </div>
+        <div class="eventTicket">
+          <%= render "event_ticket" %>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <div class="eventPageContainer">
     <section class="event-page">
       <div class="event-body-container">
@@ -40,6 +44,13 @@
             <p class="eventInfoBoxText"><%= @event.time.strftime("%A %b %d, %Y") %> • <%= @event.time.strftime("%I:%M%p") %></p>
             <p class="eventInfoBoxText"><%= @event.address %></p>
           </div>
+          <iframe
+            width="400"
+            height="400"
+            frameborder="0" style="border:0"
+            src="https://www.google.com/maps/embed/v1/place?key=<%= ENV["GYMME_MAPS_KEY"] %>
+              &q=Space+Needle,Seattle+WA" allowfullscreen>
+          </iframe>
         </div>
         <div class="eventDetailsCommentsContainer">
           <div class="event-details-continer">
@@ -61,7 +72,11 @@
               <% @comments.reverse_each do |comment| %>
               <div class="comment">
                 <p class="comment-time"><em><%= comment.created_at.strftime("%m/%d/%Y at %I:%M%p") %></em></p>
+                <% if comment.user.name %>
+                <p class="comment-user"><%= comment.user.name %></p>
+                <% else %>
                 <p class="comment-user"><%= comment.user.email %></p>
+                <% end %>
                 <p class="comment-body"><%= comment.body %></p>
                 <!-- Check if user created comment to have authorization to delete it  -->
                 <% if comment.user.id == current_user.id %>

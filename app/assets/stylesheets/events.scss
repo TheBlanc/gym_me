@@ -52,10 +52,16 @@
 
 // EVENT SHOW PAGE
 
-.eventPageBackground {
+.eventShowBackground {
   min-height: 100vh;
   background-color: #f1f1f1;
-  padding-bottom: 88px;
+  padding-bottom: 80px;
+}
+
+.eventPageBackground {
+  // min-height: 100vh;
+  // background-color: #f1f1f1;
+  // padding-bottom: 88px;
 }
 
 .eventPageContainer {
@@ -91,6 +97,7 @@
 
 .event-details-continer {
   margin: 20px 0;
+  padding-right: 15px;
 }
 
 .event-details {
@@ -119,6 +126,7 @@
   border-top: #eceaea solid 3px;
   border-bottom: #e0dede solid 1px;
   padding: 20px 20px;
+  background: white;
 
 }
 
