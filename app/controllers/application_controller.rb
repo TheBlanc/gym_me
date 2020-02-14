@@ -26,9 +26,15 @@ end
   helper_method :user_avatar
   helper_method :event_activity_icon
   helper_method :availabilityMatch?
+  helper_method :full_name
+
 
 
   private
+
+  def full_name(user)
+    return "#{user.first_name} #{user.last_name}"
+  end
 
   # returns truthy value if current_user has joined an event
   def joined_event?
