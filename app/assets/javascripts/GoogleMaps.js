@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function(){
                 var eventMap = new google.maps.Map(document.getElementById('map'), {
                 center: eventlatLong,
                 mapTypeControl: false,
-                zoom: 18
+                zoom: 12
                 });
 
                 // Map start off as hidden for mobile

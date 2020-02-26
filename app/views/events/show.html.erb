@@ -47,9 +47,9 @@
           <iframe
             width="400"
             height="400"
-            frameborder="0" style="border:0"
+            frameborder="0" style="border:0" label="none"
             src="https://www.google.com/maps/embed/v1/place?key=<%= ENV["GYMME_MAPS_KEY"] %>
-              &q=Space+Needle,Seattle+WA" allowfullscreen>
+              &q=<%= @event.address %>" allowfullscreen>
           </iframe>
         </div>
         <div class="eventDetailsCommentsContainer">
