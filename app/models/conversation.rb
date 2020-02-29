@@ -12,7 +12,6 @@ class Conversation < ApplicationRecord
 #  with is a method that returns the other participant of a conversation
   def with(current_user)
     author == current_user ? receiver : author
-  
   end
 
   scope :between, -> (sender_id, receiver_id) do

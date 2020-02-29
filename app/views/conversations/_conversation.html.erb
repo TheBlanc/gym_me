@@ -1,8 +1,7 @@
 <%= link_to conversation_path(conversation) do %>
   <div class=conversation>
-    <h3 class="convoHeading">
-      Conversation with <%= online_status conversation.with(current_user) %>
-    </h3>
+    <h3 class="convoHeading">Conversation with</h3>
+    <h3 class="convoUser"><%= online_status conversation.with(current_user) %><%= full_name(conversation.with(current_user)) %></h3>
     <p class="convoPreview"><em><%= conversation.personal_messages.last.body.truncate(50) %></em></p>
   </div>
 <% end %>

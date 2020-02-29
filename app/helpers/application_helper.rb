@@ -8,7 +8,7 @@ module ApplicationHelper
 
 
   def online_status(user)
-    content_tag :span, full_name(user), class: "user-#{user.id} online_status #{'online' if user.online?}"
+    content_tag :span, "•", class: "user-#{user.id} online_status #{'online' if user.online?}"
   end
 
   def emojify(content)

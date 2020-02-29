@@ -3,20 +3,34 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .speech-bubble {
 	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
   padding: 1em;
-	background: #b9fa9f;
-  margin: auto;
-  width: 90%;
-  /* Add shadows to create the "card" effect */
-	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-	transition: 0.3s;
-	border-radius: 5px; /* 5px rounded corners */
+	background: var(--main-green);
+  // width: 70%;
+	border-radius: 15px; /* 5px rounded corners */
 	margin-bottom: 1.5em;
 }
 
-.currentUserBubble {
-  background: var(--main-green);
+.userMessageName {
+	font-family: "Open Sans";
+	font-weight: bold;
+	font-size: 1.3em;
+	margin: 5px 0;
 }
+
+.messageDate {
+  font-size: 0.7em;
+	margin: 5px 0;
+}
+
+.convoSendNote {
+	align-self: flex-end;
+	font-size: 0.8em;
+	margin: 2px 6px;
+}
+
 
 
 // .speech-bubble:after {
@@ -33,9 +47,6 @@
 // 	margin-bottom: -20px;
 // }
 
-.created_by_message {
-  font-size: 0.8em;
-}
 
 .speech-bubble-p {
 	overflow-wrap: break-word;

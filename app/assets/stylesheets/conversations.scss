@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .backButton {
-  margin: 15px;
+  margin: 15px 0px 0px 15px;
 
 }
 
@@ -34,20 +34,24 @@
   align-items: center;
 }
 
-.conversaions {
+.conversations {
   max-width: 700px;
   width: 50%;
 }
 
-.conversaions a {
+.convoUser {
+  font-size: 2em;
+}
+
+.conversations a {
   text-decoration: none;
   color: black;
 }
 
 .convoHeading {
-  font-size: 1.5em;
+  font-size: 0.8em;
   font-weight: bold;
-  margin: 20px
+  margin: 5px;
 }
 
 .chatsHeading {
@@ -61,24 +65,26 @@
 .convoPreview {
   color: #787878;
   font-size: 1.2em;
-  margin: 10px;
+  margin: 7px;
 }
 
 #conversation-main {
   max-width: fit-content;
-  margin: auto;
-  margin-top: 1em;
+  margin: 0 auto;
+  margin-top: 0.5em;
   background: white;
-  padding: 20px;
+  padding: 6px 20px;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  min-height: 82%;
 }
 
 #conversation-body {
   max-height: 600px;
   overflow-y: auto;
   margin-bottom: 2em;
-  width: 100%;
+  max-width: 330px;
+  font-family: sans-serif;
 }
