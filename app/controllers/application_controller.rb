@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
   end
 
   def online_status(user)
-  content_tag :span, user.name, class: "user-#{user.id} online_status #{'online' if user.online?}"
+  content_tag :span, user.full_name(user), class: "user-#{user.id} online_status #{'online' if user.online?}"
 end
 
 def emojify(content)
@@ -27,10 +27,17 @@ end
   helper_method :event_activity_icon
   helper_method :availabilityMatch?
   helper_method :full_name
+  helper_method :current_user_message?
 
 
 
   private
+
+  def current_user_message?(user, current_user)
+    if user == current_user
+      return "currentUserBubble"
+    end
+  end
 
   def full_name(user)
     return "#{user.first_name} #{user.last_name}"

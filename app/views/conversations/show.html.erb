@@ -1,21 +1,28 @@
-<div class="navBar">
-<% if current_user %>
-  <%= render "shared/nav_bar" %>
-<% else %>
-  <%= render "shared/landing_nav_bar" %>
-<% end %>
-</div>
-
-<div id="conversation-main">
-  <h1>Chatting with <%= @conversation.with(current_user).name %></h1>
-  <div id="conversation-body" data-conversation-id="<%= @conversation.id %>">
-    <%= render @conversation.personal_messages %>
+<div class="conversaionPageContainer">
+  <div class="navBar">
+    <% if current_user %>
+    <%= render "shared/nav_bar" %>
+    <% else %>
+    <%= render "shared/landing_nav_bar" %>
+    <% end %>
+  </div>
+  <div class="backButton">
+    <%= link_to conversations_path do %>
+      Back to All Conversations
+    <% end %>
   </div>
 
-  <%= form_for @personal_message do |f| %>
+  <div id="conversation-main">
+    <h1 class="convoHeading">Conversation with <%= link_to full_name(@conversation.with(current_user)), user_url(@conversation.with(current_user).id) %></h1>
+    <div id="conversation-body" data-conversation-id="<%= @conversation.id %>">
+      <%= render @conversation.personal_messages %>
+    </div>
+
+    <%= form_for @personal_message do |f| %>
     <%= hidden_field_tag 'conversation_id', @conversation.id %>
     <%= f.text_area :body %>
-  <br>
+    <br>
 
-  <% end %>
+    <% end %>
+  </div>
 </div>
