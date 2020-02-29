@@ -34,14 +34,14 @@
     <div id="conversation-body" data-conversation-id="<%= @conversation.id %>">
       <%= render @conversation.personal_messages %>
     </div>
+    <div class="submitMessageContainer">
+      <%= form_for @personal_message do |f| %>
+      <%= hidden_field_tag 'conversation_id', @conversation.id %>
+      <%= f.text_area :body %>
+      <br>
 
-    <%= form_for @personal_message do |f| %>
-    <%= hidden_field_tag 'conversation_id', @conversation.id %>
-    <%= f.text_area :body %>
-    <br>
-
-    <% end %>
-    <p class="convoSendNote">return/enter</p>
-
+      <% end %>
+      <p class="convoSendNote">return/enter</p>
+    </div>
   </div>
 </div>
