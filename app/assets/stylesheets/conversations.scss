@@ -54,12 +54,33 @@
   margin: 5px;
 }
 
+
+.convoUserHeadingName {
+  font-size: 1.5em;
+}
+
+.convoHeadingContainer {
+  text-align: center;
+  margin: 10px;
+}
+
 .chatsHeading {
   margin-bottom: 10px;
   font-family: sans-serif;
   font-size: 2em;
   font-weight: bold;
 
+}
+
+.userChatAvatar {
+  margin: 0 7px;
+}
+
+.convoUserFlexContainer a {
+  display: flex;
+  text-decoration: none;
+  color: black;
+  align-items: center;
 }
 
 .convoPreview {

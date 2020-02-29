@@ -13,7 +13,24 @@
   </div>
 
   <div id="conversation-main">
-    <h1 class="convoHeading">Conversation with <%= link_to full_name(@conversation.with(current_user)), user_url(@conversation.with(current_user).id) %></h1>
+    <div class="convoHeadingContainer">
+      <div class="convoUserFlexContainer">
+        <%= link_to user_url(@conversation.with(current_user).id) do %>
+        <div class="userChatAvatar">
+          <% if @conversation.with(current_user).avatar.attached? %>
+          <div class="avatar">
+            <%= image_tag url_for(@conversation.with(current_user).avatar) %>
+          </div>
+          <% else %>
+          <div class="avatar">
+            <%= image_tag(user_avatar(@conversation.with(current_user))) %>
+          </div>
+          <% end %>
+        </div>
+        <h1 class="convoUserHeadingName"><%= full_name(@conversation.with(current_user)) %></h1>
+        <% end %>
+      </div>
+    </div>
     <div id="conversation-body" data-conversation-id="<%= @conversation.id %>">
       <%= render @conversation.personal_messages %>
     </div>
