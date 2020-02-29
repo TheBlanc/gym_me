@@ -1,7 +1,8 @@
-<div class=conversation>
-  Chatting with <%= online_status conversation.with(current_user) %>
-  <br>
-  <em><%= conversation.personal_messages.last.body.truncate(50) %></em>
-  <br>
-  <%= link_to 'View conversation', conversation_path(conversation) %>
-</div>
+<%= link_to conversation_path(conversation) do %>
+  <div class=conversation>
+    <h3 class="convoHeading">
+      Conversation with <%= online_status conversation.with(current_user) %>
+    </h3>
+    <p class="convoPreview"><em><%= conversation.personal_messages.last.body.truncate(50) %></em></p>
+  </div>
+<% end %>

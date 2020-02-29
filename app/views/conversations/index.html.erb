@@ -1,15 +1,17 @@
-<div class="navBar">
-<% if current_user %>
-  <%= render "shared/nav_bar" %>
-<% else %>
-  <%= render "shared/landing_nav_bar" %>
-<% end %>
-</div>
-
-<section class="convo-box">
-  <h1>Your conversations</h1>
-
-  <div id="conversations">
-    <%= render @conversations %>
+<div class="conversaionPageContainer">
+  <div class="navBar">
+  <% if current_user %>
+    <%= render "shared/nav_bar" %>
+  <% else %>
+    <%= render "shared/landing_nav_bar" %>
+  <% end %>
   </div>
-</section>
+
+  <section class="convo-box">
+    <h1 class="chatsHeading">Chats</h1>
+
+    <div id="conversations">
+      <%= render @conversations %>
+    </div>
+  </section>
+</div>
