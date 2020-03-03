@@ -59,10 +59,6 @@
   font-size: 1.5em;
 }
 
-.convoHeadingContainer {
-  text-align: center;
-  margin: 10px;
-}
 
 .chatsHeading {
   margin-bottom: 10px;
@@ -74,6 +70,11 @@
 
 .userChatAvatar {
   margin: 0 7px;
+}
+
+.convoHeadingContainer {
+  align-self: center;
+  margin: 10px;
 }
 
 .convoUserFlexContainer a {
@@ -103,30 +104,19 @@
   border-radius: 10px;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
-  min-height: 82%;
+  height: 80%;
 }
 
 #conversation-body {
-  max-height: 400px;
-  min-height: 400px;
+  height: 400px;
+  width: 100%;
   overflow-y: auto;
   margin-bottom: 1em;
-  max-width: 330px;
   font-family: sans-serif;
   padding: 0 8px;
 }
-
-// #messages {
-//  max-height: 450px;
-//  overflow-y: auto;
-//  .avatar {
-//    margin: 0.5rem;
-//  }
-// }
-
-
 
 
    #notification {
@@ -138,4 +128,41 @@
      border: 1px solid black;
      background-color: #fff;
      .close {cursor: pointer}
+   }
+
+
+   .speech-bubble {
+    padding: 1em;
+   	background: var(--main-green);
+   	border-radius: 15px;
+   	margin-bottom: 1.5em;
+    width: fit-content;
+    max-width: 330px;
+    overflow-x: scroll;
+   }
+
+   .userMessageName {
+   	font-family: "Open Sans";
+   	font-weight: bold;
+   	font-size: 1.3em;
+   	margin: 5px 0;
+   }
+
+   .messageDate {
+     font-size: 0.7em;
+   	margin: 5px 0;
+   }
+
+   .convoSendNote {
+   	align-self: flex-end;
+   	font-size: 0.8em;
+   	margin: 2px 6px;
+   }
+
+
+   .speech-bubble-p {
+   	overflow-wrap: break-word;
+   	img {
+   		width: initial;
+   	}
    }
