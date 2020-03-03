@@ -31,8 +31,6 @@
   justify-content: space-between;
 }
 
-
-
 .scheduleSquareAvailable {
   background-color: var(--main-green);
 }
@@ -151,10 +149,17 @@
 .index-user-name {
   font-weight: bold;
   font-size: 1.5em;
+  font-family: sans-serif;
 }
 
 p.fitness-level {
   margin: 5px 0
+}
+
+.userResultsBackground {
+  background: #f1f1f1;
+  padding-top: 10px;
+  min-height: 100vh;
 }
 
 
@@ -170,10 +175,13 @@ p.fitness-level {
 
 
 .profile-avatar {
-  width: 170px;
   vertical-align: top;
   margin: 1em;
-  }
+  height: 130px;
+  overflow: hidden;
+  width: 130px;
+  border-radius: 50%;
+}
 
 
 .user-profile-card {
