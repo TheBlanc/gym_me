@@ -1,19 +1,43 @@
-<div class="navBar">
-<% if current_user %>
-  <%= render "shared/nav_bar" %>
-<% else %>
-  <%= render "shared/landing_nav_bar" %>
-<% end %>
+<div class="conversaionShowPageContainer">
+  <div class="navBar">
+    <% if current_user %>
+    <%= render "shared/nav_bar" %>
+    <% else %>
+    <%= render "shared/landing_nav_bar" %>
+    <% end %>
+  </div>
+  <div class="backButton">
+    <%= link_to conversations_path do %>
+      Back to All Conversations
+    <% end %>
+  </div>
+  <div id="conversation-main">
+    <div class="convoHeadingContainer">
+      <div class="convoUserFlexContainer">
+        <%= link_to user_url(@receiver.id) do %>
+        <div class="userChatAvatar">
+          <% if @receiver.avatar.attached? %>
+          <div class="avatar">
+            <%= image_tag url_for(@receiver.avatar) %>
+          </div>
+          <% else %>
+          <div class="avatar">
+            <%= image_tag(user_avatar(@receiver)) %>
+          </div>
+          <% end %>
+        </div>
+        <h1 class="convoUserHeadingName"><%= full_name(@receiver) %></h1>
+        <% end %>
+      </div>
+    </div>
+    <div class="submitMessageContainer">
+      <%= form_for @personal_message do |f| %>
+        <%= hidden_field_tag 'receiver_id', @receiver.id %>
+
+        <%= f.text_area :body %>
+
+        <%= f.submit "Start Conversation" %>
+      <% end %>
+    </div>
+  </div>
 </div>
-
-
-<h1>New message to <%= @receiver.name %></h1>
-
-<%= form_for @personal_message do |f| %>
-  <%= hidden_field_tag 'receiver_id', @receiver.id %>
-
-  <%= f.label :body %>
-  <%= f.text_area :body %>
-
-  <%= f.submit %>
-<% end %>
