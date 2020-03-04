@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function(){
     // console.log(eventsMarkerTitle[0].attributes[1].value);
 
 
-    //initMap call google api to displau the makp
+    //initMap call google api to display the map
     function initMap(){
         eventMap();
         eventsMap();
@@ -75,15 +75,7 @@ document.addEventListener("DOMContentLoaded", function(){
         });
         return marker;
     };
-    //toggleBounce making the marker bounce
-    function toggleBounce(mapMarker) {
-        if (mapMarker.getAnimation() !== null) {
-            mapMarker.setAnimation(null);
-        } else {
-            mapMarker.setAnimation(google.maps.Animation.BOUNCE);
-        }
-    }
-    // make marker bounce
+
     function addMarkerWithTimeout(position, name, map, timeout) {
        window.setTimeout(function() {
            var marker = new google.maps.Marker({
@@ -92,9 +84,7 @@ document.addEventListener("DOMContentLoaded", function(){
              animation: google.maps.Animation.DROP
             });
             marker.addListener('click', function(){
-                toggleBounce(this);
-                infoWindow('<h1>'+name+'</h1>').open(map, this);
-
+                infoWindow('<h1>' + name + '</h1>').open(map, this);
             });
            // infoWindow('<h1>'+eventName.innerHTML+'</h1>').open(eventMap, this);
          markers.push(marker);
