@@ -2,13 +2,16 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.backButton {
-  margin: 15px 0px 0px 15px;
 
+.backButton {
+  position: absolute;
+  left: 0;
 }
 
 .backButton a {
-  // text-decoration: none;
+  text-decoration: none;
+  color: black;
+  font-size: 28px;
 }
 
 .conversaionPageContainer {
@@ -79,8 +82,13 @@
 }
 
 .convoHeadingContainer {
+  position: relative;
+  display: flex;
+  justify-content: center;
   align-self: center;
-  margin: 10px;
+  margin: 14px 10px;
+  width: 100%;
+  align-items: center;
 }
 
 .convoUserFlexContainer a {
@@ -111,7 +119,7 @@
 #conversation-main {
   max-width: 400px;
   margin: 0 auto;
-  margin-top: 0.5em;
+  margin-top: 25px;
   background: white;
   padding: 6px 20px;
   border-radius: 10px;
@@ -119,74 +127,154 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-between;
-  height: 82%;
+  height: 85%;
 }
 
 #conversation-body {
   height: 450px;
   width: 100%;
   overflow-y: scroll;
-  margin-bottom: 1em;
   font-family: sans-serif;
-  padding: 0 8px;
+  padding: 0 8px 10px 8px;
   flex-grow: 1;
+  // margin-bottom: 22px;
 }
 
 
-   #notification {
-     position: fixed;
-     right: 10px;
-     bottom: 10px;
-     width: 300px;
-     padding: 10px;
-     border: 1px solid black;
-     background-color: #fff;
-     .close {cursor: pointer}
-   }
+#notification {
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  width: 300px;
+  padding: 10px;
+  border: 1px solid black;
+  background-color: #fff;
+  .close {cursor: pointer}
+}
 
 
-   .speech-bubble {
-    padding: 1em;
-   	background: var(--main-green);
-   	border-radius: 15px;
-   	margin-bottom: 1.5em;
-    width: fit-content;
-    max-width: 290px;
-    overflow-x: scroll;
-   }
+.speech-bubble {
+  padding: 1em;
+	background: var(--main-green);
+	border-radius: 15px;
+	margin-bottom: 1.5em;
+  width: fit-content;
+  max-width: 290px;
+  overflow-x: scroll;
+}
 
-   .userMessageName {
-   	font-family: "Open Sans";
-   	font-weight: bold;
-   	font-size: 1.3em;
-   	margin: 5px 0;
-   }
+.userMessageName {
+	font-family: "Open Sans";
+	font-weight: bold;
+	font-size: 1.3em;
+	margin: 5px 0;
+}
 
-   .messageDate {
-     font-size: 0.7em;
-   	margin: 5px 0;
-   }
+.messageDate {
+ font-size: 0.7em;
+	margin: 5px 0;
+}
 
-   .convoSendNote {
-   	align-self: flex-end;
-   	font-size: 0.8em;
-   	margin: 2px 6px;
-   }
+.convoSendNote {
+	align-self: flex-end;
+	font-size: 0.8em;
+  margin: 2px 11px 2px 0;
+}
 
 
-   .speech-bubble-p {
-   	overflow-wrap: break-word;
-   	img {
-   		width: initial;
-   	}
-   }
+.speech-bubble-p {
+	overflow-wrap: break-word;
+	img {
+		width: initial;
+	}
+}
 
-.new_personal_message input[type="submit"] {
-  padding: 20px;
+.new_personal_message {
+  text-align: right;
+  padding: 3px 10px;
+}
+
+.new_personal_message textarea {
+  margin: 2px 0 6px 0;
+  font-size: 18px;
+  padding: 5px;
+  border-radius: 15px;
+}
+
+.new_personal_message input[type=submit] {
+  background-color: var(--main-green);
+  border: none;
+  color: white;
+  padding: 14px 30px;
+  font-size: 16px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+  width: 100%;
 }
 
 @media screen and (min-width: 400px) {
   #conversation-main {
     min-width: 400px;
+  }
+  .body {
+    height: 100vh;
+  }
+}
+
+@media screen and (max-width: 400px) {
+
+  .body {
+    height: 100vh;
+  }
+
+  .submitMessageContainer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background: white;
+  }
+
+  .new_personal_message textarea {
+    min-height: 35px;
+    height: fit-content;
+  }
+
+  #conversation-main {
+    height: 80%;
+  }
+
+  .conversaionShowPageContainer .navBarContainer {
+    display: none;
+  }
+
+  #conversation-main {
+  height: 100%;
+  }
+
+  #conversation-body {
+  margin-bottom: 49px;
+  }
+
+  .convoHeadingContainer {
+  position: fixed;
+  background: white;
+  display: flex;
+  top: 0;
+  justify-content: center;
+  align-self: center;
+  padding: 14px 10px;
+  width: 100%;
+  align-items: center;
+  margin: 0;
+  }
+
+  .backButton {
+  position: absolute;
+  left: 0;
+  left: 14px;
   }
 }
