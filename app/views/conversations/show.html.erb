@@ -1,19 +1,19 @@
 <div class="conversaionShowPageContainer">
-  <div class="navBar">
+  <div class="navBarContainer">
     <% if current_user %>
     <%= render "shared/nav_bar" %>
     <% else %>
     <%= render "shared/landing_nav_bar" %>
     <% end %>
   </div>
-  <div class="backButton">
-    <%= link_to conversations_path do %>
-      Back to All Conversations
-    <% end %>
-  </div>
 
   <div id="conversation-main">
     <div class="convoHeadingContainer">
+      <div class="backButton">
+        <%= link_to conversations_path do %>
+          <<
+        <% end %>
+      </div>
       <div class="convoUserFlexContainer">
         <%= link_to user_url(@conversation.with(current_user).id) do %>
         <div class="userChatAvatar">
@@ -35,13 +35,14 @@
       <%= render @conversation.personal_messages %>
     </div>
     <div class="submitMessageContainer">
+      <p class="convoSendNote">return/enter</p>
+
       <%= form_for @personal_message do |f| %>
       <%= hidden_field_tag 'conversation_id', @conversation.id %>
       <%= f.text_area :body %>
       <br>
 
       <% end %>
-      <p class="convoSendNote">return/enter</p>
     </div>
   </div>
 </div>
