@@ -255,5 +255,44 @@
     font-weight: lighter;
   }
 
+  .event-body-container {
+    display: block;
+  } .event-body-container iframe {
+    width: 100%;
+  }
+
+  .event-details-continer {
+    background: white;
+    padding: 10px;
+  }
+
+  .commentAreaContainer .comment, .commentAreaContainer textarea {
+    width: 100%;
+  } .commentAreaContainer input[type="submit"] {
+    background: white;
+    padding: 5px;
+  }
+
+  .eventInfoBox .map-icon {
+    text-align: center;
+    margin-left: auto;
+    display: block;
+  }
+
+  .eventInfoBox .eventInfoBoxText {
+    margin-bottom: 0;
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  .map-icon {
+    border: none;
+  }
+
+  #eventsMap {
+    display: none;
+  }
 
 }
