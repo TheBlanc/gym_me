@@ -43,7 +43,7 @@
             <div class="event-info">
               <p class="date"><%= event.time.strftime("%A %b %d, %Y") %></p>
               <h3 class="event-title"><%= event.title %></h3>
-              <p class="event-description"><%= event.description %></p>
+              <p class="address"><%= event.address %></p>
             </div>
           </div>
         <% end %>
@@ -63,7 +63,6 @@
             <p class="date"><%= event.time.strftime("%A %b %d, %Y") %></p>
             <h3 class="event-title"><%= event.title %></h3>
             <p class="address"><%= event.address %></p>
-            <p class="event-description"><%= event.description %></p>
           </div>
         </div>
       </div>

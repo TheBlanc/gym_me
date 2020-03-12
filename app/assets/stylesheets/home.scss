@@ -5,10 +5,8 @@
 }
 
 .home {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
+  width: fit-content;
+  margin: auto;
 }
 
 .event-reults {
@@ -24,28 +22,14 @@
   background-size: 100%;
   background-position: 0 45%;
   background-repeat: no-repeat;
-  height: 200px;}
-
-.home-page .top-heading {
-  top: 87px;
-  left: 31%;
+  height: 200px;
 }
-
-.home-page .sub-heading {
-  top: 140px;
-  left: 31%;
-}
-
 
 .home-page-heading {
   font-size: 1.5em;
   margin: 4em 0 2em 0;
 }
 
-.home p.date {
-  margin: 0.2em;
-  font-size: 0.8em;
-}
 
 .no-rsvps {
   font-style: italic;
@@ -66,41 +50,17 @@
   background-color: #c3c3c3;
 }
 
-.event-cards-container {
-  max-width: 700px;
-  width: 60%;
-}
 
-.event-icon {
-  display: inline-block;
-  width: 80px;
-  margin: auto;
-}
-
-.event-icon-container {
-
-}
-
-.event-info {
-  padding: 0 0 0 15px;
-}
-
-
-
-.home-heading {
-  text-align: center;
-  margin: 1em 0.5em 0 1.7em;
-  font-size: 1.2em;
-}
-
-.event-title {
-  color: black;
-  font-family: sans-serif;
-  font-weight: bold;
-  font-size: 1.5em;
-}
 
 .greeting-help {
   width: 9em;
   display: inline-block;
+}
+
+@media screen and (max-width: 680px){
+
+  .home-hero-image {
+    background-size: 150%;
+  }
+
 }

@@ -2,7 +2,8 @@
 
 <% if @event.capacity %>
 <div class="ticketAttendance">
-  <p><%= @event.capacity %> spots left</p>
+  <div class="ticketSpots">Spots Left</div>
+  <p><%= @event.capacity %></p>
 </div>
 <% else %>
 <p><%= @event.users.length %> attending</p>

@@ -13,11 +13,21 @@
       <div class="event-show-info">
         <p class="event-date"><%= @event.time.strftime("%A %b %d, %Y") %></p>
         <h1 id="eventName" class="event-name"><%= @event.title %></h1>
-        <% if @event.owner.first_name %>
-        <p class="eventInfoBoxText">Hosted by <span class="event-owner"><%= link_to full_name(@event.owner), user_path(@event.owner.id) %></span></p>
-        <% else %>
-        <p class="eventInfoBoxText">Hosted by <span class="event-owner"><%= link_to @event.owner.email, user_path(@event.owner.id) %></span></p>
-        <% end %>
+        <div class="eventHostFlexContainer">
+          <% if @event.owner.first_name && @event.owner.avatar.attached? %>
+            <p class="eventInfoBoxText">Hosted by</p>
+            <%= link_to user_path(@event.owner.id) do %>
+            <div class="avatar">
+              <%= image_tag url_for(@event.owner.avatar) %>
+            </div>
+            <p class="event-owner"><%= full_name(@event.owner) %></p>
+            <% end %>
+          <% elsif @event.owner.first_name %>
+            <p class="eventInfoBoxText">Hosted by <span class="event-owner"><%= link_to full_name(@event.owner), user_path(@event.owner.id) %></span></p>
+          <% else %>
+            <p class="eventInfoBoxText">Hosted by <span class="event-owner"><%= link_to @event.owner.email, user_path(@event.owner.id) %></span></p>
+          <% end %>
+        </div>
       </div>
     </div>
   </header>
