@@ -53,8 +53,14 @@
           <div class="eventInfoBox">
             <p class="eventInfoBoxText"><%= @event.time.strftime("%A %b %d, %Y") %> • <%= @event.time.strftime("%I:%M%p") %></p>
             <p class="eventInfoBoxText"><%= @event.address %></p>
+            <div class="map-icon" id="map-button">
+              <p id="showText">show</p>
+              <p class="hidden" id="hideText">hide</p>
+              <%= image_tag("noun_Map.png") %>
+            </div>
           </div>
           <iframe
+            id="eventsMap"
             width="400"
             height="400"
             frameborder="0" style="border:0" label="none"
