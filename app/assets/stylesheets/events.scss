@@ -3,15 +3,6 @@
   margin: auto;
 }
 
-.event-card {
-  display: flex;
-  background-color: white;
-  margin: 1em 2em 1em 2em;
-  padding: 1em 1em 0 1em;
-  border: 1px solid black;
-  text-align: left;
-  transition: 0.3s;
-}
 
 .event-card a {
   color: black;
@@ -46,11 +37,25 @@
   font-size: 1em;
 }
 
-.new-event-heading {
-  font-size: 1.8em;
-}
 
 // EVENT SHOW PAGE
+
+.eventHostFlexContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+} .eventHostFlexContainer a {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: black;
+
+} .eventHostFlexContainer .avatar {
+  margin: 8px;
+
+}
+
 
 .eventShowBackground {
   min-height: 100vh;
@@ -141,6 +146,8 @@
   display: flex;
   margin: 30px 0;
   flex-direction: row;
+  align-items: center;
+  justify-content: space-between
 }
 
 .eventTicketBar {
@@ -174,6 +181,8 @@
 .ticketAttendance {
   margin-right: 30px;
   font-weight: bold;
+  text-align: center;
+
 }
 
 .eventTicketName {
@@ -224,5 +233,27 @@
 }
 
 .event-body-container {
+
+}
+
+
+@media screen and (max-width: 680px){
+
+  .eventTicketBar .event-date {
+    font-size: 0.8em;
+  }
+
+  .ticketAttendance {
+    font-size: 1em;
+    margin: 0 15px;
+    font-size: 1.2em;
+    font-weight: bold;
+  }
+
+  .ticketAttendance .ticketSpots {
+    font-size: 0.7em;
+    font-weight: lighter;
+  }
+
 
 }
