@@ -266,11 +266,15 @@
     padding: 10px;
   }
 
-  .commentAreaContainer .comment, .commentAreaContainer textarea {
+  .commentAreaContainer .comment, {
     width: 100%;
   } .commentAreaContainer input[type="submit"] {
     background: white;
     padding: 5px;
+  } .commentAreaContainer textarea {
+    width: 100%;
+    border: 1px solid grey;
+    margin: 5px 0;
   }
 
   .eventInfoBox .map-icon {

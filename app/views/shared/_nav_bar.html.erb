@@ -1,7 +1,11 @@
+<% if current_user %>
 <nav class="navBar">
+  <%= link_to home_path(current_user.id) do %>
   <div class="gymmelogo-container">
     <h1 class="gymme-logo">Gymme</h1>
   </div>
+  <% end %>
+
   <div class="nav-item-container">
     <ul class="navBar-items" id="navBarItems">
       <div class="nav-button">
@@ -48,11 +52,7 @@
       </div>
     </ul>
 
-    <div class="hamburger-menu-icon" id="hamburgerMenuIcon">
-      <%= image_tag("menu.svg") %>
-    </div>
 
-  <% if current_user %>
     <div class="profile-button" id="profile-avatar-button">
       <% if current_user.avatar.attached? %>
         <div class="avatar">
@@ -69,20 +69,43 @@
 
   <section class="user-options-modal hidden" id="userMenu">
     <ul class="user-options">
-      <%= link_to new_event_path do %>
-        <li class="user-options-link">Create Event</li>
-      <% end %>
-      <%= link_to user_path(current_user.id) do %>
-        <li class="user-options-link">Profile</li>
-      <% end %>
-      <%= link_to destroy_user_session_path, method: :delete do %>
-        <li class="user-options-link logout">Logout</li>
-      <% end %>
+      <div class="nav-button mainNavOption">
+        <%= link_to home_path(current_user.id) do %>
+          <li class="desktop nav-item"> Home </li>
+        <% end %>
+      </div>
+      <div class="nav-button mainNavOption">
+        <%= link_to discover_path do %>
+          <li class="desktop nav-item"> Discover Events </li>
+        <% end %>
+      </div>
+      <div class="nav-button mainNavOption">
+        <%= link_to gymbuddy_path do %>
+          <li class="desktop nav-item"> Find Gym Buddy </li>
+        <% end %>
+      </div>
+      <div class="nav-button mainNavOption">
+        <%= link_to conversations_path do %>
+          <li class="desktop nav-item"> Messages </li>
+        <% end %>
+      </div>
+      <div class="nav-button-extra">
+        <%= link_to new_event_path do %>
+        <li class="nav-item">Create Event</li>
+        <% end %>
+      </div>
+      <div class="nav-button-extra">
+        <%= link_to user_path(current_user.id) do %>
+        <li class="nav-item">Profile</li>
+        <% end %>
+      </div>
+      <div class="nav-button-extra">
+        <%= link_to destroy_user_session_path, method: :delete do %>
+        <li class="nav-item logout">Logout</li>
+        <% end %>
+      </div>
     </ul>
   </section>
-  <div class="screen-cover" id="userScreenCover"></div>
-  <div class="screen-cover drop-down-screen-cover-tint" id="dropDownScreenCover"></div>
-
-
 <% end %>
 </nav>
+<div class="screen-cover drop-down-screen-cover-tint" id="dropDownScreenCover"></div>
