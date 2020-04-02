@@ -33,7 +33,12 @@ document.addEventListener("DOMContentLoaded", function(){
     $('#dropDownScreenCover').toggle();
   });
 
-
+  $(window).scroll(function() {
+      if ($(document).scrollTop() > 100) {
+        $('#dropDownItems').hide( "slide", { direction: "up" }, 330);
+        $('#dropDownScreenCover').hide();
+      }
+    });
 
 
 
