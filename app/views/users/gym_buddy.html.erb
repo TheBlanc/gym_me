@@ -46,64 +46,54 @@
           <div class="activity-icon">
             <p class="activity-type-description">Yoga/Pilates</p>
             <label class="activity-type hide-radio-button">
-              <%= radio_button_tag :activity_goal, "Yoga/Pilates", checked = false %>
+              <%= radio_button_tag :activity_type, "Yoga/Pilates", checked = false %>
+              <div class="clickedRadioCircle"></div>
               <%= image_tag("lotus-position.svg") %>
             </label>
           </div>
           <div class="activity-icon">
             <p class="activity-type-description">Resistence</p>
             <label class="activity-type hide-radio-button">
-              <%= radio_button_tag :activity_goal, "Resistence Training", checked = false %>
-              <%= image_tag("dumbbell.svg") %>
+              <%= radio_button_tag :activity_type, "Resistence Training", checked = false %>
+              <div class="clickedRadioCircle"></div>
+              <%= image_tag("exercise.svg") %>
             </label>
           </div>
           <div class="activity-icon">
             <p class="activity-type-description">Cardio</p>
             <label class="activity-type hide-radio-button">
-              <%= radio_button_tag :activity_goal, "Cardio", checked = false %>
+              <%= radio_button_tag :activity_type, "Cardio", checked = false %>
+              <div class="clickedRadioCircle"></div>
               <%= image_tag("athletics.svg") %>
             </label>
           </div>
           <div class="activity-icon">
             <p class="activity-type-description">Recreation</p>
             <label class="activity-type hide-radio-button">
-              <%= radio_button_tag :activity_goal, "Recreation", checked = false %>
+              <%= radio_button_tag :activity_type, "Recreation", checked = false %>
+              <div class="clickedRadioCircle"></div>
               <%= image_tag("american-football.svg") %>
             </label>
           </div>
           <label class="activity-type hide-radio-button">
-            <%= radio_button_tag :activity_goal, "", checked = true %>
+            <%= radio_button_tag :activity_type, "", checked = true %>
+            <div class="clickedRadioSquare"></div>
             <div class="activity-icon-all">All Types</div>
           </label>
         </div>
       </div>
 
       <div class="form-card discover">
-        <h2 class="activity-type-header">Fitness Level</h2>
-        <div class="fitness-level-wrapper">
-          <label class="fitness-level hide-radio-button">
-            <%= radio_button_tag :fitness_level, 1, checked = false %>
-            <p class="form-label">1</p>
-          </label>
-          <label class="fitness-level hide-radio-button">
-            <%= radio_button_tag :fitness_level, 2, checked = false %>
-            <p class="form-label">2</p>
-          </label>
-          <label class="fitness-level hide-radio-button">
-            <%= radio_button_tag :fitness_level, 3, checked = false %>
-            <p class="form-label">3</p>
-          </label>
-          <label class="fitness-level hide-radio-button">
-            <%= radio_button_tag :fitness_level, "", checked = true %>
-            <p class="form-label">All</p>
-          </label>
-        </div>
-        <div class="form-card discover">
+        <div class="form-item">
           <h2 class="activity-type-header">Fitness Level</h2>
-          <div class="fitness-level-wrapper">
-            <label class="fitness-level hide-radio-button">
-              <%= check_box_tag :availability_check, true, checked = true %>
-              <p class="form-label">Availability Check</p>
+          <%= select_tag :fitness_level, options_for_select([["All", ""], 1, 2, 3], selected: "All"), include_blank: false %>
+        </div>
+      </div>
+        <div class="form-card discover">
+          <div class="form-item">
+            <label class="fitness-level availabilityCheck">
+              <h2 class="activity-type-header availabilityCheck">Availability Check</h2>
+              <%= check_box_tag :availability_check, true, checked = false %>
             </label>
           </div>
 

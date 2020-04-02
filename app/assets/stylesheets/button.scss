@@ -36,9 +36,8 @@
   font-size: 1.4em;
   cursor: pointer;
   margin: 5px 0;
-  background: #ff8888;
-  color: white;
-
+  background: var(--main-green);
+  color: black;
 }
 
 .large-submit-button > input[type=submit]:hover {
