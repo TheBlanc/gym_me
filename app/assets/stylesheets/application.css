@@ -17,6 +17,7 @@
  *= require_self
  */
 
+
  :root {
    --main-grey: #f5f5f5;
    --main-dark-grey: #969696;
@@ -34,6 +35,8 @@
 html {
   font-family: "Open Sans", sans-serif;
   font-size: 16px;
+  scroll-behavior: smooth;
+
 
 }
 

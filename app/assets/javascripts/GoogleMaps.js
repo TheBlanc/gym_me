@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", function(){
                 var eventsMap = new google.maps.Map(document.getElementById('eventsMap'), {
                 center: eventsCoordinates,
                 mapTypeControl: false,
-                zoom: 13
+                zoom: 11
                 });
                 drop(eventsLatLongClass, eventsMap);
 
