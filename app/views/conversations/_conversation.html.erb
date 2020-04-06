@@ -1,7 +1,21 @@
 <%= link_to conversation_path(conversation) do %>
   <div class=conversation>
-    <h3 class="convoHeading">Conversation with</h3>
-    <h3 class="convoUser"><%= online_status conversation.with(current_user) %><%= full_name(conversation.with(current_user)) %></h3>
+      <h3 class="convoHeading">Conversation with</h3>
+    <div class="convoUserFlexContainer">
+      <%= online_status conversation.with(current_user) %>
+      <div class="userChatAvatar">
+        <% if conversation.with(current_user).avatar.attached? %>
+        <div class="avatar">
+          <%= image_tag url_for(conversation.with(current_user).avatar) %>
+        </div>
+        <% else %>
+        <div class="avatar">
+          <%= image_tag(user_avatar(conversation.with(current_user))) %>
+        </div>
+        <% end %>
+      </div>
+      <h3 class="convoUser"><%= full_name(conversation.with(current_user)) %></h3>
+    </div>
     <p class="convoPreview"><em><%= conversation.personal_messages.last.body.truncate(50) %></em></p>
   </div>
 <% end %>

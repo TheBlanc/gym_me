@@ -5,8 +5,10 @@
 .online_status {
   color: red;
   transition: color 1s ease;
-  position: relative;
-  top: -13px;
+  position: absolute;
+  top: 0;
+  left: 8px;
+  font-size: 36px;
   &.online {
     color: green;
   }
