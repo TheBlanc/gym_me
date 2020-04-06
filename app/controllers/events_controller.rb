@@ -84,7 +84,7 @@ class EventsController < ApplicationController
       end
 
     if @event.save
-      redirect_to root_url
+      redirect_to event_path(@event)
     else
       flash[:alert] = "Something went wrong"
       render :new

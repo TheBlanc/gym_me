@@ -18,18 +18,14 @@
   color: black;
 }
 
-.messageButton {
-  margin: 0 5px;
-  padding: 10px;
-} .messageButton a {
-  text-decoration: none;
-  color: black;
-  cursor: pointer;
 
-
+.icon-button {
+  width: 25px;
+  margin: 10px;
 }
 
 .messageButton {
+  margin: 0 5px;
   background-color: var(--main-green);
   border-radius: 6px;
   display: inline-block;
@@ -44,7 +40,16 @@
 } .messageButton:active {
   position: relative;
   top: 1px;
+} .messageButton a {
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
 }
+
+.messageButtonSmallContainer {
+  display: none;
+}
+
 
 .profileSideFlexContainer {
   text-align: center;
@@ -108,6 +113,7 @@
 
 .flex-profile-card {
   display: flex;
+  flex-direction: row-reverse;
   justify-content: space-between;
 }
 
@@ -132,6 +138,9 @@
 }
 
 .user-name {
+}
+
+.userNameContainer {
   display: block;
   border-bottom: solid black 1px;
   padding: 0 0 10px 0;
@@ -237,7 +246,6 @@ p.fitness-level {
     width: 90%;
     margin-top: 1em;
     /* Add shadows to create the "card" effect */
-  	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   	transition: 0.3s;
   	border-radius: 5px; /* 5px rounded corners */
   }
@@ -249,8 +257,6 @@ p.fitness-level {
     margin: auto;
     width: 90%;
     margin-top: 1em;
-    /* Add shadows to create the "card" effect */
-  	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   	transition: 0.3s;
   	border-radius: 5px; /* 5px rounded corners */
 }
@@ -276,6 +282,14 @@ p.fitness-level {
 
 }
 
+.profile-avatar-small {
+  display: none;
+}
+
+.messageButtonSmall {
+  display: none;
+}
+
 @media screen and (max-width: 530px){
   .index-user-name {
     font-size: 2em;
@@ -284,4 +298,56 @@ p.fitness-level {
     height: 100px;
     width: 100px;
   }
+}
+
+@media screen and (max-width: 610px){
+  .flex-profile-card {
+    display: block;
+  }
+  .profile-avatar {
+    display: none;
+  }
+  .user-name {
+    display: flex;
+    align-items: center;
+  }
+  .profile-avatar-small {
+    display: block;
+    margin: 0 1em;
+    height: 50px;
+    overflow: hidden;
+    width: 50px;
+    border-radius: 50%;
+  }
+  .messageButtonFlex {
+    display: none;
+  }
+  .messageButtonSmallContainer {
+    display: block;
+    text-align: center;
+  }
+  .messageButtonSmall {
+    margin: 0 5px;
+    background-color: var(--main-green);
+    border-radius: 6px;
+    display: inline-block;
+    cursor: pointer;
+    letter-spacing: 1px;
+    font-weight: bold;
+    font-size: 12px;
+    padding: 8px 12px;
+    text-decoration: none;
+  } .messageButtonSmall:hover {
+    background-color: #a9ecff;
+  } .messageButtonSmall:active {
+    position: relative;
+    top: 1px;
+  } .messageButtonSmall a {
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+  }
+
+
+
 }
