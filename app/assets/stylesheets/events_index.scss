@@ -30,6 +30,7 @@
   border: 1px solid black;
   text-align: left;
   transition: 0.3s;
+  border-radius: 5px;
 }
 
 .event-card .date {
@@ -56,6 +57,12 @@
   padding: 0 0 0 30px;
 }
 
+
+@media screen and (max-width: 420px){
+   .new-event.sub-heading {
+    display: none;
+   }
+}
 
 
 @media screen and (max-width: 680px){

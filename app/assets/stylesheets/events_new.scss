@@ -61,7 +61,7 @@
 
 .form-card {
   border-bottom: solid grey 1px;
-  padding: 10px 80px;
+  padding: 20px 80px;
 }
 
 .form-item {
@@ -104,4 +104,44 @@ textarea {
 .form-item-icon {
   display: inline-block;
   width: 50px;
+}
+
+@media screen and (max-width: 420px){
+   .create-new-event .hero-image {
+    background-size: 147%;
+    background-position: 0 100%;
+   }
+
+   .form-item-icon {
+    width: 30px;
+  }
+}
+
+@media screen and (max-width: 500px){
+   .new-event-form {
+     padding: 0;
+   }
+   .form-item.description {
+     padding: 0;
+   }
+}
+
+@media screen and (max-width: 688px){
+   .form-item.description {
+     padding: 0;
+   }
+   .form-card {
+    padding: 10px 10px;
+   }
+
+}
+
+@media screen and (max-width: 555px){
+  .new-event-form {
+    padding: 0;
+  }
+  .form-item-icon {
+   width: 30px;
+ }
+
 }

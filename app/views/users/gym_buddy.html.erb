@@ -36,7 +36,7 @@
       </div>
       <div class="form-card discover">
         <div class="form-item">
-          <h2 class="activity-type-header">Gender</h2>
+          <h2 class="activity-type-header">Who would you prefer to workout with?</h2>
           <%= select_tag :gender, options_for_select([["All", nil], "Female", "Male", "Non-Binary"], selected: "All"), include_blank: false %>
         </div>
       </div>
@@ -85,14 +85,14 @@
 
       <div class="form-card discover">
         <div class="form-item">
-          <h2 class="activity-type-header">Fitness Level</h2>
+          <h2 class="activity-type-header">What fitness level?</h2>
           <%= select_tag :fitness_level, options_for_select([["All", ""], 1, 2, 3], selected: "All"), include_blank: false %>
         </div>
       </div>
         <div class="form-card discover">
           <div class="form-item">
             <label class="fitness-level availabilityCheck">
-              <h2 class="activity-type-header availabilityCheck">Availability Check</h2>
+              <h2 class="activity-type-header-block availabilityCheck">Only show those with matching availability</h2>
               <%= check_box_tag :availability_check, true, checked = false %>
             </label>
           </div>

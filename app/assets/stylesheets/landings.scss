@@ -170,6 +170,19 @@
   border-radius: 5px;
 }
 
+// Sign in button
+
+.sign-in {
+  padding: 5px 0 5px 0;
+  margin: 20px 20px 0 0;
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+
+}
+
+
 @media screen and (min-width: 376px) {
   .mainpagebox {
     padding: 40px 0 40px 25px;
@@ -198,6 +211,10 @@
 
 
 @media screen and (min-width: 1055px){
+
+  .sign-in {
+    margin: 20px 105px 0 0;
+  }
 
   .landingbox {
     display: flex;
