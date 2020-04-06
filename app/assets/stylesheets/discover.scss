@@ -12,7 +12,9 @@
 
 .form-card.discover {
   text-align: center;
-
+  min-width: fit-content;
+  width: 70%;
+  margin: auto;
 }
 
 .filter-search form {
@@ -56,8 +58,13 @@
   font-weight: normal;
 }
 
+.activity-type-header-block {
+  margin: 0;
+}
+
 .availabilityCheck {
   display: inline-block;
+  vertical-align: middle;
 }
 
 .activity-type-description {

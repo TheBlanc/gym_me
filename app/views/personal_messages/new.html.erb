@@ -6,13 +6,13 @@
     <%= render "shared/landing_nav_bar" %>
     <% end %>
   </div>
-  <div class="backButton">
-    <%= link_to conversations_path do %>
-      Back to All Conversations
-    <% end %>
-  </div>
   <div id="conversation-main">
     <div class="convoHeadingContainer">
+      <div class="backButton">
+        <%= link_to conversations_path do %>
+          <<
+        <% end %>
+      </div>
       <div class="convoUserFlexContainer">
         <%= link_to user_url(@receiver.id) do %>
         <div class="userChatAvatar">
