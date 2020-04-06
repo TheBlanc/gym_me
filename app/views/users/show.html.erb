@@ -9,9 +9,46 @@
 
   <section class="user-profile-card">
     <div class="flex-profile-card">
+      <div class="profileSideFlexContainer">
+        <% if @user.avatar.attached? %>
+        <div class="profile-avatar">
+          <%= image_tag url_for(@user.avatar) %>
+        </div>
+        <% else %>
+        <div class="profile-avatar">
+          <%= image_tag url_for(user_avatar(@user)) %>
+        </div>
+        <% end %>
+
+        <% if current_user != @user %>
+        <div class="messageButtonFlex">
+          <button class="messageButton">
+            <%= link_to "Message", new_personal_message_path(receiver_id: params[:id]) %>
+          </button>
+        </div>
+        <% end %>
+      </div>
       <div class="profile-info">
-        <div class="user-name">
-          <h1><%= full_name(@user) %></h1>
+        <div class="userNameContainer">
+          <div class="user-name">
+            <% if @user.avatar.attached? %>
+            <div class="profile-avatar-small">
+              <%= image_tag url_for(@user.avatar) %>
+            </div>
+            <% else %>
+            <div class="profile-avatar">
+              <%= image_tag url_for(user_avatar(@user)) %>
+            </div>
+            <% end %>
+            <h1><%= full_name(@user) %></h1>
+          </div>
+          <div class="messageButtonSmallContainer">
+            <% if current_user != @user %>
+              <button class="messageButtonSmall">
+                <%= link_to "Message", new_personal_message_path(receiver_id: params[:id]) %>
+              </button>
+            <% end %>
+          </div>
         </div>
         <div class="profileCard">
           <div class="profile-item">
@@ -92,27 +129,6 @@
             <p><%= @user.description %></p>
           </div>
         </div>
-      </div>
-
-      <div class="profileSideFlexContainer">
-        <% if @user.avatar.attached? %>
-        <div class="profile-avatar">
-          <%= image_tag url_for(@user.avatar) %>
-        </div>
-        <% else %>
-        <div class="profile-avatar">
-          <%= image_tag url_for(user_avatar(@user)) %>
-        </div>
-
-        <% end %>
-
-        <% if current_user != @user %>
-        <div class="messageButtonFlex">
-          <button class="messageButton">
-            <%= link_to "Message", new_personal_message_path(receiver_id: params[:id]) %>
-          </button>
-        </div>
-        <% end %>
       </div>
     </div>
 

@@ -81,14 +81,14 @@
 .event-name {
   font-size: 2.5em;
   font-weight: bold;
-  margin: 4px 0 10px -2px;
+  margin: 4px 0 0 -2px;
 }
 
 
 
 .event-header {
   font-weight: bold;
-  font-size: 1.1em;
+  font-size: 1em;
 }
 
 .event-body-container {
@@ -99,7 +99,9 @@
 
 .event-details-continer {
   margin: 20px 0;
-  padding-right: 15px;
+  padding: 20px;
+  background: white;
+  border-radius: 5px;
 }
 
 .event-details {
@@ -111,12 +113,15 @@
 }
 
 .event-header {
-  margin: 5px 0;
+  margin: 10px 0;
+  font-family: sans-serif;
 }
 
 
 .comment-area {
-  margin: 20px 0;
+  margin: 30px 0;
+  padding-top: 10px;
+  border-top: solid grey 1px;
 }
 
 
@@ -127,7 +132,7 @@
 .eventShowHeader {
   border-top: #eceaea solid 3px;
   border-bottom: #e0dede solid 1px;
-  padding: 20px 20px;
+  padding: 20px 20px 0 20px;
   background: white;
 
 }
@@ -141,7 +146,7 @@
 
 .eventTicket {
   display: flex;
-  margin: 30px 0;
+  margin: 22px 0;
   flex-direction: row;
   align-items: center;
   justify-content: space-between
@@ -233,8 +238,39 @@
 
 }
 
+.eventTicket input[type="submit"], .eventTicket a {
+  font-size: 13px;
+  text-decoration: none;
+  background: var(--main-green);
+  color: black;
+  letter-spacing: 1px;
+  padding: 7px 10px;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+} .eventTicket a[data-method="delete"] {
+  background: #ff8787;
+  font-size: 13px;
+  letter-spacing: 1px;
+  font-weight: bold;
+}
 
-@media screen and (max-width: 680px){
+.ticketJoinedMessage {
+  padding-right: 20px;
+}
+
+@media screen and (max-width: 550px){
+  .ticketJoinedMessage {
+    display: none;
+  }
+  .eventTicket a {
+    font-size: 12px;
+  }
+}
+
+
+@media screen and (max-width: 815px){
 
   .eventTicketBar .event-date {
     font-size: 0.8em;

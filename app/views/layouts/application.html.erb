@@ -11,6 +11,7 @@
     <%= javascript_include_tag "https://maps.google.com/maps/api/js?key=#{ENV["GYMME_MAPS_KEY"]}&libraries=places" %>
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+    <%= favicon_link_tag asset_path('gymBag.svg') %>
   </head>
 
   <body>

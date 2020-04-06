@@ -9,10 +9,10 @@
 <p><%= @event.users.length %> attending</p>
 <% end %>
 <% if current_user == @event.owner %>
-  <%= link_to "edit event", edit_event_path(@event.id) %>
+  <%= link_to "Edit Event", edit_event_path(@event.id) %>
 <% elsif joined_event? %>
-  <h4>You are signed up for this event!</h4>
-  <%= link_to "Cancel rsvp", event_ticket_path(@event.id, @ticket.id), method: :delete %>
+  <p class="ticketJoinedMessage">You're on the list!</p>
+  <%= link_to "Can't Go", event_ticket_path(@event.id, @ticket.id), method: :delete %>
 <% elsif current_user && current_user != @event.owner && @event.capacity > 0 %>
   <%= button_to "Join Event", event_tickets_path(@event) %>
 <% elsif @event.capacity == 0 %>
