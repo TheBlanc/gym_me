@@ -39,11 +39,15 @@ end
     current_user && current_event.users.find_by(id: current_user.id)
   end
 
-  # give user avatar based on gender
+  # check if user avatar is attached, and if not give user avatar based on selected gender
   def user_avatar(user)
-    if user.gender == "Male"
+    if user.avatar.attached?
+      return user.avatar
+    elsif user.gender == "Male"
       return "jimmy.png"
     elsif user.gender == "Female"
+      return "sue.svg"
+    elsif user.gender == "Non-Binary"
       return "yanny.svg"
     else
       return "blank-avatar.svg"

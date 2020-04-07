@@ -10,16 +10,9 @@
   <section class="user-profile-card">
     <div class="flex-profile-card">
       <div class="profileSideFlexContainer">
-        <% if @user.avatar.attached? %>
-        <div class="profile-avatar">
-          <%= image_tag url_for(@user.avatar) %>
-        </div>
-        <% else %>
         <div class="profile-avatar">
           <%= image_tag url_for(user_avatar(@user)) %>
         </div>
-        <% end %>
-
         <% if current_user != @user %>
         <div class="messageButtonFlex">
           <button class="messageButton">
@@ -31,15 +24,9 @@
       <div class="profile-info">
         <div class="userNameContainer">
           <div class="user-name">
-            <% if @user.avatar.attached? %>
             <div class="profile-avatar-small">
-              <%= image_tag url_for(@user.avatar) %>
-            </div>
-            <% else %>
-            <div class="profile-avatar">
               <%= image_tag url_for(user_avatar(@user)) %>
             </div>
-            <% end %>
             <h1><%= full_name(@user) %></h1>
           </div>
           <div class="messageButtonSmallContainer">
