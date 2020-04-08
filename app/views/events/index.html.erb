@@ -22,10 +22,9 @@
   <h1 class="index-header">Refine Your Search</h1>
   <nav class="search">
     <%= form_tag events_path, method: :get do %>
-
         <%= select_tag :activity_type, options_for_select([["All Fitness Types", nil], "Yoga/Pilates", "Resistence Training", "Cardio", "Recreation"], selected: params[:activity_type]), include_blank: false %>
         <%= text_field_tag :search, params[:search], id: "locationSearchField" %>
-        <%= select_tag :radius, options_for_select([["10km", 10], ["20km", 20], ["30km", 30], ["40km", 40], ["50km", 50], ["60km", 60], ["70km", 70], ["80km", 80], ["90km", 90], ["100km", 100]], selected: 60), include_blank: false %>
+        <%= select_tag :radius, options_for_select([["5km", 5], ["10km", 10], ["20km", 20], ["30km", 30], ["40km", 40], ["50km", 50], ["60km", 60], ["70km", 70], ["80km", 80], ["90km", 90], ["100km", 100]], selected: params[:radius]), include_blank: false %>
 
         <%= submit_tag "Filter" %>
     <% end %>

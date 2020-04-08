@@ -17,6 +17,17 @@
   </div>
 
   <section class="edit-profile-form">
+
+    <div class="text-danger">
+    <% prevError = "" %>
+    <% @user.errors.messages.each do |attribute, errors| %>
+      <% if prevError != errors[0] %>
+        <p>* <%= errors[0].capitalize %></p>
+      <% end %>
+      <% prevError = errors[0] %>
+    <% end %>
+    </div>
+
     <%= form_for( @user, url: user_path(@user.id) ) do |f| %>
 
       <div class="profile-form-card">
@@ -33,11 +44,11 @@
             </div>
             <div class="nameContainer">
               <div class="form-item">
-                <h2><%= f.label :first_name %></h2>
+                <h2>First name</h2>
                 <%= f.text_field :first_name, placeholder: "Enter First Name" %>
               </div>
               <div class="form-item">
-                <h2><%= f.label :last_name %></h2>
+                <h2>Last name</h2>
                 <%= f.text_field :last_name, placeholder: "Enter Last Name" %>
               </div>
             </div>

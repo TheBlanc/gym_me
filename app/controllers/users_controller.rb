@@ -70,7 +70,6 @@ class UsersController < ApplicationController
 
   def update
     @user = current_user
-
     @user.first_name = params[:user][:first_name]
     @user.last_name = params[:user][:last_name]
     @user.age = params[:user][:age]
