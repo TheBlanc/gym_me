@@ -23,17 +23,21 @@
         <div class="form-item name">
           <h3>What is your name?</h3>
         </div>
-        <div class="form-item-icon">
-          <%= image_tag "identification.svg" %>
-        </div>
-        <div class="form-item">
-          <h2><%= f.label :first_name %></h2>
-          <%= f.text_field :first_name, placeholder: "Enter First Name" %>
-        </div>
+        <div class="formItemFlexContainer">
+          <div class="form-item-icon">
+            <%= image_tag "identification.svg" %>
+          </div>
+          <div class="nameContainer">
+            <div class="form-item">
+              <h2><%= f.label :first_name %></h2>
+              <%= f.text_field :first_name, placeholder: "Enter First Name" %>
+            </div>
 
-        <div class="form-item">
-          <h2><%= f.label :last_name %></h2>
-          <%= f.text_field :last_name, placeholder: "Enter Last Name" %>
+            <div class="form-item">
+              <h2><%= f.label :last_name %></h2>
+              <%= f.text_field :last_name, placeholder: "Enter Last Name" %>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -69,35 +73,43 @@
       </div>
 
       <div class="profile-form-card">
-        <div class="form-item-icon">
-          <%= image_tag "gym.svg" %>
-        </div>
-        <div class="form-item">
-          <h3><%= f.label "What is your favorite fitness activity?" %></h3>
-          <p><%= f.select :activity_goal, ["Yoga/Pilates", "Resistence Training", "Cardio", "Recreation"]%></p>
-        </div>
-        <div class="form-item">
-          <h3><%= f.label "What is your fitness level?" %></h3>
-          <%= f.select :fitness_level, [["I just started exercising (level 1)", 1], ["I exercise a few times a week (level 2)", 2], ["I exercise every day (level 3)", 3]] %>
-        </div>
-      </div>
-
-      <div class="profile-form-card">
-        <div class="form-item-icon">
-          <%= image_tag "high-five.svg" %>
-        </div>
-        <div class="form-item">
-          <h3><%= f.label "What are some of your favorite things?" %></h3>
-          <%= f.text_area :description, placeholder: "The gym is cool, but I really love chips!" %>
+        <div class="formItemFlexContainer">
+          <div class="form-item-icon">
+            <%= image_tag "gym.svg" %>
+          </div>
+          <div class="formItemContainer">
+            <div class="form-item">
+              <h3><%= f.label "What is your favorite fitness activity?" %></h3>
+              <p><%= f.select :activity_goal, ["Yoga/Pilates", "Resistence Training", "Cardio", "Recreation"]%></p>
+            </div>
+            <div class="form-item">
+              <h3><%= f.label "What is your fitness level?" %></h3>
+              <%= f.select :fitness_level, [["I exercise 1-2 times a week  (level 1)", 1], ["I exercise 3-4 times a week (level 2)", 2], ["I exercise 5-6 times a week (level 3)", 3]] %>
+            </div>
+          </div>
         </div>
       </div>
 
       <div class="profile-form-card">
-        <div class="form-item-icon">
-          <%= image_tag "calendar.svg" %>
+        <div class="formItemFlexContainer">
+          <div class="form-item-icon">
+            <%= image_tag "high-five.svg" %>
+          </div>
+          <div class="form-item">
+            <h3><%= f.label "What are some of your favorite things?" %></h3>
+            <%= f.text_area :description, placeholder: "The gym is cool, but I really love chips!" %>
+          </div>
         </div>
-        <div class="form-item">
-          <h3>What is your preffered workout schedule?</h3>
+      </div>
+
+      <div class="profile-form-card">
+        <div class="scheduleFlexContainer">
+          <div class="form-item-icon">
+            <%= image_tag "calendar.svg" %>
+          </div>
+          <div class="form-item">
+            <h3>What is your preffered workout schedule?</h3>
+          </div>
         </div>
         <div class="schedule">
           <div class="schedule-day timeOfDayLabels">

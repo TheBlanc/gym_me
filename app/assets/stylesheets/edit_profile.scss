@@ -36,6 +36,13 @@
 .schedule {
   display: flex;
   flex-direction: row;
+  margin: auto;
+  width: fit-content;
+}
+
+.scheduleFlexContainer {
+  display: flex;
+  align-items: center;
 }
 
 .schedule-day {
@@ -78,6 +85,11 @@
 .form-item {
   display: inline-block;
   padding: 0 5px;
+}
+
+.formItemFlexContainer {
+  display: flex;
+  flex-direction: row;
 }
 
 .form-item.name {

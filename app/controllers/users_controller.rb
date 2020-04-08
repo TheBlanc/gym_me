@@ -57,8 +57,8 @@ class UsersController < ApplicationController
   def home
     if current_user
       @user = current_user
-      @events = @user.events
-      @owned_events = @user.owned_events
+      @events = @user.events.where("time > ?", DateTime.now)
+      @owned_events = @user.owned_events.order(:time)
     else
       redirect_to "devise/sessions#new"
     end

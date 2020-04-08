@@ -26,6 +26,10 @@
           <h2 class="activity-type-header">Find Events Near</h2>
           <%= text_field_tag :search, current_user.location, id: "locationSearchField" %>
         </div>
+        <div class="form-item">
+          <h2 class="activity-type-header">Radius</h2>
+          <%= select_tag :radius, options_for_select([["10km", 10], ["20km", 20], ["30km", 30], ["40km", 40], ["50km", 50], ["60km", 60], ["70km", 70], ["80km", 80], ["90km", 90], ["100km", 100]], selected: 60), include_blank: false %>
+        </div>
       </div>
       <div class="form-card discover">
         <h2 class="activity-type-header">What type of activity are you looking for?</h2>

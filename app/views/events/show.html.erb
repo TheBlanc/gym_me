@@ -11,7 +11,7 @@
   <header class="eventShowHeader">
     <div class="eventHeaderFlexContainer">
       <div class="event-show-info">
-        <p class="event-date"><%= @event.time.strftime("%A %b %d, %Y") %></p>
+        <p class="event-date"><%= @event.time.strftime("%A %b %d, %Y") %> • <%= @event.time.strftime("%I:%M%p") %></p>
         <h1 id="eventName" class="event-name"><%= @event.title %></h1>
         <div class="eventHostFlexContainer">
           <% if @event.owner.first_name && @event.owner.last_name %>
@@ -48,7 +48,7 @@
     <div class="eventTicketBounds">
       <div class="eventTicketContainer">
         <div class="eventTicketInfo">
-          <p class="event-date"><%= @event.time.strftime("%A %b %d, %Y") %></p>
+          <p class="event-date"><%= @event.time.strftime("%A %b %d") %> • <%= @event.time.strftime("%I:%M%p") %></p>
           <h1 id="eventName" class="eventTicketName"><%= @event.title %></h1>
         </div>
         <div class="eventTicket">
