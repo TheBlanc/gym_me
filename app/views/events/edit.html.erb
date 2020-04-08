@@ -9,14 +9,25 @@
 
 <section class="create-new-event">
 
-  <div class="new-event top-heading">
-    <h1 class="new-event-heading">Edit Your Event</h1>
-  </div>
-  <div class="new-event sub-heading">
-    <h2 class="new-event-heading">We’ll help find you some awesome people.</h2>
-  </div>
   <div class="hero-image">
+    <div class="new-event top-heading">
+      <h1 class="new-event-heading">Edit Your Event</h1>
+    </div>
+    <div class="new-event sub-heading">
+      <h2 class="new-event-heading">We’ll help find you some awesome people.</h2>
+    </div>
   </div>
+
+  <div class="text-danger">
+  <% prevError = "" %>
+  <% @event.errors.messages.each do |attribute, errors| %>
+    <% if prevError != errors[0] %>
+      <p>* <%= errors[0].capitalize %></p>
+    <% end %>
+    <% prevError = errors[0] %>
+  <% end %>
+  </div>
+
 
   <section class="new-event-form">
     <%= render "event_form", event: @event %>

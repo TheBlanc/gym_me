@@ -36,6 +36,13 @@
 .schedule {
   display: flex;
   flex-direction: row;
+  margin: auto;
+  width: fit-content;
+}
+
+.scheduleFlexContainer {
+  display: flex;
+  align-items: center;
 }
 
 .schedule-day {
@@ -78,6 +85,11 @@
 .form-item {
   display: inline-block;
   padding: 0 5px;
+}
+
+.formItemFlexContainer {
+  display: flex;
+  flex-direction: row;
 }
 
 .form-item.name {
@@ -123,7 +135,67 @@ textarea {
 
 
 // ------------- ICONS -------------
-.form-item-icon {
+.profile-form-item-icon {
   display: inline-block;
   width: 50px;
+  flex-shrink: 0;
+}
+
+.profile-form-item-icon-small {
+  display: none;
+}
+
+
+// --------- Media Queries -------------
+
+@media screen and (max-width: 580px) {
+  .edit-profile .hero-image {
+    background-size: 175%;
+  }
+
+  .edit-profile-form .formItemFlexContainer {
+    display: block;
+  }
+
+  .edit-profile .form-item {
+    display: block;
+    font-size: 1em;
+  } .edit-profile .form-item h3 {
+      font-size: 1em;
+      padding: 10px 0;
+    }
+  .edit-profile .smallItemHeadingContainer {
+    width: fit-content;
+    margin: 0 auto;
+  }
+  .profile-form-card {
+      padding: 20px 0;
+  }
+
+  .edit-profile-form {
+    padding: 0 25px;
+    margin: 0 0 25px 0;
+  }
+
+  .edit-profile .form-item textarea {
+    width: 100%;
+  }
+
+  .profile-form-card {
+    width: 100%;
+  }
+
+  .edit-profile .form-item.name {
+    padding: 0;
+  }
+
+  .profile-form-item-icon {
+    display: none;
+  }
+
+  .profile-form-item-icon-small {
+    display: block;
+    width: 30px;
+  }
+
 }

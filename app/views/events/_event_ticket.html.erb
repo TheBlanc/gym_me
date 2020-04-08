@@ -6,7 +6,9 @@
   <p><%= @event.capacity %></p>
 </div>
 <% else %>
-<p><%= @event.users.length %> attending</p>
+<div class="ticketAttendance">
+  <p><%= @event.users.length %> attending</p>
+</div>
 <% end %>
 <% if current_user == @event.owner %>
   <%= link_to "Edit Event", edit_event_path(@event.id) %>
@@ -16,7 +18,11 @@
 <% elsif current_user && current_user != @event.owner && @event.capacity > 0 %>
   <%= button_to "Join Event", event_tickets_path(@event) %>
 <% elsif @event.capacity == 0 %>
-  <h4>Event is currently full.</h4>
+  <div class="ticketAttendance">
+    <h4>Event is currently full.</h4>
+  </div>
 <% elsif !current_user %>
-  <h4><%= link_to "Log-in", new_user_session_path %> to join event</h4>
+  <div class="ticketAttendance">
+    <h4><%= link_to "Log-in", new_user_session_path %> to join event</h4>
+  </div>
 <% end %>

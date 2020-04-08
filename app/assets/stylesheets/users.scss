@@ -229,6 +229,7 @@ p.fitness-level {
 
 
 .profile-avatar {
+  background: #c0e6f9;
   vertical-align: top;
   margin: 1em;
   height: 150px;
@@ -240,12 +241,11 @@ p.fitness-level {
 
 
 .user-profile-card {
-    padding: 16px 16px 0 16px;
+    padding: 16px 0 0 16px;
   	background: white;
     margin: auto;
     width: 90%;
     margin-top: 1em;
-    /* Add shadows to create the "card" effect */
   	transition: 0.3s;
   	border-radius: 5px; /* 5px rounded corners */
   }
@@ -301,6 +301,12 @@ p.fitness-level {
 }
 
 @media screen and (max-width: 610px){
+  .profile-item {
+    margin: 10px;
+  }
+  .user-profile-card {
+    padding: 16px 16px 0 16px;
+  }
   .flex-profile-card {
     display: block;
   }

@@ -54,7 +54,7 @@
 
 // ------------- FORM -------------
 .new-event-form {
-  margin: 25px auto 50px auto;
+  margin: 0 auto 50px auto;
   padding: 0 50px;
   max-width: 700px;
 }
@@ -99,11 +99,24 @@ textarea {
 
 }
 
+// --------- Errors -------------
+.text-danger {
+  text-align: center;
+  color: #e33030;
+} .text-danger p {
+  margin: 20px 0 0 0;
+}
+
+.field_with_errors {
+  border: 4px solid #e33030;
+  width: fit-content;
+}
 
 // ------------- ICONS -------------
 .form-item-icon {
   display: inline-block;
   width: 50px;
+  flex-shrink: 0;
 }
 
 @media screen and (max-width: 420px){

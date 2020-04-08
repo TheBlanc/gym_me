@@ -25,6 +25,8 @@ class User < ApplicationRecord
   scope :fitness_level, -> (fitness_level) { where fitness_level: fitness_level }
   scope :gender, -> (gender) { where gender: gender }
 
+
+
   def name
     email.split('@')[0]
   end

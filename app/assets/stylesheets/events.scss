@@ -86,10 +86,6 @@
 
 
 
-.event-header {
-  font-weight: bold;
-  font-size: 1em;
-}
 
 .event-body-container {
   display: flex;
@@ -104,6 +100,10 @@
   border-radius: 5px;
 }
 
+.eventDetailsCommentsContainer {
+  max-width: 45%;
+}
+
 .event-details {
   line-height: 25px
 }
@@ -113,13 +113,63 @@
 }
 
 .event-header {
+  font-weight: bold;
+  font-size: 1em;
   margin: 10px 0;
   font-family: sans-serif;
+  position: relative;
+}
+
+
+.usersAttendingFlexContainer {
+  display: flex;
+  flex-flow: wrap;
+}
+
+.usersAttendingContainer {
+    padding: 10px 96px 10px 20px;
+    border-top: solid grey 1px;
+}
+
+.userAttendingCard {
+  text-align: center;
+  margin: 0 20px 20px 0;
+} .userAttendingCard a {
+  color: black;
+  text-decoration: none;
+}
+
+.userAttendingAvatar {
+  display: inline-block;
+  background: #c0e6f9;
+  margin: 0.25em;
+  height: 60px;
+  overflow: hidden;
+  width: 60px;
+  border-radius: 50%;
+}
+
+.userAttendingName {
+  font-size: 0.8em;
+  width: 60px;
+}
+
+.seeAllUsers {
+  color: -webkit-link;
+  font-size: 12px;
+  position: absolute;
+  right: 0;
+  top: 2px;
+  cursor: pointer;
+}
+
+.longGuestListHidden {
+  display: none;
 }
 
 
 .comment-area {
-  margin: 30px 0;
+  margin: 0px 0 20px 0;
   padding-top: 10px;
   border-top: solid grey 1px;
 }
@@ -181,7 +231,7 @@
 }
 
 .ticketAttendance {
-  margin-right: 30px;
+  margin-right: 20px;
   font-weight: bold;
   text-align: center;
 
@@ -226,9 +276,6 @@
   justify-content: flex-end;
 }
 
-.eventDetailsCommentsContainer {
-
-}
 
 .eventInfoFlexContainer {
 
@@ -267,13 +314,37 @@
   .eventTicket a {
     font-size: 12px;
   }
+  .userAttendingAvatar {
+    height: 40px;
+    width: 40px;
+  }
+  .userAttendingCard {
+    padding: 5px;
+    margin: 0;
+  }
 }
 
 
-@media screen and (max-width: 815px){
+
+@media screen and (max-width: 1125px) {
+  .usersAttendingContainer {
+    padding: 0 0 0 10px;
+  }
+}
+
+
+@media screen and (max-width: 845px){
+
+  .usersAttendingContainer {
+    padding: 0 400px 0 10px;
+  }
 
   .eventTicketBar .event-date {
     font-size: 0.8em;
+  }
+
+  .eventDetailsCommentsContainer {
+    max-width: 100%;
   }
 
   .ticketAttendance {
@@ -332,4 +403,9 @@
     display: none;
   }
 
+}
+@media screen and (max-width: 750px) {
+  .usersAttendingContainer {
+    padding: 0 0 0 10px;
+  }
 }

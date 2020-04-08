@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
   $('#profile-avatar-button').click(function(e) {
     $('#userMenu').toggle( "slide", { direction: "up" }, 330);
-    $('#userScreenCover').toggle();
+    $('#dropDownScreenCover').toggle();
   });
 
   $('#userScreenCover').click(function() {
@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", function(){
   });
 
   $('#dropDownScreenCover').click(function() {
-    $('#dropDownItems').toggle( "slide", { direction: "up" }, 330);
+    $('#userMenu').toggle( "slide", { direction: "up" }, 330);
     $('#dropDownScreenCover').toggle();
   });
 
