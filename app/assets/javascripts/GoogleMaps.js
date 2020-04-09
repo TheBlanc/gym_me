@@ -76,19 +76,18 @@ document.addEventListener("DOMContentLoaded", function(){
         return marker;
     };
 
-    function addMarkerWithTimeout(position, name, map, timeout) {
+    function addMarkerWithTimeout(position, name, map) {
        window.setTimeout(function() {
            var marker = new google.maps.Marker({
              position: position,
              map: map,
-             animation: google.maps.Animation.DROP
             });
             marker.addListener('click', function(){
                 infoWindow('<h1>' + name + '</h1>').open(map, this);
             });
            // infoWindow('<h1>'+eventName.innerHTML+'</h1>').open(eventMap, this);
          markers.push(marker);
-       }, timeout);
+       });
     }
      function infoWindow(contentString) {
          var infoWindow = new google.maps.InfoWindow({
