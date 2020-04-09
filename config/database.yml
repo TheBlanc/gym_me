@@ -22,6 +22,6 @@ test:
 
 production:
   <<: *default
-  database: gym_me_production
-  username: gym_me
-  password: <%= ENV['GYM_ME_DATABASE_PASSWORD'] %>
+  database: <%= ENV['DATABASE_URL'] %>
+  # username: gym_me
+  # password: <%= ENV['GYM_ME_DATABASE_PASSWORD'] %>
