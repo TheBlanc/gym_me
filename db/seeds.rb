@@ -41,20 +41,77 @@ descriptionArray = [
   u.save
 end
 
-10.times do |n|
-  e = Event.new
+yogaActivityArray = ["Yoga in the park", "Pilates in the park", "Meditation class", "Acro yoga", "Strength yoga"]
+resistenceActivityArray = ["Bootcamp park workout", "Kettlebell class", "Leg Day!", "Upper body circuit"]
+cardioActivityArray = ["Jump rope", "Run in the park", "Run to the lake", "Team jog", "Quick 5k", "Sprints at the football field", "Hill running"]
+recreationActivityArray = ["Slacklining", "Volleyball", "Parkour", "Taekwondo", "Mountain Bike", "Bike Ride", "Frisbee", "Tennis", "Ball Hockey", "Basketball"]
 
+5.times do |n|
+  e = Event.new
   e.title = FFaker::Sport.name
   e.address = streetArray.sample
   e.description = FFaker::CheesyLingo.paragraph
   e.capacity = rand(6..15)
   e.activity_type = ["Yoga/Pilates", "Resistence Training", "Cardio", "Recreation"].sample
-
+  e.title = yogaActivityArray.sample if e.activity_type == "Yoga/Pilates"
+  e.title = resistenceActivityArray.sample if e.activity_type == "Resistence Training"
+  e.title = cardioActivityArray.sample if e.activity_type == "Cardio"
+  e.title = recreationActivityArray.sample if e.activity_type == "Recreation"
   e.user_id = (n+1)
-  e.time = Time.now + 1000000
+  e.time = Time.now + 10000000
   e.persistence = false
-  e.end_date = Time.now + 100000000000
-
+  e.end_date = Time.now + 1000000000
+  e.save!
+end
+5.times do |n|
+  e = Event.new
+  e.title = FFaker::Sport.name
+  e.address = streetArray.sample
+  e.description = FFaker::CheesyLingo.paragraph
+  e.capacity = rand(6..15)
+  e.activity_type = ["Yoga/Pilates", "Resistence Training", "Cardio", "Recreation"].sample
+  e.title = yogaActivityArray.sample if e.activity_type == "Yoga/Pilates"
+  e.title = resistenceActivityArray.sample if e.activity_type == "Resistence Training"
+  e.title = cardioActivityArray.sample if e.activity_type == "Cardio"
+  e.title = recreationActivityArray.sample if e.activity_type == "Recreation"
+  e.user_id = (n+1)
+  e.time = Time.now + 10545000
+  e.persistence = false
+  e.end_date = Time.now + 105450000
+  e.save!
+end
+5.times do |n|
+  e = Event.new
+  e.title = FFaker::Sport.name
+  e.address = streetArray.sample
+  e.description = FFaker::CheesyLingo.paragraph
+  e.capacity = rand(6..15)
+  e.activity_type = ["Yoga/Pilates", "Resistence Training", "Cardio", "Recreation"].sample
+  e.title = yogaActivityArray.sample if e.activity_type == "Yoga/Pilates"
+  e.title = resistenceActivityArray.sample if e.activity_type == "Resistence Training"
+  e.title = cardioActivityArray.sample if e.activity_type == "Cardio"
+  e.title = recreationActivityArray.sample if e.activity_type == "Recreation"
+  e.user_id = (n+1)
+  e.time = Time.now + 11045000
+  e.persistence = false
+  e.end_date = Time.now + 110450000
+  e.save!
+end
+5.times do |n|
+  e = Event.new
+  e.title = FFaker::Sport.name
+  e.address = streetArray.sample
+  e.description = FFaker::CheesyLingo.paragraph
+  e.capacity = rand(6..15)
+  e.activity_type = ["Yoga/Pilates", "Resistence Training", "Cardio", "Recreation"].sample
+  e.title = yogaActivityArray.sample if e.activity_type == "Yoga/Pilates"
+  e.title = resistenceActivityArray.sample if e.activity_type == "Resistence Training"
+  e.title = cardioActivityArray.sample if e.activity_type == "Cardio"
+  e.title = recreationActivityArray.sample if e.activity_type == "Recreation"
+  e.user_id = (n+1)
+  e.time = Time.now + 15045000
+  e.persistence = false
+  e.end_date = Time.now + 150450000
   e.save!
 end
 

@@ -290,6 +290,31 @@ p.fitness-level {
   display: none;
 }
 
+.event-title.noMatch {
+  margin: 20px 0 10px 0;
+}
+.event-icon.noMatch {
+  display: inline-block;
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.noUsersFoundCard {
+  background: white;
+  text-align: center;
+  padding: 1px 20px 15px 20px;
+  border-radius: 5px;
+}
+
+.noUsersFoundCard a {
+  color: black;
+  text-decoration: none;
+}
+
+.noUsersFoundCard .big-button {
+  width: 171px;
+}
+
 @media screen and (max-width: 530px){
   .index-user-name {
     font-size: 2em;
