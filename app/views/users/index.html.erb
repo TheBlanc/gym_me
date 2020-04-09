@@ -46,7 +46,11 @@
 <div class="userResultsBackground">
   <section class="user-results">
     <% if @users.length == 0 %>
-      <h3 class="index-user-name">Sorry! No users found </h3>
+    <div class="noUsersFoundCard">
+      <h3 class="event-title noMatch">Sorry, No Users Found</h3>
+      <div class="event-icon noMatch"><%= image_tag("friends.svg") %></div>
+      <p class="address">Please try again</p>
+    </div>
     <% else %>
       <% @users.each do |user| %>
         <% unless user == current_user %>

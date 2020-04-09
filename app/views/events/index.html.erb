@@ -34,37 +34,41 @@
 </header>
 
 <section class="event-reults home">
+  <% if @events.length == 0 %>
+    <h3 class="event-title noMatch">Sorry, No Events Found</h3>
+    <div class="event-icon noMatch"><%= image_tag("friends.svg") %></div>
+    <p class="address">Please try again with a new activity or radius</p>
+  <% else %>
+    <!-- eventsMap is the map -->
+    <p class="map-icon-description" id="hide-map-desc">Hide Map</p>
+    <p class="hidden map-icon-description" id="show-map-desc">Show Map</p>
+    <div class="map-icon" id="map-button">
+      <%= image_tag("noun_Map.png") %>
+    </div>
+    <div class="map-container">
+      <div class"event-index-map" id="eventsMap" ></div>
 
-  <!-- eventsMap is the map -->
-  <p class="map-icon-description" id="hide-map-desc">Hide Map</p>
-  <p class="hidden map-icon-description" id="show-map-desc">Show Map</p>
-  <div class="map-icon" id="map-button">
-    <%= image_tag("noun_Map.png") %>
-  </div>
-  <div class="map-container">
-    <div class"event-index-map" id="eventsMap" ></div>
+      <% @events.each do | event | %>
+        <div class="eventsLatLong" data-latitude="<%= event.latitude %>" data-longitude="<%= event.longitude %>"></div>
+        <div class="eventsMarkerTitle" data-title="<%= event.title %>"></div>
+      <% end %>
+    </div>
 
-    <% @events.each do | event | %>
-      <div class="eventsLatLong" data-latitude="<%= event.latitude %>" data-longitude="<%= event.longitude %>"></div>
-      <div class="eventsMarkerTitle" data-title="<%= event.title %>"></div>
-    <% end %>
-  </div>
-
-
-  <% @events.each do |event| %>
-    <%= link_to event_url(event.id) do %>
-      <div class="event-card">
-        <div class="event-icon-container">
-          <div class="event-icon"><%= image_tag(event_activity_icon(event)) %></div>
+    <% @events.each do |event| %>
+      <%= link_to event_url(event.id) do %>
+        <div class="event-card">
+          <div class="event-icon-container">
+            <div class="event-icon"><%= image_tag(event_activity_icon(event)) %></div>
+          </div>
+          <div class="event-info">
+            <p class="date"><%= event.time.strftime("%A %b %d, %Y") %> • <%= event.time.strftime("%I:%M%p") %></p>
+            <h3 class="event-title"><%= event.title %></h3>
+            <p class="address"><%= event.address %></p>
+          </div>
         </div>
-        <div class="event-info">
-          <p class="date"><%= event.time.strftime("%A %b %d, %Y") %> • <%= event.time.strftime("%I:%M%p") %></p>
-          <h3 class="event-title"><%= event.title %></h3>
-          <p class="address"><%= event.address %></p>
-        </div>
-      </div>
+      <% end %>
     <% end %>
+
   <% end %>
-
 
 </section>

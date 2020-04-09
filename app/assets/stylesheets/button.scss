@@ -1,18 +1,13 @@
 .big-button {
   display: block;
-  border: 1px solid var(--main-dark-grey);
+  border-radius: 5px;
+  font-family: sans-serif;
   padding: 13px 10px;
   margin: 1em auto;
   width: 55%;
-  background-color: var(--main-white);
-  font-size: 1.1em;
+  background-color: var(--main-green);
+  font-size: 1.2em;
 }
-    .big-button:hover {
-      background-color: var(--main-dark-grey);
-      color: var(--main-white);
-      border: 1px solid var(--main-black);
-      z-index: 10;
-    }
 
 .user-options-link {
   display: block;
@@ -30,7 +25,7 @@
 .large-submit-button > input[type=submit] {
   border-radius: 5px;
   border: 0;
-  width: 135px;
+  width: 150px;
   height: 50px;
   font-family: sans-serif;
   font-size: 1.4em;

@@ -9,7 +9,15 @@
 
   <section class="convo-box">
     <h1 class="chatsHeading">Chats</h1>
-
+    <% if @conversations.length == 0 %>
+      <div class="noUsersFoundCard">
+        <h3 class="event-title noMatch">None... yet!</h3>
+        <div class="event-icon noMatch"><%= image_tag("friends.svg") %></div>
+        <%= link_to gymbuddy_path do %>
+          <div class="big-button">Find Gym Buddy</div>
+        <% end %>
+      </div>
+    <% end %>
     <div class="conversations id="conversations">
       <%= render @conversations %>
     </div>
