@@ -5,7 +5,7 @@
 
 
 .landingPageContainer {
-  background-image: url(background.jpg);
+  background-image: image-url('background.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -75,7 +75,7 @@
 .findBalance {
   height: 325px;
   width: 100%;
-  background-image: url(yogalanding.png);
+  background-image: image-url('yogalanding.png');
   background-size: 415%;
   background-repeat: no-repeat;
   background-position: 54% 32%;}
