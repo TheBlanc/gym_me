@@ -48,7 +48,6 @@ recreationActivityArray = ["Slacklining", "Volleyball", "Parkour", "Taekwondo", 
 
 5.times do |n|
   e = Event.new
-  e.title = FFaker::Sport.name
   e.address = streetArray.sample
   e.description = FFaker::CheesyLingo.paragraph
   e.capacity = rand(6..15)
@@ -65,7 +64,6 @@ recreationActivityArray = ["Slacklining", "Volleyball", "Parkour", "Taekwondo", 
 end
 5.times do |n|
   e = Event.new
-  e.title = FFaker::Sport.name
   e.address = streetArray.sample
   e.description = FFaker::CheesyLingo.paragraph
   e.capacity = rand(6..15)
@@ -82,7 +80,6 @@ end
 end
 5.times do |n|
   e = Event.new
-  e.title = FFaker::Sport.name
   e.address = streetArray.sample
   e.description = FFaker::CheesyLingo.paragraph
   e.capacity = rand(6..15)
@@ -116,13 +113,14 @@ end
 end
 
 ticketArray = []
-10.times do |x|
+20.times do |x|
     5.times do
       t = Ticket.new
       t.user_id = rand(1..20)
       t.event_id = (x+1)
-      t.save! unless ticketArray.include?(t)
-      ticketArray << [t.user_id, t.event_id]
+      userEventPair = [t.user_id, t.event_id]
+      t.save unless ticketArray.include?(userEventPair)
+      ticketArray << userEventPair
       t.event.capacity -= 1
     end
 end

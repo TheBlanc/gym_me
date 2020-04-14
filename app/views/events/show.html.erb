@@ -66,8 +66,8 @@
             <p class="eventInfoBoxText"><%= @event.time.strftime("%A %b %d, %Y") %> • <%= @event.time.strftime("%I:%M%p") %></p>
             <p class="eventInfoBoxText"><%= @event.address %></p>
             <div class="map-icon" id="map-button">
-              <p id="showText">show</p>
-              <p class="hidden" id="hideText">hide</p>
+              <p id="showText">hide</p>
+              <p class="hidden" id="hideText">show</p>
               <%= image_tag("noun_Map.png") %>
             </div>
           </div>
@@ -124,24 +124,21 @@
               </div>
               <% end %>
               <% if current_user  %>
-              <% @comments.reverse_each do |comment| %>
-              <div class="comment">
-                <p class="comment-time"><em><%= comment.created_at.strftime("%m/%d/%Y at %I:%M%p") %></em></p>
-                <% if comment.user.name %>
-                <p class="comment-user"><%= comment.user.name %></p>
-                <% else %>
-                <p class="comment-user"><%= comment.user.email %></p>
+                <% @comments.reverse_each do |comment| %>
+                <div class="comment">
+                  <p class="comment-time"><em><%= comment.created_at.strftime("%m/%d/%Y at %I:%M%p") %></em></p>
+                  <% if comment.user.full_name %>
+                    <p class="comment-user"><%= comment.user.full_name %></p>
+                  <% else %>
+                    <p class="comment-user"><%= comment.user.email %></p>
+                  <% end %>
+                  <p class="comment-body"><%= comment.body %></p>
+                  <!-- Check if user created comment to have authorization to delete it  -->
+                  <% if comment.user.id == current_user.id %>
+                    <%= button_to "delete", event_comment_path(@event, comment.id), data: { confirm: "Are you sure?" }, method: :delete %>
+                  <% end %>
+                </div>
                 <% end %>
-                <p class="comment-body"><%= comment.body %></p>
-                <!-- Check if user created comment to have authorization to delete it  -->
-                <% if comment.user.id == current_user.id %>
-                <%= button_to "delete", event_comment_path(@event, comment.id), data: { confirm: "Are you sure?" }, method: :delete %>
-                <% end %>
-              </div>
-              <% end %>
-
-
-
               <% end %>
             </section>
           </div>

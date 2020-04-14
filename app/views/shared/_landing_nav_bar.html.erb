@@ -1,7 +1,9 @@
 <nav class="navBar">
-  <div class="gymmelogo-container">
-    <h1 class="gymme-logo">Gymme</h1>
-  </div>
+  <%= link_to root_url do %>
+    <div class="gymmelogo-container">
+      <h1 class="gymme-logo">Gymme</h1>
+    </div>
+  <% end %>
   <div class="landing-nav-item-container">
 
     <ul class="navBar-items">
@@ -15,7 +17,7 @@
         <a href="/#testimonials"><li class="desktop nav-item"> Testimonials </li></a>
       </div>
     </ul>
-    <ul class="navBar-items drop-down-items" id="dropDownItems">
+    <ul class="navBar-items drop-down-items" id="landingNavDropDownItems">
       <div class="nav-button">
         <a href="/#meetYourMatch"><li class="desktop nav-item"> Meet Your Match </li></a>
       </div>

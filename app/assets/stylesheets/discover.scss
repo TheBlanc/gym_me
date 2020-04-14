@@ -23,6 +23,9 @@
   align-items: baseline;
   overflow: scroll;
 }
+.filter-search form > * {
+  flex-shrink: 0
+}
 
 .filter-search #filterButton {
   margin: 0 10px;
@@ -35,7 +38,7 @@
 
 .event-index {
   text-align: center;
-  margin: 10px 0 15px 0;
+  margin: 10px 7px 15px 7px;
 }
 
 .discover h2 {
@@ -175,6 +178,14 @@ label.fitness-level > input:checked + .form-label {
 
 label.hide-radio-button > p {
   cursor: pointer;
+}
+@media screen and (max-width: 805px){
+  .filter-search form {
+      display: flex;
+      justify-content: left;
+      align-items: baseline;
+      overflow: scroll;
+  }
 }
 
 @media screen and (max-width: 680px){

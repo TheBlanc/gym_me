@@ -1,29 +1,29 @@
-# README
-1...2...3 Gym Me.
+# Gymme
 
-Developers: Jeffery, Haggai, Kevin
+A fitness social media platform that aims to help users connect and exercise.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Features
 
-Things you may want to cover:
+* Instant messaging - Redis & Action Cable
+* Google maps API
+* Active storage
+* Schedule matching logic - Vanilla JS
+* Authentication - Devise
 
-* Ruby version
-    ruby 2.5.1p57 (2018-03-29 revision 63029) [x86_64-darwin17]
-* System dependencies
 
-* Configuration
-google maps API: https://developers.google.com/maps/documentation/javascript/tutorial
+## Built With
 
-* Database creation
+* [Rails](https://rubyonrails.org/)
+* [Devise](https://github.com/heartcombo/devise) - Authentication service
+* [Google Maps API](https://cloud.google.com/maps-platform/?utm_source=google&utm_medium=cpc&utm_campaign=FY18-Q2-global-demandgen-paidsearchonnetworkhouseads-cs-maps_contactsal_saf&utm_content=text-ad-none-none-DEV_c-CRE_274433407138-ADGP_Hybrid+%7C+AW+SEM+%7C+BKWS+~+Google+Maps+API-KWID_43700033921822021-kwd-335425467-userloc_9061009&utm_term=KW_google%20maps%20api-ST_google+maps+api&gclid=EAIaIQobChMIjqyzk5To6AIVDtvACh3NJQcKEAAYASAAEgIo6vD_BwE) - Embedded map, auto-complete and geocoding
+* [Redis](https://redis.io/) - Used as instant messaging server
 
-* Database initialization
+## Contributing
 
-* How to run the test suite
+Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
 
-* Services (job queues, cache servers, search engines, etc.)
+## Authors
 
-* Deployment instructions
-
-* ...
-# gym_me
+* **Kevin LeBlanc** - [TheBlanc](https://github.com/TheBlanc)
+* **Jeffery Campbell** - [hibernatingnerd](https://github.com/hibernatingnerd)
+* **Haggai Lerman** - [Israelistic](https://github.com/Israelistic)

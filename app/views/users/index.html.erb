@@ -56,7 +56,7 @@
         <% unless user == current_user %>
           <%= link_to user_url(user.id) do %>
             <div class="user-card">
-              <div class="profile-avatar">
+              <div class="userIndexAvatar">
                 <%= image_tag url_for(user_avatar(user)) %>
               </div>
               <div class="user-card-flex-container">

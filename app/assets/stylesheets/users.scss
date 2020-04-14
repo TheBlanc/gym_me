@@ -238,6 +238,16 @@ p.fitness-level {
   border-radius: 50%;
   flex-shrink: 1;
 }
+.userIndexAvatar {
+  background: #c0e6f9;
+  vertical-align: top;
+  margin: 1em;
+  height: 150px;
+  overflow: hidden;
+  width: 150px;
+  border-radius: 50%;
+  flex-shrink: 1;
+}
 
 
 .user-profile-card {
@@ -317,11 +327,11 @@ p.fitness-level {
 
 @media screen and (max-width: 530px){
   .index-user-name {
-    font-size: 2em;
+    font-size: 1.5em;
   }
-  .profile-avatar {
-    height: 100px;
-    width: 100px;
+  .userIndexAvatar {
+    height: 60px;
+    width: 60px;
   }
 }
 

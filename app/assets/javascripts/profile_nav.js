@@ -24,19 +24,21 @@ document.addEventListener("DOMContentLoaded", function(){
   });
 
   $('#hamburgerMenuIcon').click(function(e) {
-    $('#dropDownItems').toggle( "slide", { direction: "up" }, 330);
+    $('#landingNavDropDownItems').toggle( "slide", { direction: "up" }, 330);
     $('#dropDownScreenCover').toggle();
   });
 
   $('#dropDownScreenCover').click(function() {
+    $('#landingNavDropDownItems').toggle( "slide", { direction: "up" }, 330);
     $('#userMenu').toggle( "slide", { direction: "up" }, 330);
     $('#dropDownScreenCover').toggle();
   });
 
   $(window).scroll(function() {
       if ($(document).scrollTop() > 100) {
-        $('#dropDownItems').hide( "slide", { direction: "up" }, 330);
+        $('#landingNavDropDownItems').hide( "slide", { direction: "up" }, 330);
         $('#dropDownScreenCover').hide();
+        $('#userMenu').hide( "slide", { direction: "up" }, 330);
       }
     });
 

@@ -19,7 +19,7 @@
   color: white;
   padding: 10px 0 0 25px;;
   background-color: rgba(0, 0, 0, 0.19);
-  margin: 20px;
+  margin: 10px 20px;
   align-items: flex-start;
   display: flex;
   flex-direction: column;
@@ -59,7 +59,7 @@
   width: 100%;
   line-height: 3rem;
   padding: 0 25px;
-  margin: 28px 0;
+  margin: 28px 0 0 0;
 } .landingSectionStyle h1 {
   font-size: 1.9rem;
   font-weight: bold;
@@ -98,7 +98,7 @@
   color: white;
   // height: 350px;
   width: 100%;
-  background: linear-gradient(0deg,rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url(ocean-horizon.jpg), ;
+  background: linear-gradient(0deg,rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), image-url('ocean-horizon.jpg') ;
   background-size: cover;
   background-position-y: bottom;
   background-position-x: center;
@@ -174,7 +174,7 @@
 
 .sign-in {
   padding: 5px 0 5px 0;
-  margin: 20px 20px 0 0;
+  margin: 10px 20px 0 0;
   text-align: right;
   display: flex;
   flex-direction: column;
