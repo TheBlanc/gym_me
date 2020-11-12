@@ -24,7 +24,7 @@
     <%= form_tag events_path, method: :get do %>
         <%= select_tag :activity_type, options_for_select([["All Fitness Types", nil], "Yoga/Pilates", "Resistence Training", "Cardio", "Recreation"], selected: params[:activity_type]), include_blank: false %>
         <%= text_field_tag :search, params[:search], id: "locationSearchField" %>
-        <%= select_tag :radius, options_for_select([["5km", 5], ["10km", 10], ["20km", 20], ["30km", 30], ["40km", 40], ["50km", 50], ["60km", 60], ["70km", 70], ["80km", 80], ["90km", 90], ["100km", 100]], selected: params[:radius]), include_blank: false %>
+        <%= select_tag :radius, options_for_select([["1km", 1], ["2km", 2], ["5km", 5], ["10km", 10], ["15km", 15], ["20km", 20], ["30km", 30], ["40km", 40], ["50km", 50], ["60km", 60], ["70km", 70], ["80km", 80], ["90km", 90], ["100km", 100]], selected: params[:radius]), include_blank: false %>
 
         <%= submit_tag "Filter" %>
     <% end %>
@@ -39,15 +39,14 @@
     <div class="event-icon noMatch"><%= image_tag("friends.svg") %></div>
     <p class="address">Please try again with a new activity or radius</p>
   <% else %>
-    <!-- eventsMap is the map -->
     <p class="map-icon-description" id="hide-map-desc">Hide Map</p>
     <p class="hidden map-icon-description" id="show-map-desc">Show Map</p>
     <div class="map-icon" id="map-button">
       <%= image_tag("noun_Map.png") %>
     </div>
     <div class="map-container">
+      <!-- Render Events Map -->
       <div class"event-index-map" id="eventsMap" ></div>
-
       <% @events.each do | event | %>
         <div class="eventsLatLong" data-latitude="<%= event.latitude %>" data-longitude="<%= event.longitude %>"></div>
         <div class="eventsMarkerTitle" data-title="<%= event.title %>"></div>

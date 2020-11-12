@@ -6,7 +6,6 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-streetArray = ["#{rand(100..300)} King St. W, Toronto", "#{rand(100..300)} Queen St. W, Toronto", "#{rand(100..300)} College St. W, Toronto", "#{rand(100..300)} Ossington St, Toronto", "#{rand(100..300)} St Clair Ave W, Toronto", "#{rand(100..300)} Bathurst St, Toronto"]
 descriptionArray = [
   "‘I know that,’ said Professor McGonagall irritably. ‘But thats no reason to lose our heads. People are being downright careless, out on the streets in broad daylight, not even dressed in Muggle clothes, swapping rumours.’",
   "Uncle Vernon stayed at home again. After burning all the letters, he got out a hammer and nails and boarded up the cracks around the front and back doors so no one could go out. He hummed ‘Tiptoe through the Tulips’ as he worked, and jumped at small noises.",
@@ -21,6 +20,7 @@ descriptionArray = [
 ]
 20.times do |n|
   u = User.new
+  streetArray = ["#{rand(100..300)} King St. W, Toronto", "#{rand(100..300)} Queen St. W, Toronto", "#{rand(100..300)} College St. W, Toronto", "#{rand(100..300)} Ossington St, Toronto", "#{rand(100..300)} St Clair Ave W, Toronto", "#{rand(100..300)} Bathurst St, Toronto"]
   u.email = FFaker::Internet.email
   u.password = "passpass"
   u.first_name = FFaker::Name.first_name
@@ -48,6 +48,7 @@ recreationActivityArray = ["Slacklining", "Volleyball", "Parkour", "Taekwondo", 
 
 5.times do |n|
   e = Event.new
+  streetArray = ["#{rand(100..300)} King St. W, Toronto", "#{rand(100..300)} Queen St. W, Toronto", "#{rand(100..300)} College St. W, Toronto", "#{rand(100..300)} Ossington St, Toronto", "#{rand(100..300)} St Clair Ave W, Toronto", "#{rand(100..300)} Bathurst St, Toronto"]
   e.address = streetArray.sample
   e.description = FFaker::CheesyLingo.paragraph
   e.capacity = rand(6..15)
@@ -64,6 +65,7 @@ recreationActivityArray = ["Slacklining", "Volleyball", "Parkour", "Taekwondo", 
 end
 5.times do |n|
   e = Event.new
+  streetArray = ["#{rand(100..300)} King St. W, Toronto", "#{rand(100..300)} Queen St. W, Toronto", "#{rand(100..300)} College St. W, Toronto", "#{rand(100..300)} Ossington St, Toronto", "#{rand(100..300)} St Clair Ave W, Toronto", "#{rand(100..300)} Bathurst St, Toronto"]
   e.address = streetArray.sample
   e.description = FFaker::CheesyLingo.paragraph
   e.capacity = rand(6..15)
@@ -80,6 +82,7 @@ end
 end
 5.times do |n|
   e = Event.new
+  streetArray = ["#{rand(100..300)} King St. W, Toronto", "#{rand(100..300)} Queen St. W, Toronto", "#{rand(100..300)} College St. W, Toronto", "#{rand(100..300)} Ossington St, Toronto", "#{rand(100..300)} St Clair Ave W, Toronto", "#{rand(100..300)} Bathurst St, Toronto"]
   e.address = streetArray.sample
   e.description = FFaker::CheesyLingo.paragraph
   e.capacity = rand(6..15)
@@ -96,6 +99,7 @@ end
 end
 5.times do |n|
   e = Event.new
+  streetArray = ["#{rand(100..300)} King St. W, Toronto", "#{rand(100..300)} Queen St. W, Toronto", "#{rand(100..300)} College St. W, Toronto", "#{rand(100..300)} Ossington St, Toronto", "#{rand(100..300)} St Clair Ave W, Toronto", "#{rand(100..300)} Bathurst St, Toronto"]
   e.title = FFaker::Sport.name
   e.address = streetArray.sample
   e.description = FFaker::CheesyLingo.paragraph

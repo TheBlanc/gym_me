@@ -7,7 +7,7 @@ class EventsController < ApplicationController
   def index
     @events = Event.all
     if params[:search].present?
-      radius = params[:radius];
+      radius = params[:radius]
       search_location_lat = Geocoder.search(params[:search])[0].data["lat"]
       search_location_lon = Geocoder.search(params[:search])[0].data["lon"]
       @events = Event.near([search_location_lat, search_location_lon], radius, units: :km)
